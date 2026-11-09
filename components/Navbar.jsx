@@ -39,18 +39,26 @@ export default function Navbar() {
           >
             Daftar Hero & Build
           </Link>
-          <a
-            href="#meta-tier"
-            className="px-3.5 py-1.5 rounded-lg text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all"
+          <Link
+            href="/tier-list"
+            className={`px-3.5 py-1.5 rounded-lg text-sm font-semibold transition-all ${
+              pathname === '/tier-list'
+                ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 shadow-glow-cyan'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+            }`}
           >
             Tier List
-          </a>
-          <a
-            href="#emblems"
-            className="px-3.5 py-1.5 rounded-lg text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all"
+          </Link>
+          <Link
+            href="/emblems"
+            className={`px-3.5 py-1.5 rounded-lg text-sm font-semibold transition-all ${
+              pathname === '/emblems'
+                ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 shadow-glow-cyan'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+            }`}
           >
             Emblem Talents
-          </a>
+          </Link>
         </nav>
 
         {/* Patch Version Badge */}

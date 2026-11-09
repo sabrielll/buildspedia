@@ -1,12 +1,7 @@
 /**
  * Buildspedia - Centralized Hero & Build Configuration
- * Admin-Friendly Data Repository for Mobile Legends: Bang Bang
- * 
- * Struktur path aset mengacu pada direktori lokal di /Assets/:
- * - Hero Icon: /Assets/Hero Icons/[Nama_Hero]/[Nama_Hero].png
- * - Item Icon: /Assets/Build Icons/[Kategori_Item]/[Nama_Item].png
- * - Emblem Icon: /Assets/Emblem/[Kategori_Emblem]/[Nama_Talent].png
- * - Role Icon: /Assets/Clases/[Role].png
+ * Complete Catalog of all 121 Mobile Legends: Bang Bang Heroes
+ * Admin-Friendly Data Repository
  */
 
 export const ROLE_LIST = [
@@ -18,1120 +13,6 @@ export const ROLE_LIST = [
   { id: "Support", name: "Support", icon: "/Assets/Clases/Support.png" },
   { id: "Tank", name: "Tank", icon: "/Assets/Clases/Tank.png" },
 ];
-
-export const HEROES_DATA = [
-  {
-    id: "aamon",
-    slug: "aamon",
-    name: "Aamon",
-    title: "Duke of Shards",
-    role: "Assassin",
-    secondaryRole: "Mage",
-    lane: "Jungler",
-    tier: "S+",
-    difficulty: "Medium",
-    ratings: {
-      durability: 4,
-      offense: 9,
-      controlEffect: 3,
-      difficulty: 6,
-    },
-    winRate: "53.8%",
-    pickRate: "2.4%",
-    banRate: "18.2%",
-    patch: "1.8.92",
-    summary: "Assassin Magic assassin burst mematikan yang mengandalkan kamuflase tak terlihat, mobilitas tinggi, dan eksekusi mematikan dengan pecahan belati (shards).",
-    pros: [
-      "Burst magic damage instan sangat tinggi ke target tunggal",
-      "Kemampuan Camouflage pasif memberikan HP regen dan imunitas lock skill target",
-      "Sangat lincah dalam rotasi jungle dan flank backline musuh",
-      "Ultimate mengeksekusi musuh dengan persentase HP yang hilang"
-    ],
-    cons: [
-      "Rentan terhadap Crowd Control instan (khususnya Suppression / Hard Stun)",
-      "Efektivitas berkurang jika musuh menumpuk Magic Defense (Radiant Armor)",
-      "Sangat bergantung pada akumulasi shard sebelum meluncurkan Ultimate"
-    ],
-    assets: {
-      heroIcon: "/Assets/Hero Icons/Aamon/Aamon.png",
-      heroPortrait: "/Assets/Hero Icons/Aamon/Aamon_rec.png",
-      roleIcon: "/Assets/Clases/Assassin.png",
-      skins: [
-        { name: "Default Duke", path: "/Assets/Hero Icons/Aamon/Aamon.png" },
-        { name: "Night's Edge", path: "/Assets/Hero Icons/Aamon/Aamon_0.png" },
-        { name: "Noble Crest", path: "/Assets/Hero Icons/Aamon/Aamon_1.png" },
-        { name: "Cyber Shard", path: "/Assets/Hero Icons/Aamon/Aamon_2.png" },
-      ]
-    },
-    spells: [
-      {
-        name: "Ice Retribution",
-        category: "Boots",
-        filename: "Ice_retribution.png",
-        assetPath: "/Assets/Build Icons/Boots/Ice_retribution.png",
-        isPrimary: true,
-        tag: "Rekomendasi Utama (Jungler)",
-        description: "Mencuri 72-100 Movement Speed target selama 3 detik, sangat mempermudah Aamon mengejar musuh licin untuk mengunci burst shard."
-      },
-      {
-        name: "Flame Retribution",
-        category: "Boots",
-        filename: "Flame_Retribution.png",
-        assetPath: "/Assets/Build Icons/Boots/Flame_Retribution.png",
-        isPrimary: false,
-        tag: "Situasional Jungler vs Tank",
-        description: "Mencuri 58-100 Physical Attack dan Magic Power target selama 4 detik, efektif untuk adu objektif turtle/lord vs jungler tank."
-      },
-      {
-        name: "Execute",
-        category: "Spells",
-        filename: "Execute.png",
-        assetPath: "/Assets/Spells/Execute.png",
-        isPrimary: false,
-        tag: "Opsi Non-Jungler (Mid/Exp)",
-        description: "Menghasilkan True Damage instan yang berskala dengan sisa HP musuh untuk mengamankan kill."
-      }
-    ],
-    emblem: {
-      name: "Custom Assassin Emblem",
-      category: "Assasins",
-      assetPath: "/Assets/Emblem/Assasins/Custom_Assassin_Emblem.png",
-      baseStats: "+16 Adaptive Penetration | +10 Adaptive Attack | +3% Movement Speed",
-      tier1: {
-        name: "Rupture",
-        category: "Assasins",
-        filename: "Rupture-Talent.png",
-        assetPath: "/Assets/Emblem/Assasins/Rupture-Talent.png",
-        type: "Tier 1 - Standard Talent",
-        effect: "Mendapatkan 5 Adaptive Penetration tambahan.",
-        reason: "Memaksimalkan burst damage early game agar shard Aamon langsung menembus base defense hero musuh."
-      },
-      tier2: {
-        name: "Seasoned Hunter",
-        category: "Basic_Common",
-        filename: "Seasoned_Hunter.png",
-        assetPath: "/Assets/Emblem/Basic_Common/Seasoned_Hunter.png",
-        type: "Tier 2 - Advanced Talent",
-        effect: "Meningkatkan damage ke Lord dan Turtle sebesar 15% serta mempercepat farming jungle.",
-        reason: "Memastikan rotasi level Aamon mendahului musuh dan unggul dalam perebutan objektif Retribution."
-      },
-      tier3: {
-        name: "Lethal Ignition",
-        category: "Mage",
-        filename: "Lethal_Ignition-Talent.png",
-        assetPath: "/Assets/Emblem/Mage/Lethal_Ignition-Talent.png",
-        type: "Tier 3 - Core Talent",
-        effect: "Menghasilkan damage lebih dari 7% Max HP lawan 3 kali berturut-turut akan membakar target sebesar 162-750 Adaptive Damage tambahan.",
-        reason: "Sinergi luar biasa dengan kombo multi-hit belati pasif dan skill Ultimate Endless Shards milik Aamon."
-      }
-    },
-    coreBuild: [
-      {
-        slot: 1,
-        name: "Ice Hunter's Arcane Boots",
-        category: "Boots",
-        filename: "Arcane_boots.png",
-        assetPath: "/Assets/Build Icons/Boots/Arcane_boots.png",
-        cost: "700 Gold",
-        stats: "+40 Movement Speed, +10 Magic Penetration",
-        passive: "Hunter: Memberikan damage creep ekstra. Arcane memberi flat magic penetration krusial di early game.",
-        whyBuy: "Membantu rotasi cepat antar camp jungle sekaligus memastikan damage skill 1 dan pasif langsung terasa perih."
-      },
-      {
-        slot: 2,
-        name: "Genius Wand",
-        category: "Magical",
-        filename: "Genius_wand.png",
-        assetPath: "/Assets/Build Icons/Magical/Genius_wand.png",
-        cost: "2000 Gold",
-        stats: "+75 Magic Power, +5% Movement Speed, +10 Magic PEN",
-        passive: "Magic: Setiap damage mengurangi 3-7 Magic Defense musuh selama 2 detik (dapat di-stack hingga 3 kali).",
-        whyBuy: "Item spike pertama paling mematikan. Karena shard Aamon menyerang multi-hit, 3 stack pengurangan defense langsung tercapai instan."
-      },
-      {
-        slot: 3,
-        name: "Concentrated Energy",
-        category: "Magical",
-        filename: "Concentrated_energy.png",
-        assetPath: "/Assets/Build Icons/Magical/Concentrated_energy.png",
-        cost: "2020 Gold",
-        stats: "+70 Magic Power, +700 HP, +20% Magic Lifesteal",
-        passive: "Recharge: Meningkatkan Magic Power hingga 6 stack saat bertarung terus-menerus dan sustain lifesteal tebal.",
-        whyBuy: "Memberikan HP tambahan dan lifesteal agar Aamon dapat bertahan dalam pertarungan tim berkepanjangan."
-      },
-      {
-        slot: 4,
-        name: "Holy Crystal",
-        category: "Magical",
-        filename: "Holy_crystal.png",
-        assetPath: "/Assets/Build Icons/Magical/Holy_crystal.png",
-        cost: "2180 Gold",
-        stats: "+100 Magic Power",
-        passive: "Mystery: Meningkatkan Magic Power sebesar 21% - 35% berdasarkan level hero.",
-        whyBuy: "Power spike damage puncak di mid game. Melipatgandakan seluruh stat magic power dari Genius Wand dan Concentrated Energy."
-      },
-      {
-        slot: 5,
-        name: "Divine Glaive",
-        category: "Magical",
-        filename: "Divine_glaive.png",
-        assetPath: "/Assets/Build Icons/Magical/Divine_glaive.png",
-        cost: "1970 Gold",
-        stats: "+65 Magic Power, +40% Magic Penetration",
-        passive: "Spellbreaker: Memperoleh 0.1% Magic PEN tambahan untuk setiap poin Magic Defense yang dimiliki musuh (hingga 20%).",
-        whyBuy: "Wajib dibeli ketika tank atau fighter musuh mulai menyelesaikan item Athena's Shield atau Radiant Armor."
-      },
-      {
-        slot: 6,
-        name: "Blood Wings",
-        category: "Magical",
-        filename: "Blood_wings.png",
-        assetPath: "/Assets/Build Icons/Magical/Blood_wings.png",
-        cost: "3000 Gold",
-        stats: "+175 Magic Power, +500 HP",
-        passive: "Guard: Memperoleh Shield setara 200% Magic Power. Saat shield pecah, mendapat 30 Movement Speed selama 1 detik.",
-        whyBuy: "Item pamungkas slot 6 yang memberikan magic power terbesar dan shield pelindung dari burst mendadak saat masuk backline."
-      }
-    ],
-    situationalBuild: [
-      {
-        name: "Winter Truncheon",
-        category: "Magical",
-        filename: "Winter_truncheon.png",
-        assetPath: "/Assets/Build Icons/Magical/Winter_truncheon.png",
-        cost: "1910 Gold",
-        stats: "+60 Magic Power, +25 Physical Defense, +400 HP",
-        badge: "Anti Burst / Outplay",
-        whyBuy: "Gunakan skill aktif Frozen (kebal 2 detik) saat diincar kombo instan assassin lawan seperti Ling, Hayabusa, atau Saber."
-      },
-      {
-        name: "Immortality",
-        category: "Defense",
-        filename: "Immortality.png",
-        assetPath: "/Assets/Build Icons/Defense/Immortality.png",
-        cost: "2120 Gold",
-        stats: "+800 HP, +20 Physical Defense",
-        badge: "Late Game Insurance",
-        whyBuy: "Sangat krusial saat waktu respawn late game menyentuh 60 detik. Memberikan kesempatan kedua untuk kabur dengan Camouflage."
-      },
-      {
-        name: "Shadow Twinblades",
-        category: "Magical",
-        filename: "Shadow_twinblades.png",
-        assetPath: "/Assets/Build Icons/Magical/Shadow_twinblades.png",
-        cost: "1960 Gold",
-        stats: "+75 Magic Power, +15% Magic Lifesteal, +5% Movement Speed",
-        badge: "Enhanced Basic Slow",
-        whyBuy: "Memberikan slow 60% dan bonus magic damage ekstra saat keluar dari mode kamuflase untuk menahan hero lincah."
-      },
-      {
-        name: "Athena's Shield",
-        category: "Defense",
-        filename: "Athena_shield.png",
-        assetPath: "/Assets/Build Icons/Defense/Athena_shield.png",
-        cost: "2150 Gold",
-        stats: "+900 HP, +62 Magic Defense, +2 HP Regen",
-        badge: "Vs High Magic Burst",
-        whyBuy: "Ganti item ofensif jika mage lawan seperti Eudora, Aurora, atau Kadita mampu mengeliminasi Aamon dalam satu kombo."
-      }
-    ],
-    skills: [
-      {
-        type: "Passive",
-        name: "Invisible Armor",
-        cooldown: "Pasif",
-        description: "Setiap kali Aamon mengenai musuh dengan skill, ia memasuki status Camouflage di mana ia tidak dapat ditargetkan oleh basic attack atau single-target lock skill, meregenerasi 25 (+2.5% Total Magic Power) HP setiap 0.6 detik, dan memperoleh 60% Movement Speed ekstra yang melambat dalam 3.5 detik. Setelah keluar dari Camouflage, Basic Attack berikutnya diperkuat menjadi serangan jarak dekat bertubi-tubi.",
-        tips: "Selalu manfaatkan status Camouflage untuk reset posisi atau menunggu cooldown skill tanpa bisa ditarget."
-      },
-      {
-        type: "Skill 1",
-        name: "Soul Shards",
-        cooldown: "9.0 - 6.5s",
-        description: "Pasif: Aamon mengisi energi belati saat melancarkan serangan. Setelah terisi penuh, serangan berikutnya melempar 5 belati ke target terdekat.\nAktif: Melemparkan belati ke arah musuh terdekat, memberikan 150-300 (+60% Total Magic Power) Magic Damage dan menjatuhkan shard di tanah.",
-        tips: "Gunakan untuk memicu Camouflage dari jarak aman dan menghasilkan serakan shard di lantai untuk modal Ultimate."
-      },
-      {
-        type: "Skill 2",
-        name: "Slayer Shards",
-        cooldown: "15.0 - 12.5s",
-        description: "Aamon melempar belati shard ke arah yang ditentukan. Memberikan Magic Damage ke musuh yang tertabrak dan memberikan efek Slow 50% selama 1 detik. Jika mengenai lawan atau mencapai jarak maksimal, belati akan kembali ke Aamon dan seketika mengaktifkan mode Camouflage.",
-        tips: "Skill inisiasi terbaik. Lemparkan ke monster jungle atau minion untuk kabur atau masuk ke teamfight secara siluman."
-      },
-      {
-        type: "Ultimate",
-        name: "Endless Shards",
-        cooldown: "46.0 - 36.0s",
-        description: "Aamon mengunci target musuh dan meluncurkan semua shard di dekatnya (antara 8 hingga maksimal 25 shard). Setiap shard menghasilkan 90-110 (+24% Total Magic Power) Magic Damage. Damage meningkat hingga 150% berdasarkan sisa HP target yang hilang (semakin sekarat musuh, semakin mematikan).",
-        tips: "Jangan pernah langsung gunakan Ultimate di awal duel! Kumpulkan shard dari skill 1 & 2 terlebih dahulu, tunggu musuh di bawah 50% HP untuk eksekusi one-shot pasti."
-      }
-    ],
-    skillOrder: {
-      priority: "Prioritas: Max Skill 1 > Max Skill 2 > Ambil Ultimate tiap Lv 4/8/12",
-      levels: [
-        { level: 1, skill: "Skill 1" },
-        { level: 2, skill: "Skill 2" },
-        { level: 3, skill: "Skill 1" },
-        { level: 4, skill: "Ultimate" },
-        { level: 5, skill: "Skill 1" },
-        { level: 6, skill: "Skill 2" },
-        { level: 7, skill: "Skill 1" },
-        { level: 8, skill: "Ultimate" },
-        { level: 9, skill: "Skill 1" },
-        { level: 10, skill: "Skill 2" },
-        { level: 11, skill: "Skill 1" },
-        { level: 12, skill: "Ultimate" },
-      ]
-    },
-    combos: [
-      {
-        name: "Flank Assassination (Standard Burst)",
-        sequence: ["Skill 2 (Camouflage)", "Approach Target", "Enhanced Basic Attack", "Skill 1", "Enhanced Basic Attack", "Ultimate (Endless Shards)"],
-        description: "Masuk ke teamfight dari sudut buta memanfaatkan Camouflage Skill 2. Lepaskan pukulan enhanced basic attack, sambung dengan Skill 1 untuk menambah shard maksimal, lalu tutup dengan Ultimate saat HP musuh menipis."
-      },
-      {
-        name: "Maximum Shards Overkill (25 Shards Combo)",
-        sequence: ["Skill 1 (Kumpulkan Shard)", "Skill 2", "Enhanced Basic Attack", "Retribution Slow", "Ultimate"],
-        description: "Digunakan untuk menghabisi fighter tebal. Pastikan ada tumpukan shard di tanah sebelum menekan Ultimate agar damage mencapai amplifikasi 25 proyektil penuh."
-      }
-    ],
-    counters: {
-      strongAgainst: [
-        { name: "Layla", role: "Marksman", reason: "Hero tanpa mobilitas yang sangat mudah dibunuh instan di backline." },
-        { name: "Miya", role: "Marksman", reason: "Tidak dapat menahan burst damage magic instan dari stealth Aamon." },
-        { name: "Xavier", role: "Mage", reason: "Mage statis yang tidak bisa mengunci Aamon saat berada dalam Camouflage." }
-      ],
-      weakAgainst: [
-        { name: "Franco", role: "Tank", reason: "Ultimate Iron Hook & Suppression tidak mempedulikan status Camouflage." },
-        { name: "Kaja", role: "Support", reason: "Suppression Judgment dapat mengunci Aamon seketika saat mendekat." },
-        { name: "Ruby", role: "Fighter", reason: "Area stun dan hook bertubi-tubi mengacaukan rotasi kamuflase Aamon." }
-      ],
-      synergies: [
-        { name: "Angela", role: "Support", reason: "Heartguard memberi shield ekstra dan slow, membuat Aamon tak tersentuh." },
-        { name: "Tigreal", role: "Tank", reason: "Implosion mengumpulkan 5 musuh sekaligus untuk disantap shard Aamon." },
-        { name: "Atlas", role: "Tank", reason: "Slam Fatal Links menyatukan carry musuh dalam radius burst Aamon." }
-      ]
-    },
-    gameplayGuide: {
-      earlyGame: "Fokus membersihkan blue buff terlebih dahulu karena Aamon sangat mengandalkan cooldown skill untuk memicu pasif kamuflasenya. Lanjutkan ke buff merah dan creep kecil untuk mencapai level 4 sebelum perebutan Turtle pertama. Lakukan gank ke Gold Lane jika marksman lawan bermain terlalu agresif.",
-      midGame: "Di fase mid game dengan Genius Wand dan Holy Crystal, damage Aamon berada pada puncak power spike. Jangan pernah memulai teamfight dari depan; bersembunyilah di semak jungle dan tunggu tank lawan membuka inisiasi. Targetkan Mage dan Marksman dari arah samping (flanking).",
-      lateGame: "Musuh biasanya sudah membuat Athena's Shield atau Radiant Armor. Manfaatkan Divine Glaive untuk menembus pertahanan mereka. Hati-hati terhadap lock suppression dari tank musuh. Tunggu momen ketika carry musuh terpisah dari pengawalan roamernya."
-    }
-  },
-  {
-    id: "akai",
-    slug: "akai",
-    name: "Akai",
-    title: "Panda Warrior",
-    role: "Tank",
-    secondaryRole: "Fighter",
-    lane: "Roamer / Jungler",
-    tier: "S",
-    difficulty: "Low",
-    ratings: {
-      durability: 10,
-      offense: 5,
-      controlEffect: 10,
-      difficulty: 4,
-    },
-    winRate: "52.8%",
-    pickRate: "4.5%",
-    banRate: "12.0%",
-    patch: "1.8.92",
-    summary: "Tank inisiator dan crowd control terkuat di Mobile Legends yang mampu memporak-porandakan formasi tim lawan, mengamankan objektif Turtle/Lord, serta mengunci musuh ke dinding dengan putaran Heavy Spin tak terbendung.",
-    pros: [
-      "Ultimate Heavy Spin memberikan imunitas terhadap efek slow dan mematikan posisi formasi musuh",
-      "Shield pasif Tai Chi sangat tebal dan berskala langsung dengan Max HP",
-      "Paling handal dalam mengamankan Lord/Turtle dengan menabrakkan jungler musuh keluar pit",
-      "Dapat dimainkan efektif sebagai Roamer pelindung maupun Jungler Tank mandiri"
-    ],
-    cons: [
-      "Membutuhkan penempatan posisi (positioning) yang matang agar tidak mendorong musuh ke tempat aman",
-      "Rentan terhadap hero dengan True Damage persentase HP tinggi seperti Karrie",
-      "Cooldown Ultimate cukup panjang jika tidak mengenai target dinding"
-    ],
-    assets: {
-      heroIcon: "/Assets/Hero Icons/Akai/Akai.png",
-      heroPortrait: "/Assets/Hero Icons/Akai/Akai_rec.png",
-      roleIcon: "/Assets/Clases/Tank.png",
-      skins: [
-        { name: "Default Panda", path: "/Assets/Hero Icons/Akai/Akai.png" },
-        { name: "Summer Party", path: "/Assets/Hero Icons/Akai/Akai_0.png" },
-        { name: "Monk Master", path: "/Assets/Hero Icons/Akai/Akai_1.png" },
-        { name: "Street Panda", path: "/Assets/Hero Icons/Akai/Akai_2.png" },
-      ]
-    },
-    spells: [
-      {
-        name: "Petrify",
-        category: "Spells",
-        filename: "Petrify.png",
-        assetPath: "/Assets/Spells/Petrify.png",
-        isPrimary: true,
-        tag: "Rekomendasi Utama (Roamer)",
-        description: "Menimbulkan 115-325 Magic Damage ke musuh di sekitar dan membatu (petrify) mereka selama 0.8 detik, memastikan Akai bisa langsung memposisikan Heavy Spin ke dinding."
-      },
-      {
-        name: "Bloody Retribution",
-        category: "Boots",
-        filename: "Bloody_retribution.png",
-        assetPath: "/Assets/Build Icons/Boots/Bloody_retribution.png",
-        isPrimary: false,
-        tag: "Wajib Opsi Jungler Tank",
-        description: "Menyerap HP target sebesar 250 + 20% Max HP pengguna selama 4 detik, menjadikan Akai monster adu tebal di area objektif."
-      },
-      {
-        name: "Flicker",
-        category: "Spells",
-        filename: "Flicker.png",
-        assetPath: "/Assets/Spells/Flicker.png",
-        isPrimary: false,
-        tag: "Opsi Kejutan Insec",
-        description: "Teleportasi instan ke belakang lawan untuk mengejutkan mereka dengan dorongan Ultimate ke arah turret teman."
-      }
-    ],
-    emblem: {
-      name: "Custom Tank Emblem",
-      category: "Tank",
-      assetPath: "/Assets/Emblem/Tank/Custom_Tank_Emblem.png",
-      baseStats: "+500 Max HP | +10 Physical & Magic Defense | +4 HP Regen",
-      tier1: {
-        name: "Vitality",
-        category: "Tank",
-        filename: "Vitality-Talent.png",
-        assetPath: "/Assets/Emblem/Tank/Vitality-Talent.png",
-        type: "Tier 1 - Standard Talent",
-        effect: "Mendapatkan 225 Max HP tambahan secara instan.",
-        reason: "Semakin tinggi Max HP Akai, semakin tebal perisai Tai Chi dan damage pukulan Body Slam miliknya."
-      },
-      tier2: {
-        name: "Tenacity",
-        category: "Tank",
-        filename: "Tenacity-Talent.png",
-        assetPath: "/Assets/Emblem/Tank/Tenacity-Talent.png",
-        type: "Tier 2 - Advanced Talent",
-        effect: "Saat HP berada di bawah 50%, meningkatkan Physical & Magic Defense sebesar 15 poin.",
-        reason: "Membuat Akai sangat keras dan sulit ditumbangkan saat menahan gempuran seluruh tim musuh di garis depan."
-      },
-      tier3: {
-        name: "Concussive Blast",
-        category: "Tank",
-        filename: "Concussive_Blast-Talent.png",
-        assetPath: "/Assets/Emblem/Tank/Concussive_Blast-Talent.png",
-        type: "Tier 3 - Core Talent",
-        effect: "Setelah melakukan basic attack, menimbulkan gelombang ledakan magic sebesar 100 (+7% Total HP) ke musuh di sekitar (Cooldown 15 detik).",
-        reason: "Memberikan clear wave cepat bagi Akai dan burst damage kejutan tambahan di tengah-tengah kerumunan musuh."
-      }
-    },
-    coreBuild: [
-      {
-        slot: 1,
-        name: "Tough Boots (Conceal)",
-        category: "Boots",
-        filename: "Tough_boots.png",
-        assetPath: "/Assets/Build Icons/Boots/Tough_boots.png",
-        cost: "700 Gold",
-        stats: "+40 Movement Speed, +22 Magic Defense",
-        passive: "Fortitude: Mengurangi durasi efek Crowd Control yang diterima sebesar 30%. Blessing Conceal menyembunyikan tim untuk inisiasi kejutan.",
-        whyBuy: "Sepatu wajib bagi Akai agar durasi slow/stun dari mage musuh cepat berakhir sebelum meluncurkan Heavy Spin."
-      },
-      {
-        slot: 2,
-        name: "Cursed Helmet",
-        category: "Defense",
-        filename: "Cursed_helmet.png",
-        assetPath: "/Assets/Build Icons/Defense/Cursed_helmet.png",
-        cost: "1760 Gold",
-        stats: "+1200 HP, +25 Magic Defense",
-        passive: "Burning Soul: Memberikan Magic Damage per detik setara 1.2% Max HP ke musuh di sekitar (naik 150% terhadap minion dan creep jungle).",
-        whyBuy: "Membantu Akai melakukan clearing minion dengan cepat dan memberikan continuous burn damage saat berputar menempel musuh."
-      },
-      {
-        slot: 3,
-        name: "Guardian Helmet",
-        category: "Defense",
-        filename: "Guardian_helmet.png",
-        assetPath: "/Assets/Build Icons/Defense/Guardian_helmet.png",
-        cost: "2200 Gold",
-        stats: "+1550 HP, +20 HP Regen",
-        passive: "Recovery: Memulihkan 2.5% Max HP setiap detik di luar pertempuran (meningkat seiring durasi tidak terkena hit).",
-        whyBuy: "Membuat Akai tidak perlu kembali ke base (recall) setelah open war, siap menjaga vision Turtle atau Lord terus menerus."
-      },
-      {
-        slot: 4,
-        name: "Dominance Ice",
-        category: "Defense",
-        filename: "Dominance_ice.png",
-        assetPath: "/Assets/Build Icons/Defense/Dominance_ice.png",
-        cost: "2010 Gold",
-        stats: "+500 Mana, +70 Physical Defense, +5% Movement Speed",
-        passive: "Arctic Cold & Lifebane: Mengurangi Attack Speed musuh di dekatnya sebesar 70% dan memangkas efek Shield/HP Regen musuh sebesar 50%.",
-        whyBuy: "Item anti-heal dan anti-marksman paling krusial untuk melumpuhkan lifesteal fighter dan attack speed marksman musuh."
-      },
-      {
-        slot: 5,
-        name: "Athena's Shield",
-        category: "Defense",
-        filename: "Athena_shield.png",
-        assetPath: "/Assets/Build Icons/Defense/Athena_shield.png",
-        cost: "2150 Gold",
-        stats: "+900 HP, +62 Magic Defense, +2 HP Regen",
-        passive: "Shield: Mengurangi Magic Damage yang diterima sebesar 25% selama 3 detik saat pertama kali terkena serangan sihir.",
-        whyBuy: "Pertahanan mutlak dari serangan tiba-tiba mage burst lawan sehingga Akai tidak bocor sebelum sempat mengunci target."
-      },
-      {
-        slot: 6,
-        name: "Immortality",
-        category: "Defense",
-        filename: "Immortality.png",
-        assetPath: "/Assets/Build Icons/Defense/Immortality.png",
-        cost: "2120 Gold",
-        stats: "+800 HP, +20 Physical Defense",
-        passive: "Immortal: Hidup kembali 2.5 detik setelah tereliminasi dengan 16% HP dan shield setara 220-1200 HP.",
-        whyBuy: "Sebagai garda terdepan, Akai sering menjadi sasaran fokus. Immortality memberi jaminan hidup kedua untuk kembali memutar badan."
-      }
-    ],
-    situationalBuild: [
-      {
-        name: "Antique Cuirass",
-        category: "Defense",
-        filename: "Antique_cuirass.png",
-        assetPath: "/Assets/Build Icons/Defense/Antique_cuirass.png",
-        cost: "2170 Gold",
-        stats: "+920 HP, +54 Physical Defense, +4 HP Regen",
-        badge: "Vs Physical Skill Casters",
-        whyBuy: "Beli jika melawan assassin/fighter berbasis skill fisik seperti Lancelot, Fanny, Hayabusa, atau Paquito untuk mengurangi damage mereka hingga 24%."
-      },
-      {
-        name: "Blade Armor",
-        category: "Defense",
-        filename: "Blade_armor.png",
-        assetPath: "/Assets/Build Icons/Defense/Blade_armor.png",
-        cost: "1960 Gold",
-        stats: "+90 Physical Defense, +20% Critical Damage Reduction",
-        badge: "Vs Crit Marksman",
-        whyBuy: "Sangat ampuh memantulkan 20% basic attack physical lawan kembali ke penyerang (counter mutlak Claude, Bruno, Miya)."
-      },
-      {
-        name: "Radiant Armor",
-        category: "Defense",
-        filename: "Radiant_armor.png",
-        assetPath: "/Assets/Build Icons/Defense/Radiant_armor.png",
-        cost: "1880 Gold",
-        stats: "+950 HP, +52 Magic Defense, +12 HP Regen",
-        badge: "Vs Continuous Magic",
-        whyBuy: "Wajib dibeli jika musuh memiliki mage bertipe DPS bertubi-tubi seperti Valir, Chang'e, Yve, atau Kimmy."
-      },
-      {
-        name: "Thunder Belt",
-        category: "Defense",
-        filename: "Thunder_belt.png",
-        assetPath: "/Assets/Build Icons/Defense/Thunder_belt.png",
-        cost: "1990 Gold",
-        stats: "+800 HP, +30 Physical Defense, +10% Cooldown Reduction",
-        badge: "Hybrid Offensive & Slow",
-        whyBuy: "Memberikan true damage ekstra dan efek slow 99% pada basic attack setelah menggunakan skill untuk mengunci musuh kabur."
-      }
-    ],
-    skills: [
-      {
-        type: "Passive",
-        name: "Tai Chi",
-        cooldown: "Pasif (Cooldown 2.5s)",
-        description: "Akai memperoleh Shield yang menyerap 28 (+5% Total HP) damage selama 2 detik setiap kali menggunakan skill. Selain itu, basic attack Akai setelah skill akan meninggalkan Mark pada musuh, meningkatkan damage basic attack berikutnya sebesar 5% dari Max HP target.",
-        tips: "Selalu jeda sedikit antar penggunaan skill untuk memicu regenerasi shield Tai Chi berulang kali."
-      },
-      {
-        type: "Skill 1",
-        name: "Headbutt",
-        cooldown: "11.0 - 8.5s",
-        description: "Akai melompat dan menerjang ke arah target, memberikan 300-400 (+50% Total Physical Attack) Physical Damage ke musuh di sepanjang jalurnya. Jika mengenai hero lawan, Akai akan menghentikan terjangannya dan melambungkan musuh ke udara (Airborne) selama 0.5 detik.",
-        tips: "Gunakan untuk menembus dinding tipis atau menutup jarak sebelum menekan Petrify dan Ultimate."
-      },
-      {
-        type: "Skill 2",
-        name: "Body Slam",
-        cooldown: "7.0 - 5.5s",
-        description: "Akai menghempaskan tubuhnya ke tanah, menimbulkan 270-420 (+7% Total HP) Physical Damage ke musuh di area sekitar serta memperlambat gerakan mereka sebesar 45% selama 2 detik.",
-        tips: "Memberikan efek slow instan sehingga musuh tidak dapat menghindari sudut dorongan Heavy Spin."
-      },
-      {
-        type: "Ultimate",
-        name: "Heavy Spin",
-        cooldown: "45.0 - 35.0s",
-        description: "Akai menghapus semua debuff pada dirinya dan berputar kencang seperti tornado selama 4 detik, menjadi kebal terhadap efek Slow. Akai terus menerus memberikan 180-360 (+100% Total Physical Attack) Physical Damage dan memukul mundur (Knockback) musuh yang tersentuh. Musuh yang terbentur ke rintangan/dinding akan terkena Stun selama 1 detik berulang kali.",
-        tips: "Kuncian maut Akai! Cari sudut di mana Anda dapat mendesak target ke dinding map atau turret teman agar mereka ter-stun terus-menerus tanpa daya gerak."
-      }
-    ],
-    skillOrder: {
-      priority: "Prioritas: Max Skill 2 (Damage & Slow) > Max Skill 1 (Mobility) > Ambil Ultimate tiap Lv 4/8/12",
-      levels: [
-        { level: 1, skill: "Skill 2" },
-        { level: 2, skill: "Skill 1" },
-        { level: 3, skill: "Skill 2" },
-        { level: 4, skill: "Ultimate" },
-        { level: 5, skill: "Skill 2" },
-        { level: 6, skill: "Skill 1" },
-        { level: 7, skill: "Skill 2" },
-        { level: 8, skill: "Ultimate" },
-        { level: 9, skill: "Skill 2" },
-        { level: 10, skill: "Skill 1" },
-        { level: 11, skill: "Skill 1" },
-        { level: 12, skill: "Ultimate" },
-      ]
-    },
-    combos: [
-      {
-        name: "The Unescapable Wall Pin",
-        sequence: ["Skill 1 (Jump & Airborne)", "Petrify (Freeze)", "Skill 2 (Mark & Slow)", "Ultimate (Dorong ke Tembok)", "Basic Attack"],
-        description: "Kombo paling mematikan Akai. Terjang musuh dengan Skill 1, aktifkan Petrify saat musuh masih melayang, putar Ultimate dan jepit mereka ke dinding terdekat sampai HP habis tergerus tim."
-      },
-      {
-        name: "Flicker Insec Retribution",
-        sequence: ["Conceal (Speed Boost)", "Skill 1 mendekat", "Flicker ke belakang musuh", "Ultimate (Dorong ke Turret / Teman)"],
-        description: "Trik menculik carry musuh yang berdiri di belakang tank mereka. Lompat, gunakan flicker untuk memposisikan badan di belakang mereka, dan putar ke arah kawan."
-      }
-    ],
-    counters: {
-      strongAgainst: [
-        { name: "Fanny", role: "Assassin", reason: "Heavy Spin langsung membatalkan jalur kabel (Steel Cable) Fanny di udara." },
-        { name: "Ling", role: "Assassin", reason: "Mampu mendorong Ling keluar saat mendarat dari Tempest of Blades." },
-        { name: "Tigreal", role: "Tank", reason: "Dapat membatalkan channeling Implosion Tigreal dengan tabrakan knockback." }
-      ],
-      weakAgainst: [
-        { name: "Karrie", role: "Marksman", reason: "True damage persentase HP melelehkan darah tebal Akai dengan sangat cepat." },
-        { name: "Valir", role: "Mage", reason: "Skill knockback Vengeance Flame dan slow tak berujung membuat Akai susah mendekat." },
-        { name: "Diggie", role: "Support", reason: "Ultimate Time Journey menghapus efek knockback dan stun Heavy Spin seketika." }
-      ],
-      synergies: [
-        { name: "Beatrix", role: "Marksman", reason: "Sniper Wesker / Rocket Bennett dapat menghujani musuh yang sedang terjepit di dinding." },
-        { name: "Pharsa", role: "Mage", reason: "Feathered Air Strike menjamin damage 100% kena pada musuh yang di-lock Akai." },
-        { name: "Claude", role: "Marksman", reason: "Blazing Duet Claude dengan mudah menyapu bersih musuh yang terperangkap Heavy Spin." }
-      ]
-    },
-    gameplayGuide: {
-      earlyGame: "Bantu Midlaner membersihkan gelombang minion pertama, lalu segera buka semak jungle (bush check) untuk melindungi jungler dari invasi musuh. Saat kontes Lithowanderer atau Turtle, posisikan badan di antara jungler musuh dan objektif.",
-      midGame: "Manfaatkan item roaming Conceal bersama rekan tim untuk melakukan gank terkoordinasi ke Gold Lane lawan. Jika Anda bermain sebagai Jungler Tank, amankan Turtle dan Lord karena putaran Heavy Spin Anda bisa memukul mundur Retribution musuh keluar pit.",
-      lateGame: "Fokus utama Anda di late game bukan membunuh, melainkan mengunci damage dealer utama lawan (Marksman/Mage) atau mengisolasi assassin mereka agar tidak bisa menyentuh carry tim Anda. Jangan buang Ultimate sembarangan sebelum pertarungan besar dimulai."
-    }
-  },
-  {
-    id: "chou",
-    slug: "chou",
-    name: "Chou",
-    title: "Kung Fu Boy",
-    role: "Fighter",
-    secondaryRole: "Tank",
-    lane: "Exp Lane / Roamer",
-    tier: "S",
-    difficulty: "High",
-    ratings: {
-      durability: 7,
-      offense: 8,
-      controlEffect: 9,
-      difficulty: 9,
-    },
-    winRate: "51.6%",
-    pickRate: "6.8%",
-    banRate: "9.4%",
-    patch: "1.8.92",
-    summary: "Fighter paling serbaguna dalam sejarah MLBB dengan imunitas crowd control, knockup beruntun, mobilitas tinggi, dan tendangan pamungkas The Way of Dragon penculik nomor satu.",
-    pros: [
-      "Skill 2 Shunpo memberikan imunitas Crowd Control dan Shield instan",
-      "Sangat fleksibel: bisa dibangun Full Damage Assassin atau Full Tank Roamer",
-      "Penculik target tunggal paling presisi di Mobile Legends"
-    ],
-    cons: [
-      "Membutuhkan mekanik jari tingkat tinggi (micro skill tinggi)",
-      "Salah perhitungan tendangan bisa menyelamatkan musuh ke tempat aman"
-    ],
-    assets: {
-      heroIcon: "/Assets/Hero Icons/Chou/Chou.png",
-      heroPortrait: "/Assets/Hero Icons/Chou/Chou_rec.png",
-      roleIcon: "/Assets/Clases/Fighter.png",
-      skins: [
-        { name: "Default Kung Fu", path: "/Assets/Hero Icons/Chou/Chou.png" },
-        { name: "Hip-hop Boy", path: "/Assets/Hero Icons/Chou/Chou_0.png" },
-        { name: "King of Muay Thai", path: "/Assets/Hero Icons/Chou/Chou_1.png" },
-      ]
-    },
-    spells: [
-      {
-        name: "Flicker",
-        category: "Spells",
-        filename: "Flicker.png",
-        assetPath: "/Assets/Spells/Flicker.png",
-        isPrimary: true,
-        tag: "Wajib Chou",
-        description: "Esensial untuk mengeksekusi kombo Flicker + Jeet Kune Do knockup atau insec The Way of Dragon."
-      }
-    ],
-    emblem: {
-      name: "Custom Assassin Emblem",
-      category: "Assasins",
-      assetPath: "/Assets/Emblem/Assasins/Custom_Assassin_Emblem.png",
-      baseStats: "+16 Adaptive Penetration | +10 Adaptive Attack | +3% Movement Speed",
-      tier1: {
-        name: "Rupture",
-        category: "Assasins",
-        filename: "Rupture-Talent.png",
-        assetPath: "/Assets/Emblem/Assasins/Rupture-Talent.png",
-        type: "Tier 1 - Standard Talent",
-        effect: "Mendapatkan 5 Adaptive Penetration tambahan.",
-        reason: "Memaksimalkan physical penetration untuk eksekusi one-shot carry musuh."
-      },
-      tier2: {
-        name: "Master Assassin",
-        category: "Assasins",
-        filename: "Master_Assassin-Talent.png",
-        assetPath: "/Assets/Emblem/Assasins/Master_Assassin-Talent.png",
-        type: "Tier 2 - Advanced Talent",
-        effect: "Meningkatkan damage sebesar 7% jika hanya ada 1 musuh di sekitar.",
-        reason: "Sempurna untuk duel 1v1 di Exp Lane atau penculikan target tunggal di semak."
-      },
-      tier3: {
-        name: "Killing Spree",
-        category: "Assasins",
-        filename: "Killing_Spree-Talent.png",
-        assetPath: "/Assets/Emblem/Assasins/Killing_Spree-Talent.png",
-        type: "Tier 3 - Core Talent",
-        effect: "Memulihkan 8% Max HP dan mendapat 20% Movement Speed setelah mengeliminasi hero.",
-        reason: "Membantu Chou kabur dengan lincah setelah menendang dan menumbangkan marksman musuh."
-      }
-    },
-    coreBuild: [
-      {
-        slot: 1,
-        name: "Warrior Boots",
-        category: "Boots",
-        filename: "Warrior_boots.png",
-        assetPath: "/Assets/Build Icons/Boots/Warrior_boots.png",
-        cost: "720 Gold",
-        stats: "+40 Movement Speed, +22 Physical Defense",
-        passive: "Valor: Physical defense bertambah setiap kali menerima basic attack musuh.",
-        whyBuy: "Ketahanan dasar penting untuk trading pukulan di Exp lane."
-      },
-      {
-        slot: 2,
-        name: "Blade of the Heptaseas",
-        category: "Physical",
-        filename: "Blade_of_the_heptaseas.png",
-        assetPath: "/Assets/Build Icons/Physical/Blade_of_the_heptaseas.png",
-        cost: "1950 Gold",
-        stats: "+70 Physical Attack, +250 HP, +15 Physical Penetration",
-        passive: "Ambush: Jika tidak menerima atau memberi damage selama 5 detik, basic attack berikutnya memberikan 160% damage ekstra dan slow 40%.",
-        whyBuy: "Item signature Chou damage. Pukulan pertama dari semak langsung menghilangkan separuh darah hero empuk."
-      },
-      {
-        slot: 3,
-        name: "Hunter Strike",
-        category: "Physical",
-        filename: "Hunter_strike.png",
-        assetPath: "/Assets/Build Icons/Physical/Hunter_strike.png",
-        cost: "2010 Gold",
-        stats: "+80 Physical Attack, +10% Cooldown Reduction, +15 Physical PEN",
-        passive: "Retribution: Menyerang 5 kali beruntun memberi 50% movement speed selama 3 detik.",
-        whyBuy: "Cooldown reduction penting untuk spam Jeet Kune Do dan mobilitas ekstra mengejar atau kabur."
-      },
-      {
-        slot: 4,
-        name: "Blade of Despair",
-        category: "Physical",
-        filename: "Blade_of_despair.png",
-        assetPath: "/Assets/Build Icons/Physical/Blade_of_despair.png",
-        cost: "3010 Gold",
-        stats: "+160 Physical Attack, +5% Movement Speed",
-        passive: "Despair: Menyerang musuh dengan HP di bawah 50% meningkatkan Physical Attack sebesar 25% selama 2 detik.",
-        whyBuy: "Menjamin tendangan The Way of Dragon langsung menewaskan target tanpa ampun."
-      },
-      {
-        slot: 5,
-        name: "Endless Battle",
-        category: "Physical",
-        filename: "Endless_battle.png",
-        assetPath: "/Assets/Build Icons/Physical/Endless_battle.png",
-        cost: "2470 Gold",
-        stats: "+65 Physical Attack, +250 HP, +10% CDR, +8% Hybrid Lifesteal, +5% Movement Speed",
-        passive: "Divine Justice: Setelah skill, basic attack berikutnya menghasilkan 60% True Damage.",
-        whyBuy: "Sinergi tiada henti dengan Jeet Kune Do yang sering di-spam."
-      },
-      {
-        slot: 6,
-        name: "Immortality",
-        category: "Defense",
-        filename: "Immortality.png",
-        assetPath: "/Assets/Build Icons/Defense/Immortality.png",
-        cost: "2120 Gold",
-        stats: "+800 HP, +20 Physical Defense",
-        passive: "Immortal: Hidup kembali setelah tereliminasi.",
-        whyBuy: "Menyelamatkan nyawa saat menyelam ke formasi terdalam musuh."
-      }
-    ],
-    situationalBuild: [
-      {
-        name: "Athena's Shield",
-        category: "Defense",
-        filename: "Athena_shield.png",
-        assetPath: "/Assets/Build Icons/Defense/Athena_shield.png",
-        cost: "2150 Gold",
-        stats: "+900 HP, +62 Magic Defense",
-        badge: "Vs Burst Mage",
-        whyBuy: "Mencegah Chou terbunuh saat mencoba menjangkau midlaner lawan."
-      },
-      {
-        name: "Dominance Ice",
-        category: "Defense",
-        filename: "Dominance_ice.png",
-        assetPath: "/Assets/Build Icons/Defense/Dominance_ice.png",
-        cost: "2010 Gold",
-        stats: "+70 Physical Defense, +500 Mana",
-        badge: "Anti-Heal Tank Roam",
-        whyBuy: "Beli saat bermain sebagai Chou Tank Roamer untuk mematikan regenerasi lawan."
-      }
-    ],
-    skills: [
-      {
-        type: "Passive",
-        name: "Only Fast",
-        cooldown: "Pasif",
-        description: "Setelah Chou bergerak setiap 8 yard, serangan Basic Attack berikutnya menghasilkan 180% damage ekstra dan memperlambat target sebesar 80% secara singkat.",
-        tips: "Selalu gerakkan Chou terus menerus sebelum menyerang agar pasif siap terpicu."
-      },
-      {
-        type: "Skill 1",
-        name: "Jeet Kune Do",
-        cooldown: "11.0 - 9.0s",
-        description: "Chou meninju ke depan hingga 3 kali berturut-turut. Setiap serangan memberikan damage, dan pukulan ke-3 akan menyebabkan efek Airborne (terbang ke udara) kepada musuh yang terkena.",
-        tips: "Reset cooldown Skill 2 setiap kali pukulan ke-3 Jeet Kune Do berhasil mengenai musuh."
-      },
-      {
-        type: "Skill 2",
-        name: "Shunpo",
-        cooldown: "5.0s",
-        description: "Chou menerjang ke depan, memperoleh kekebalan penuh terhadap efek Crowd Control selama gerakan terjangannya, serta memperoleh Shield tebal dan 15 Physical Penetration.",
-        tips: "Gunakan untuk menembus stun lawan seperti skill Franco atau petrify musuh."
-      },
-      {
-        type: "Ultimate",
-        name: "The Way of Dragon",
-        cooldown: "34.0s",
-        description: "Chou menendang musuh ke belakang dan memberikan damage. Gunakan kembali untuk melancarkan rentetan tendangan di udara yang mengunci target tak berdaya.",
-        tips: "Padukan dengan Flicker ke belakang musuh untuk mengarahkan tendangan ke arah tim Anda."
-      }
-    ],
-    skillOrder: {
-      priority: "Prioritas: Max Skill 1 > Max Skill 2 > Ambil Ultimate tiap Lv 4/8/12",
-      levels: [
-        { level: 1, skill: "Skill 1" },
-        { level: 2, skill: "Skill 2" },
-        { level: 3, skill: "Skill 1" },
-        { level: 4, skill: "Ultimate" },
-        { level: 5, skill: "Skill 1" },
-        { level: 6, skill: "Skill 2" },
-        { level: 7, skill: "Skill 1" },
-        { level: 8, skill: "Ultimate" },
-        { level: 9, skill: "Skill 1" },
-        { level: 10, skill: "Skill 2" },
-        { level: 11, skill: "Skill 1" },
-        { level: 12, skill: "Ultimate" },
-      ]
-    },
-    combos: [
-      {
-        name: "The Classic Insec Kick",
-        sequence: ["Skill 1 (Hit 1 & 2)", "Skill 2 mendekat", "Skill 1 (Knockup ke-3)", "Flicker ke belakang", "Ultimate ke arah tim"],
-        description: "Inisiasi paling ditakuti. Siapkan stack ke-2 di semak, loncat dengan knockup ke-3, flash ke belakang target, dan tendang ke rekan tim."
-      }
-    ],
-    counters: {
-      strongAgainst: [
-        { name: "Layla", role: "Marksman", reason: "Sangat mudah diculik tanpa bisa melawan balik." },
-        { name: "Pharsa", role: "Mage", reason: "Membatalkan channeling Ultimate Pharsa seketika." }
-      ],
-      weakAgainst: [
-        { name: "Minsitthar", role: "Fighter", reason: "King's Calling mengunci seluruh skill dash & blink milik Chou." }
-      ],
-      synergies: [
-        { name: "Pharsa", role: "Mage", reason: "Tendangan Chou mengantar musuh tepat ke karpet bom Pharsa." }
-      ]
-    },
-    gameplayGuide: {
-      earlyGame: "Di Exp lane, gunakan Jeet Kune Do untuk trading damage dan bersihkan minion. Gunakan Shunpo untuk membatalkan CC laner musuh.",
-      midGame: "Mulai rotasi ke midlane dan semak musuh. Selalu incar marksman atau mage yang terpisah dari tank.",
-      lateGame: "Jangan pernah menginisiasi dari depan sendirian. Cari celah flanking semak untuk menendang hypercarry musuh."
-    }
-  },
-  {
-    id: "beatrix",
-    slug: "beatrix",
-    name: "Beatrix",
-    title: "Dawnbreak Soldier",
-    role: "Marksman",
-    secondaryRole: null,
-    lane: "Gold Lane",
-    tier: "S",
-    difficulty: "High",
-    ratings: {
-      durability: 3,
-      offense: 10,
-      controlEffect: 3,
-      difficulty: 8,
-    },
-    winRate: "52.1%",
-    pickRate: "5.2%",
-    banRate: "8.1%",
-    patch: "1.8.92",
-    summary: "Marksman multi-senjata jenius dengan 4 pilihan senjata unik (Renner, Bennett, Wesker, Nibiru) yang dapat disesuaikan untuk segala situasi pertempuran jarak jauh maupun burst jarak dekat.",
-    pros: [
-      "Sangat adaptif dengan 4 senjata berbeda untuk poke, burst, atau AoE",
-      "Burst Wesker shotgun jarak dekat mampu menumbangkan assassin dalam 1 tembakan",
-      "Ultimate Renner memiliki jarak serang sniper terjauh di MLBB"
-    ],
-    cons: [
-      "Tidak memiliki lifesteal alami yang tinggi",
-      "Mekanik reload peluru menuntut timing yang sempurna"
-    ],
-    assets: {
-      heroIcon: "/Assets/Hero Icons/Beatrix/Beatrix.png",
-      heroPortrait: "/Assets/Hero Icons/Beatrix/Beatrix_rec.png",
-      roleIcon: "/Assets/Clases/Marksman.png",
-      skins: [
-        { name: "Default Dawnbreak", path: "/Assets/Hero Icons/Beatrix/Beatrix.png" },
-        { name: "Blitz Attack", path: "/Assets/Hero Icons/Beatrix/Beatrix_0.png" },
-      ]
-    },
-    spells: [
-      {
-        name: "Flicker",
-        category: "Spells",
-        filename: "Flicker.png",
-        assetPath: "/Assets/Spells/Flicker.png",
-        isPrimary: true,
-        tag: "Rekomendasi Utama",
-        description: "Menghindari inisiasi musuh atau melakukan repositioning cepat saat menembakkan Wesker shotgun."
-      },
-      {
-        name: "Purify",
-        category: "Spells",
-        filename: "Purify.png",
-        assetPath: "/Assets/Spells/Purify.png",
-        isPrimary: false,
-        tag: "Vs Heavy CC",
-        description: "Membebaskan diri dari stun mematikan tank musuh."
-      }
-    ],
-    emblem: {
-      name: "Custom Marksman Emblem",
-      category: "Marksman",
-      assetPath: "/Assets/Emblem/Marksman/Custom_Marksman_Emblem.png",
-      baseStats: "+15% Attack Speed | +5% Adaptive Attack | +5% Critical Chance",
-      tier1: {
-        name: "Fatal",
-        category: "Marksman",
-        filename: "Fatal-Talent.png",
-        assetPath: "/Assets/Emblem/Marksman/Fatal-Talent.png",
-        type: "Tier 1 - Standard Talent",
-        effect: "Meningkatkan 5% Critical Chance dan 10% Critical Damage.",
-        reason: "Mendongkrak burst tembakan Nibiru dan Renner."
-      },
-      tier2: {
-        name: "Weapon Master",
-        category: "Marksman",
-        filename: "Weapon_Master-Talent.png",
-        assetPath: "/Assets/Emblem/Marksman/Weapon_Master-Talent.png",
-        type: "Tier 2 - Advanced Talent",
-        effect: "Physical Attack yang diperoleh dari item dan emblem meningkat sebesar 5%.",
-        reason: "Memberikan amplifikasi stat physical mentah yang sangat masif di mid hingga late game."
-      },
-      tier3: {
-        name: "Quantum Charge",
-        category: "Basic_Common",
-        filename: "Quantum_Charge-Talent.png",
-        assetPath: "/Assets/Emblem/Basic_Common/Quantum_Charge-Talent.png",
-        type: "Tier 3 - Core Talent",
-        effect: "Basic Attack memberikan 30% Movement Speed selama 1.5 detik dan memulihkan HP setara 75-180 (+30% Total Physical Attack).",
-        reason: "Kiting tiada henti dan sustain HP tanpa harus recall saat bertukar tembakan di lane."
-      }
-    },
-    coreBuild: [
-      {
-        slot: 1,
-        name: "Swift Boots",
-        category: "Boots",
-        filename: "Swift_boots.png",
-        assetPath: "/Assets/Build Icons/Boots/Swift_boots.png",
-        cost: "710 Gold",
-        stats: "+40 Movement Speed, +15% Attack Speed",
-        passive: "Swift: Meningkatkan kelancaran reload dan attack speed.",
-        whyBuy: "Membantu kenyamanan reload peluru Beatrix di early game."
-      },
-      {
-        slot: 2,
-        name: "Blade of the Heptaseas",
-        category: "Physical",
-        filename: "Blade_of_the_heptaseas.png",
-        assetPath: "/Assets/Build Icons/Physical/Blade_of_the_heptaseas.png",
-        cost: "1950 Gold",
-        stats: "+70 Physical Attack, +250 HP, +15 Physical Penetration",
-        passive: "Ambush: Menghasilkan damage ekstra masif pada tembakan pertama dari semak.",
-        whyBuy: "Sangat bersinergi dengan Renner (Sniper) dan Wesker (Shotgun) untuk one-shot musuh."
-      },
-      {
-        slot: 3,
-        name: "Blade of Despair",
-        category: "Physical",
-        filename: "Blade_of_despair.png",
-        assetPath: "/Assets/Build Icons/Physical/Blade_of_despair.png",
-        cost: "3010 Gold",
-        stats: "+160 Physical Attack, +5% Movement Speed",
-        passive: "Despair: Menyerang lawan sekarat memberi bonus 25% physical attack.",
-        whyBuy: "Stat attack mentah terbesar untuk seluruh proyektil senjata Beatrix."
-      },
-      {
-        slot: 4,
-        name: "Demon Hunter Sword",
-        category: "Physical",
-        filename: "Demon_hunter_sword.png",
-        assetPath: "/Assets/Build Icons/Physical/Demon_hunter_sword.png",
-        cost: "2180 Gold",
-        stats: "+35 Physical Attack, +25% Attack Speed",
-        passive: "Devour: Menghasilkan damage setara 8% dari sisa HP target per tembakan.",
-        whyBuy: "Penghancur tank tebal saat menggunakan senjata mesin Nibiru."
-      },
-      {
-        slot: 5,
-        name: "Wind of Nature",
-        category: "Physical",
-        filename: "Wind_of_nature.png",
-        assetPath: "/Assets/Build Icons/Physical/Wind_of_nature.png",
-        cost: "1910 Gold",
-        stats: "+30 Physical Attack, +20% Attack Speed, +10% Physical Lifesteal",
-        passive: "Wind Chant: Kebal terhadap seluruh Physical Damage selama 2 detik.",
-        whyBuy: "Penyelamat mutlak saat diserang Assassin fisik seperti Hayabusa atau Ling."
-      },
-      {
-        slot: 6,
-        name: "Rose Gold Meteor",
-        category: "Physical",
-        filename: "Rose_gold_meteor.png",
-        assetPath: "/Assets/Build Icons/Physical/Rose_gold_meteor.png",
-        cost: "2120 Gold",
-        stats: "+60 Physical Attack, +30 Magic Defense, +10% Lifesteal",
-        passive: "Lifeline: Memperoleh perisai shield saat HP di bawah 30%.",
-        whyBuy: "Melindungi Beatrix dari burst mage mendadak."
-      }
-    ],
-    situationalBuild: [
-      {
-        name: "Immortality",
-        category: "Defense",
-        filename: "Immortality.png",
-        assetPath: "/Assets/Build Icons/Defense/Immortality.png",
-        cost: "2120 Gold",
-        stats: "+800 HP, +20 Physical Defense",
-        badge: "Late Game Insurance",
-        whyBuy: "Beli di menit-menit akhir untuk kesempatan hidup kedua saat clash Lord."
-      },
-      {
-        name: "Sea Halberd",
-        category: "Physical",
-        filename: "Sea_halberd.png",
-        assetPath: "/Assets/Build Icons/Physical/Sea_halberd.png",
-        cost: "2050 Gold",
-        stats: "+80 Physical Attack, +25% Attack Speed",
-        badge: "Anti-Heal & Shield",
-        whyBuy: "Wajib jika melawan Estes, Floryn, atau Uranus untuk memangkas regen mereka."
-      }
-    ],
-    skills: [
-      {
-        type: "Passive",
-        name: "Mechanical Genius",
-        cooldown: "Pasif",
-        description: "Beatrix membawa 4 senjata berteknologi tinggi: Renner (Sniper Jarak Jauh), Bennett (Peluncur Granat AoE), Wesker (Shotgun Jarak Dekat), dan Nibiru (Senapan Mesin Cepat). Masing-masing memiliki karakteristik serangan unik dan memerlukan reload setelah peluru habis.",
-        tips: "Sesuaikan senjata dengan lawan: Wesker saat melawan assassin yang mendekat, Renner untuk mencicil dari luar layar."
-      },
-      {
-        type: "Skill 1",
-        name: "Masterful Gunsmith",
-        cooldown: "0.6s",
-        description: "Beatrix menukar senjata utama dengan senjata kedua yang sedang dibawanya, memungkinkannya berganti gaya bertarung secara instan di medan tempur.",
-        tips: "Selalu persiapkan kombinasi senjata yang tepat (misal Renner + Wesker) sebelum pertempuran dimulai."
-      },
-      {
-        type: "Skill 2",
-        name: "Tactical Reposition",
-        cooldown: "8.0 - 6.0s",
-        description: "Beatrix berguling ke arah yang ditentukan dan seketika mengisi ulang seluruh peluru senjatanya secara penuh.",
-        tips: "Gunakan untuk repositioning sekaligus reset peluru instan saat sedang beradu tembakan."
-      },
-      {
-        type: "Ultimate",
-        name: "Arsenal Ultimates",
-        cooldown: "24.0s",
-        description: "Masing-masing senjata memiliki jurus pamungkas unik: Renner melepaskan tembakan sniper jarak jauh mematikan; Bennett membombardir area luas dengan roket bertubi-tubi; Wesker menembakkan rentetan peluru shotgun berhamburan; Nibiru menembakkan hujan 6 peluru beruntun.",
-        tips: "Ultimate Renner dapat digunakan untuk mengeliminasi hero musuh yang sedang recall di balik turret."
-      }
-    ],
-    skillOrder: {
-      priority: "Prioritas: Max Skill 2 (Dash & Reload) > Max Skill 1 > Ambil Ultimate tiap Lv 4/8/12",
-      levels: [
-        { level: 1, skill: "Skill 2" },
-        { level: 2, skill: "Skill 1" },
-        { level: 3, skill: "Skill 2" },
-        { level: 4, skill: "Ultimate" },
-        { level: 5, skill: "Skill 2" },
-        { level: 6, skill: "Skill 1" },
-        { level: 7, skill: "Skill 2" },
-        { level: 8, skill: "Ultimate" },
-        { level: 9, skill: "Skill 2" },
-        { level: 10, skill: "Skill 1" },
-        { level: 11, skill: "Skill 2" },
-        { level: 12, skill: "Ultimate" },
-      ]
-    },
-    combos: [
-      {
-        name: "Wesker Close-Range Annihilation",
-        sequence: ["Tunggu di semak dengan Wesker", "Basic Attack Shotgun", "Skill 2 Dash (Reload)", "Basic Attack Shotgun", "Wesker Ultimate"],
-        description: "Kombo ambush paling mematikan. Assassin yang melintas akan lenyap dalam waktu kurang dari 1 detik."
-      }
-    ],
-    counters: {
-      strongAgainst: [
-        { name: "Miya", role: "Marksman", reason: "Kalah jangkauan dan kalah burst damage di early game." }
-      ],
-      weakAgainst: [
-        { name: "Lolita", role: "Support", reason: "Guardian's Reflection memblokir seluruh peluru proyektil Beatrix." }
-      ],
-      synergies: [
-        { name: "Akai", role: "Tank", reason: "Musuh yang dijepit Akai ke dinding menjadi target empuk tembakan shotgun Wesker." }
-      ]
-    },
-    gameplayGuide: {
-      earlyGame: "Di Gold Lane, gunakan Bennett atau Renner untuk mendominasi lane dan mencicil musuh dari jarak jauh. Amankan shield gold turret.",
-      midGame: "Bantu tim mengamankan Turtle dengan zoning menggunakan Ultimate Bennett atau snipe dengan Renner.",
-      lateGame: "Tetap berdiri di samping roamer Anda. Gunakan Wind of Nature segera jika assassin lawan melompat ke arah Anda."
-    }
-  }
-];
-
-// Helper functions for easy querying
-export function getAllHeroes() {
-  return HEROES_DATA;
-}
-
-export function getHeroBySlug(slug) {
-  if (!slug) return null;
-  const normalized = slug.toString().toLowerCase().trim();
-  return HEROES_DATA.find(
-    (hero) => hero.slug.toLowerCase() === normalized || hero.id.toLowerCase() === normalized
-  ) || null;
-}
-
-export function getHeroesByRole(role) {
-  if (!role || role === "All") return HEROES_DATA;
-  return HEROES_DATA.filter((hero) => hero.role === role || hero.secondaryRole === role);
-}
 
 export const TIER_CONFIG = {
   "S+": {
@@ -1155,3 +36,2149 @@ export const TIER_CONFIG = {
     label: "Balanced"
   }
 };
+
+// Reusable Archetype Build Configurations
+const ARCHETYPES = {
+  PhysicalAssassin: {
+    spells: [
+      { name: "Ice Retribution", category: "Boots", filename: "Ice_retribution.png", isPrimary: true, tag: "Wajib Jungler", description: "Mencuri movement speed lawan untuk memastikan seluruh kombo fisik terkunci rapi." },
+      { name: "Flicker", category: "Spells", filename: "Flicker.png", isPrimary: false, tag: "Opsi Non-Jungle", description: "Teleportasi cepat untuk mengejar atau melarikan diri dari sergapan lawan." }
+    ],
+    emblem: {
+      name: "Custom Assassin Emblem",
+      category: "Assasins",
+      assetPath: "/Assets/Emblem/Assasins/Custom_Assassin_Emblem.png",
+      baseStats: "+16 Adaptive Penetration | +10 Adaptive Attack | +3% Movement Speed",
+      tier1: { name: "Rupture", category: "Assasins", filename: "Rupture-Talent.png", effect: "Mendapatkan 5 Adaptive Penetration tambahan.", reason: "Memaksimalkan burst damage penetrasi awal game." },
+      tier2: { name: "Seasoned Hunter", category: "Basic_Common", filename: "Seasoned_Hunter.png", effect: "Meningkatkan damage ke Lord dan Turtle sebesar 15%.", reason: "Mempercepat perebutan objektif jungle." },
+      tier3: { name: "Killing Spree", category: "Assasins", filename: "Killing_Spree-Talent.png", effect: "Memulihkan 8% Max HP dan memperoleh 20% Movement Speed setelah eliminasi.", reason: "Sustain dan mobilitas tinggi saat teamfight berkepanjangan." }
+    },
+    coreBuild: [
+      { slot: 1, name: "Ice Hunter's Tough Boots", category: "Boots", filename: "Tough_boots.png", cost: "700 Gold", stats: "+40 Movement Speed, +22 Magic Defense", passive: "Mengurangi durasi Crowd Control sebesar 30%.", whyBuy: "Mengurangi resiko ter-stun saat menyelam ke formasi musuh." },
+      { slot: 2, name: "Blade of the Heptaseas", category: "Physical", filename: "Blade_of_the_heptaseas.png", cost: "1950 Gold", stats: "+70 Physical Attack, +250 HP, +15 PEN", passive: "Ambush: Basic attack pertama dari semak memberi 160% damage ekstra.", whyBuy: "Kunci instan burst saat melompat dari semak." },
+      { slot: 3, name: "Hunter Strike", category: "Physical", filename: "Hunter_strike.png", cost: "2010 Gold", stats: "+80 Physical Attack, +10% CDR, +15 PEN", passive: "Retribution: Menyerang 5 kali beruntun memberi 50% movement speed.", whyBuy: "Meningkatkan mobilitas rotasi dan penetrasi ekstra." },
+      { slot: 4, name: "Blade of Despair", category: "Physical", filename: "Blade_of_despair.png", cost: "3010 Gold", stats: "+160 Physical Attack, +5% Movement Speed", passive: "Despair: Menyerang musuh sekarat memberi 25% physical attack tambahan.", whyBuy: "Power spike damage puncak untuk menghabisi musuh." },
+      { slot: 5, name: "Endless Battle", category: "Physical", filename: "Endless_battle.png", cost: "2470 Gold", stats: "+65 Physical Attack, +250 HP, +10% CDR, +8% Lifesteal", passive: "Divine Justice: Menghasilkan 60% True Damage setelah skill.", whyBuy: "Menembus armor tank lawan dengan True Damage." },
+      { slot: 6, name: "Immortality", category: "Defense", filename: "Immortality.png", cost: "2120 Gold", stats: "+800 HP, +20 Physical Defense", passive: "Immortal: Bangkit kembali setelah tereliminasi.", whyBuy: "Jaminan hidup kedua di late game." }
+    ],
+    situationalBuild: [
+      { name: "Rose Gold Meteor", category: "Physical", filename: "Rose_gold_meteor.png", cost: "2120 Gold", stats: "+60 Physical Attack, +30 Magic Defense, +10% Lifesteal", badge: "Vs Burst Mage", whyBuy: "Memberi shield darurat saat HP turun di bawah 30%." },
+      { name: "Sea Halberd", category: "Physical", filename: "Sea_halberd.png", cost: "2050 Gold", stats: "+80 Physical Attack, +25% Attack Speed", badge: "Anti Heal", whyBuy: "Memangkas pemulihan darah dan perisai hero lifesteal lawan." },
+      { name: "Winter Truncheon", category: "Magical", filename: "Winter_truncheon.png", cost: "1910 Gold", stats: "+60 Magic Power, +25 Physical Defense", badge: "Outplay Kebal", whyBuy: "Skill aktif beku selama 2 detik untuk mengulur waktu bantuan kawan." },
+      { name: "Athena's Shield", category: "Defense", filename: "Athena_shield.png", cost: "2150 Gold", stats: "+900 HP, +62 Magic Defense", badge: "Vs Magic Burst", whyBuy: "Meredam kombo sihir mendadak dari mage lawan." }
+    ]
+  },
+  MagicMage: {
+    spells: [
+      { name: "Flicker", category: "Spells", filename: "Flicker.png", isPrimary: true, tag: "Rekomendasi Utama", description: "Menghindari sergapan mendadak dari assassin lincah lawan." },
+      { name: "Flameshot", category: "Spells", filename: "Flameshot.png", isPrimary: false, tag: "Opsi Sniping / Knockback", description: "Mendorong musuh yang mendekat atau menembak target kabur sekarat." }
+    ],
+    emblem: {
+      name: "Custom Mage Emblem",
+      category: "Mage",
+      assetPath: "/Assets/Emblem/Mage/Custom_Mage_Emblem.png",
+      baseStats: "+30 Magic Power | +5% Cooldown Reduction | +8 Magic Penetration",
+      tier1: { name: "Inspire", category: "Mage", filename: "Inspire-Talent.png", effect: "Mendapatkan 5% Cooldown Reduction ekstra.", reason: "Membantu spam skill sejak menit pertama." },
+      tier2: { name: "Bargain Hunter", category: "Mage", filename: "Bargain_Hunter-Talent.png", effect: "Memperoleh diskon harga 5% pada seluruh pembelian equipment di shop.", reason: "Mempercepat terselesaikannya item core sihir." },
+      tier3: { name: "Lethal Ignition", category: "Mage", filename: "Lethal_Ignition-Talent.png", effect: "Memberikan damage multi-hit membakar musuh hingga 750 adaptive damage.", reason: "Melipatgandakan efek burst sihir." }
+    },
+    coreBuild: [
+      { slot: 1, name: "Arcane Boots", category: "Boots", filename: "Arcane_boots.png", cost: "690 Gold", stats: "+40 Movement Speed, +10 Magic Penetration", passive: "Memberi flat penetration krusial di early game.", whyBuy: "Memaksimalkan rasa sakit dari skill poke di lane." },
+      { slot: 2, name: "Clock of Destiny", category: "Magical", filename: "Clock_of_destiny.png", cost: "1950 Gold", stats: "+60 Magic Power, +500 HP, +600 Mana", passive: "Menumpuk HP dan Magic Power setiap 20 detik.", whyBuy: "Pondasi scaling stat tebal di mid hingga late game." },
+      { slot: 3, name: "Lightning Truncheon", category: "Magical", filename: "Lightning_truncheon.png", cost: "2250 Gold", stats: "+75 Magic Power, +10% CDR, +400 Mana", passive: "Memantulkan gelombang petir berskala dengan max mana hero.", whyBuy: "Sinergi ledakan damage utama bersama Clock of Destiny." },
+      { slot: 4, name: "Holy Crystal", category: "Magical", filename: "Holy_crystal.png", cost: "2180 Gold", stats: "+100 Magic Power", passive: "Mystery: Meningkatkan Magic Power sebesar 21%-35%.", whyBuy: "Melipatgandakan seluruh magic damage secara eksponensial." },
+      { slot: 5, name: "Divine Glaive", category: "Magical", filename: "Divine_glaive.png", cost: "1970 Gold", stats: "+65 Magic Power, +40% Magic Penetration", passive: "Spellbreaker: Menembus pertahanan magic defense musuh.", whyBuy: "Wajib untuk meruntuhkan Athena's Shield tank lawan." },
+      { slot: 6, name: "Blood Wings", category: "Magical", filename: "Blood_wings.png", cost: "3000 Gold", stats: "+175 Magic Power, +500 HP", passive: "Guard: Memperoleh perisai shield tebal setara 200% magic power.", whyBuy: "Item pamungkas pemberi magic power terbesar dan pelindung shield." }
+    ],
+    situationalBuild: [
+      { name: "Winter Truncheon", category: "Magical", filename: "Winter_truncheon.png", cost: "1910 Gold", stats: "+60 Magic Power, +25 Physical Defense", badge: "Kebal 2 Detik", whyBuy: "Menghindari one-shot dari assassin musuh." },
+      { name: "Genius Wand", category: "Magical", filename: "Genius_wand.png", cost: "2000 Gold", stats: "+75 Magic Power, +5% Movement Speed", badge: "Flat Penetrasi", whyBuy: "Merontokkan magic defense musuh tipis dengan cepat." },
+      { name: "Ice Queen Wand", category: "Magical", filename: "Ice_queen_wand.png", cost: "2240 Gold", stats: "+75 Magic Power, +10% Magic Lifesteal, +7% MS", badge: "Slow Kiting", whyBuy: "Memberi efek slow 30% pada setiap skill yang mengenai musuh." },
+      { name: "Immortality", category: "Defense", filename: "Immortality.png", cost: "2120 Gold", stats: "+800 HP, +20 Physical Defense", badge: "Asuransi Hidup", whyBuy: "Jaminan bangkit kembali saat terbunuh di akhir game." }
+    ]
+  },
+  TankRoam: {
+    spells: [
+      { name: "Flicker", category: "Spells", filename: "Flicker.png", isPrimary: true, tag: "Rekomendasi Utama", description: "Inisiasi kejutan untuk melompat ke tengah musuh." },
+      { name: "Vengeance", category: "Spells", filename: "Vengeance.png", isPrimary: false, tag: "Vs High DPS", description: "Memantulkan 35% damage serangan musuh dan memberi reduksi damage tebal." }
+    ],
+    emblem: {
+      name: "Custom Tank Emblem",
+      category: "Tank",
+      assetPath: "/Assets/Emblem/Tank/Custom_Tank_Emblem.png",
+      baseStats: "+500 Max HP | +10 Physical & Magic Defense | +4 HP Regen",
+      tier1: { name: "Vitality", category: "Tank", filename: "Vitality-Talent.png", effect: "Mendapatkan 225 Max HP tambahan secara instan.", reason: "Mendongkrak ketahanan darah sejak menit pertama." },
+      tier2: { name: "Tenacity", category: "Tank", filename: "Tenacity-Talent.png", effect: "Meningkatkan defense sebesar 15 poin saat darah di bawah 50%.", reason: "Membuat badan semakin keras saat menahan gempuran musuh." },
+      tier3: { name: "Concussive Blast", category: "Tank", filename: "Concussive_Blast-Talent.png", effect: "Menghasilkan ledakan area magic berskala Max HP setelah basic attack.", reason: "Membantu clear wave dan memberi damage kejutan." }
+    },
+    coreBuild: [
+      { slot: 1, name: "Tough Boots (Conceal)", category: "Boots", filename: "Tough_boots.png", cost: "700 Gold", stats: "+40 Movement Speed, +22 Magic Defense", passive: "Conceal: Menyembunyikan seluruh tim untuk inisiasi gank cepat.", whyBuy: "Membantu koordinasi open war mendadak." },
+      { slot: 2, name: "Dominance Ice", category: "Defense", filename: "Dominance_ice.png", cost: "2010 Gold", stats: "+500 Mana, +70 Physical Defense, +5% MS", passive: "Mengurangi attack speed lawan 70% dan memangkas regen/shield 50%.", whyBuy: "Item anti-heal wajib bagi seluruh roamer garis depan." },
+      { slot: 3, name: "Athena's Shield", category: "Defense", filename: "Athena_shield.png", cost: "2150 Gold", stats: "+900 HP, +62 Magic Defense, +2 HP Regen", passive: "Mengurangi magic damage yang diterima sebesar 25% selama 3 detik.", whyBuy: "Penangkal utama burst sihir mage lawan." },
+      { slot: 4, name: "Antique Cuirass", category: "Defense", filename: "Antique_cuirass.png", cost: "2170 Gold", stats: "+920 HP, +54 Physical Defense, +4 HP Regen", passive: "Mengurangi Physical Attack musuh hingga 24% saat terkena skill.", whyBuy: "Meruntuhkan damage assassin dan fighter berbasis skill." },
+      { slot: 5, name: "Blade Armor", category: "Defense", filename: "Blade_armor.png", cost: "1960 Gold", stats: "+90 Physical Defense, +20% Crit Dmg Reduction", passive: "Memantulkan 20% basic attack lawan kembali ke penyerangnya.", whyBuy: "Counter mutlak marksman ber-critical tinggi." },
+      { slot: 6, name: "Immortality", category: "Defense", filename: "Immortality.png", cost: "2120 Gold", stats: "+800 HP, +20 Physical Defense", passive: "Immortal: Hidup kembali setelah tereliminasi.", whyBuy: "Memberi kesempatan kedua untuk kembali melindungi carry kawan." }
+    ],
+    situationalBuild: [
+      { name: "Radiant Armor", category: "Defense", filename: "Radiant_armor.png", cost: "1880 Gold", stats: "+950 HP, +52 Magic Defense", badge: "Vs DPS Magic", whyBuy: "Melawan mage dengan serangan beruntun seperti Chang'e dan Valir." },
+      { name: "Guardian Helmet", category: "Defense", filename: "Guardian_helmet.png", cost: "2200 Gold", stats: "+1550 HP, +20 HP Regen", badge: "HP Tanpa Recall", whyBuy: "Memulihkan darah di luar pertempuran tanpa perlu kembali ke base." },
+      { name: "Cursed Helmet", category: "Defense", filename: "Cursed_helmet.png", cost: "1760 Gold", stats: "+1200 HP, +25 Magic Defense", badge: "Burn Damage", whyBuy: "Memberi aura bakar HP pada musuh di dekatnya." },
+      { name: "Thunder Belt", category: "Defense", filename: "Thunder_belt.png", cost: "1990 Gold", stats: "+800 HP, +30 Physical Defense", badge: "Slow True Dmg", whyBuy: "Efek slow 99% dan True Damage setelah menggunakan skill." }
+    ]
+  },
+  FighterExp: {
+    spells: [
+      { name: "Flicker", category: "Spells", filename: "Flicker.png", isPrimary: true, tag: "Rekomendasi Utama", description: "Inisiasi melompat atau keluar dari sergapan gank." },
+      { name: "Vengeance", category: "Spells", filename: "Vengeance.png", isPrimary: false, tag: "Vs Duelist Melee", description: "Menahan gempuran adu pukul di garis depan." }
+    ],
+    emblem: {
+      name: "Custom Fighter Emblem",
+      category: "Fighter",
+      assetPath: "/Assets/Emblem/Fighter/Custom_Fighter_Emblem.png",
+      baseStats: "+10% Spell Vamp | +22 Adaptive Attack | +6 Physical & Magic Defense",
+      tier1: { name: "Firmness", category: "Fighter", filename: "Firmness-Talent.png", effect: "Mendapatkan 6 Physical & Magic Defense tambahan.", reason: "Ketahanan dasar dalam pertukaran pukulan di Exp Lane." },
+      tier2: { name: "Festival of Blood", category: "Fighter", filename: "Festival_of_Blood-Talent.png", effect: "Meningkatkan 6% Spell Vamp (+0.5% per kill/assist hingga 10%).", reason: "Menjadikan darah semakin tebal saat bertarung terus menerus." },
+      tier3: { name: "Brave Smite", category: "Fighter", filename: "Brave_Smite-Talent.png", effect: "Memulihkan 4% Max HP setiap kali memberikan damage dengan skill.", reason: "Regenerasi instan saat berduel di tengah kerumunan." }
+    },
+    coreBuild: [
+      { slot: 1, name: "Warrior Boots", category: "Boots", filename: "Warrior_boots.png", cost: "720 Gold", stats: "+40 Movement Speed, +22 Physical Defense", passive: "Meningkatkan physical defense pada setiap basic attack lawan.", whyBuy: "Kunci memenangkan pertukaran pukulan di lane." },
+      { slot: 2, name: "War Axe", category: "Physical", filename: "War_axe.png", cost: "2100 Gold", stats: "+40 Physical Attack, +550 HP, +10% CDR, +12% Spell Vamp", passive: "Fighting Spirit: Menumpuk physical attack dan true damage per detik.", whyBuy: "Item wajib nomor 1 untuk seluruh fighter sustained war." },
+      { slot: 3, name: "Dominance Ice", category: "Defense", filename: "Dominance_ice.png", cost: "2010 Gold", stats: "+500 Mana, +70 Physical Defense, +5% MS", passive: "Mengurangi attack speed lawan 70% dan anti-heal 50%.", whyBuy: "Menahan regenerasi darah lawan tanding di Exp Lane." },
+      { slot: 4, name: "Brute Force Breastplate", category: "Defense", filename: "Brute_force_breastplate.png", cost: "1870 Gold", stats: "+600 HP, +30 Physical Defense, +10% CDR", passive: "Menambah movement speed dan physical/magic defense setiap menggunakan skill.", whyBuy: "Mobilitas kencang dan kekebalan CC saat mengejar mangsa." },
+      { slot: 5, name: "Athena's Shield", category: "Defense", filename: "Athena_shield.png", cost: "2150 Gold", stats: "+900 HP, +62 Magic Defense", passive: "Meredam serangan magic burst sebesar 25%.", whyBuy: "Mencegah terbunuh seketika saat masuk ke backline musuh." },
+      { slot: 6, name: "Immortality", category: "Defense", filename: "Immortality.png", cost: "2120 Gold", stats: "+800 HP, +20 Physical Defense", passive: "Immortal: Hidup kembali setelah tereliminasi.", whyBuy: "Penyelamat nyawa di fase perang akhir game." }
+    ],
+    situationalBuild: [
+      { name: "Bloodlust Axe", category: "Physical", filename: "Bloodlust_axe.png", cost: "1970 Gold", stats: "+70 Physical Attack, +10% CDR, +20% Spell Vamp", badge: "Max Spell Vamp", whyBuy: "Memaksimalkan lifesteal sihir pada setiap skill." },
+      { name: "Blade of Despair", category: "Physical", filename: "Blade_of_despair.png", cost: "3010 Gold", stats: "+160 Physical Attack, +5% MS", badge: "Finisher Damage", whyBuy: "Mendongkrak damage pukulan akhir game." },
+      { name: "Queen's Wings", category: "Defense", filename: "Queen_wings.png", cost: "2250 Gold", stats: "+1000 HP, +10% CDR, +5% Spell Vamp", badge: "Anti Dying", whyBuy: "Mengurangi damage 30% dan menambah lifesteal saat sekarat." },
+      { name: "Sea Halberd", category: "Physical", filename: "Sea_halberd.png", cost: "2050 Gold", stats: "+80 Physical Attack, +25% Attack Speed", badge: "Anti Shield", whyBuy: "Memecahkan shield tebal milik Uranus, Harith, atau Esmeralda." }
+    ]
+  },
+  MarksmanGold: {
+    spells: [
+      { name: "Flicker", category: "Spells", filename: "Flicker.png", isPrimary: true, tag: "Rekomendasi Utama", description: "Satu-satunya penyelamat posisi dari sergapan assassin." },
+      { name: "Purify", category: "Spells", filename: "Purify.png", isPrimary: false, tag: "Vs Heavy CC", description: "Menghapus semua efek stun/freeze seketika." }
+    ],
+    emblem: {
+      name: "Custom Marksman Emblem",
+      category: "Marksman",
+      assetPath: "/Assets/Emblem/Marksman/Custom_Marksman_Emblem.png",
+      baseStats: "+15% Attack Speed | +5% Adaptive Attack | +5% Critical Chance",
+      tier1: { name: "Fatal", category: "Marksman", filename: "Fatal-Talent.png", effect: "Meningkatkan 5% Critical Chance dan 10% Critical Damage.", reason: "Mendongkrak daya tembak mematikan." },
+      tier2: { name: "Weapon Master", category: "Marksman", filename: "Weapon_Master-Talent.png", effect: "Physical Attack yang diperoleh bertambah sebesar 5%.", reason: "Amplifikasi kekuatan seluruh item serang." },
+      tier3: { name: "Quantum Charge", category: "Basic_Common", filename: "Quantum_Charge-Talent.png", effect: "Basic attack memberi 30% Movement Speed dan memulihkan HP.", reason: "Kiting tiada henti dan sustain darah tanpa harus recall." }
+    },
+    coreBuild: [
+      { slot: 1, name: "Swift Boots", category: "Boots", filename: "Swift_boots.png", cost: "710 Gold", stats: "+40 Movement Speed, +15% Attack Speed", passive: "Swift: Mempercepat jeda antar tembakan.", whyBuy: "Membantu kelancaran last-hit minion di Gold Lane." },
+      { slot: 2, name: "Corrosion Scythe", category: "Physical", filename: "Corrosion_scythe.png", cost: "2050 Gold", stats: "+30 Physical Attack, +5% MS, +35% Attack Speed", passive: "Memberi efek slow 8% per hit dan menumpuk attack speed.", whyBuy: "Mengunci musuh agar tidak bisa melarikan diri." },
+      { slot: 3, name: "Demon Hunter Sword", category: "Physical", filename: "Demon_hunter_sword.png", cost: "2180 Gold", stats: "+35 Physical Attack, +25% Attack Speed", passive: "Menghasilkan damage setara 8% sisa HP target per tembakan.", whyBuy: "Penghancur darah tebal tank lawan." },
+      { slot: 4, name: "Golden Staff", category: "Physical", filename: "Golden_staff.png", cost: "2100 Gold", stats: "+65 Physical Attack, +15% Attack Speed", passive: "Mengubah critical menjadi attack speed dan memicu efek pasif 3 kali.", whyBuy: "Melipatgandakan seluruh efek item serangan menjadi bertubi-tubi." },
+      { slot: 5, name: "Wind of Nature", category: "Physical", filename: "Wind_of_nature.png", cost: "1910 Gold", stats: "+30 Physical Attack, +20% Attack Speed, +10% Lifesteal", passive: "Wind Chant: Kebal terhadap seluruh physical damage selama 2 detik.", whyBuy: "Penyelamat nyawa mutlak saat diserang assassin fisik." },
+      { slot: 6, name: "Rose Gold Meteor", category: "Physical", filename: "Rose_gold_meteor.png", cost: "2120 Gold", stats: "+60 Physical Attack, +30 Magic Defense, +10% Lifesteal", passive: "Memberi shield tebal saat HP berada di bawah 30%.", whyBuy: "Perlindungan dari burst magic mendadak." }
+    ],
+    situationalBuild: [
+      { name: "Berserker's Fury", category: "Physical", filename: "Berserkers_fury.png", cost: "2250 Gold", stats: "+65 Physical Attack, +25% Crit Chance, +40% Crit Dmg", badge: "Crit Burst", whyBuy: "Opsi build kritikal penghancur hero empuk dalam 3 hit." },
+      { name: "Windtalker", category: "Physical", filename: "Windtalker.png", cost: "1820 Gold", stats: "+40% Attack Speed, +20 Movement Speed, +10% Crit", badge: "Wave Clear", whyBuy: "Menembakkan percikan angin sihir pembersih minion cepat." },
+      { name: "Blade of Despair", category: "Physical", filename: "Blade_of_despair.png", cost: "3010 Gold", stats: "+160 Physical Attack, +5% MS", badge: "Max Attack", whyBuy: "Maksimalisasi damage tembakan di menit akhir." },
+      { name: "Immortality", category: "Defense", filename: "Immortality.png", cost: "2120 Gold", stats: "+800 HP, +20 Physical Defense", badge: "Asuransi Hidup", whyBuy: "Pencegah kekalahan saat adu Lord di late game." }
+    ]
+  },
+  SupportRoam: {
+    spells: [
+      { name: "Flicker", category: "Spells", filename: "Flicker.png", isPrimary: true, tag: "Rekomendasi Utama", description: "Menghindari serbuan musuh yang mengincar support." },
+      { name: "Revitalize", category: "Spells", filename: "Revitalize.png", isPrimary: false, tag: "Opsi Heal Massal", description: "Menciptakan lingkaran pemulihan darah tebal di area pertempuran." }
+    ],
+    emblem: {
+      name: "Custom Support Emblem",
+      category: "Support",
+      assetPath: "/Assets/Emblem/Support/Custom_Support_Emblem.png",
+      baseStats: "+15% Healing Effect | +10 Cooldown Reduction | +10 Movement Speed",
+      tier1: { name: "Agility", category: "Support", filename: "Agility-Talent.png", effect: "Mendapatkan 4% Movement Speed tambahan.", reason: "Membantu mobilitas rotasi cepat menyusul kawan." },
+      tier2: { name: "Pull Yourself Together", category: "Support", filename: "Pull_Yourself_Together-Talent.png", effect: "Mengurangi cooldown Battle Spell dan item aktif sebesar 15%.", reason: "Mempercepat tersedianya spell Flicker/Revitalize." },
+      tier3: { name: "Focusing Mark", category: "Support", filename: "Focusing_Mark-Talent.png", effect: "Serangan ke musuh membuat rekan tim menghasilkan damage 6% lebih besar ke target.", reason: "Membantu rekan tim melenyapkan target fokus." }
+    },
+    coreBuild: [
+      { slot: 1, name: "Magic Shoes (Favor)", category: "Boots", filename: "Magic_shoes.png", cost: "710 Gold", stats: "+40 Movement Speed, +10% Cooldown Reduction", passive: "Favor: Memulihkan darah rekan terendah saat menggunakan skill heal/shield.", whyBuy: "Maksimalisasi heal dan pemendekan cooldown skill." },
+      { slot: 2, name: "Fleeting Time", category: "Magical", filename: "Fleeting_time.png", cost: "2050 Gold", stats: "+70 Magic Power, +350 Mana, +15% CDR", passive: "Mengurangi cooldown Ultimate sebesar 30% setelah kill atau assist.", whyBuy: "Membuat Ultimate dapat digunakan berulang kali dalam perang." },
+      { slot: 3, name: "Dominance Ice", category: "Defense", filename: "Dominance_ice.png", cost: "2010 Gold", stats: "+500 Mana, +70 Physical Defense, +5% MS", passive: "Mengurangi regen musuh sebesar 50% dan attack speed 70%.", whyBuy: "Wajib untuk mematikan lifesteal dan heal lawan." },
+      { slot: 4, name: "Oracle", category: "Defense", filename: "Oracle.png", cost: "2060 Gold", stats: "+850 HP, +42 Magic Defense, +10% CDR", passive: "Meningkatkan efek shield dan regenerasi HP sebesar 30%.", whyBuy: "Mempertebal seluruh efek penyembuhan pada tim." },
+      { slot: 5, name: "Athena's Shield", category: "Defense", filename: "Athena_shield.png", cost: "2150 Gold", stats: "+900 HP, +62 Magic Defense", passive: "Mengurangi magic damage yang diterima sebesar 25%.", whyBuy: "Mencegah mati konyol terkena burst mage musuh." },
+      { slot: 6, name: "Immortality", category: "Defense", filename: "Immortality.png", cost: "2120 Gold", stats: "+800 HP, +20 Physical Defense", passive: "Immortal: Bangkit kembali setelah gugur.", whyBuy: "Memberi kesempatan terus menyembuhkan rekan kawan." }
+    ],
+    situationalBuild: [
+      { name: "Winter Truncheon", category: "Magical", filename: "Winter_truncheon.png", cost: "1910 Gold", stats: "+60 Magic Power, +25 Physical Defense", badge: "Self Freeze", whyBuy: "Menyelamatkan diri saat menjadi target fokus musuh." },
+      { name: "Antique Cuirass", category: "Defense", filename: "Antique_cuirass.png", cost: "2170 Gold", stats: "+920 HP, +54 Physical Defense", badge: "Vs Physical", whyBuy: "Menahan tebasan assassin fisik lawan." },
+      { name: "Necklace of Durance", category: "Magical", filename: "Necklace_of_durance.png", cost: "2010 Gold", stats: "+60 Magic Power, +5% CDR, +10% Magic Lifesteal", badge: "Anti Heal Magic", whyBuy: "Alternatif anti-heal dari skill sihir jarak jauh." },
+      { name: "Guardian Helmet", category: "Defense", filename: "Guardian_helmet.png", cost: "2200 Gold", stats: "+1550 HP, +20 HP Regen", badge: "Non-stop Regen", whyBuy: "Menjaga darah support tetap penuh di medan perang." }
+    ]
+  }
+};
+
+const RAW_METADATA = {
+  Aamon: {
+    displayName: 'Aamon',
+    title: 'Duke of Shards',
+    role: 'Assassin',
+    sec: 'Mage',
+    lane: 'Jungler',
+    tier: 'S+',
+    diff: 'Medium',
+    winRate: '53.8%',
+    pickRate: '2.4%',
+    banRate: '18.2%',
+    summary: 'Assassin Magic burst mematikan yang mengandalkan kamuflase tak terlihat, mobilitas tinggi, dan eksekusi pecahan belati shards.',
+    pros: ['Burst damage magic instan sangat masif', 'Camouflage pasif memberi HP regen dan imunitas target lock', 'Sangat lincah dalam rotasi dan flanking'],
+    cons: ['Rentan terhadap Suppression CC', 'Burst berkurang jika lawan menumpuk Radiant Armor', 'Bergantung pada tumpukan shard sebelum Ultimate']
+  },
+  Akai: {
+    displayName: 'Akai',
+    title: 'Panda Warrior',
+    role: 'Tank',
+    sec: 'Fighter',
+    lane: 'Roamer',
+    tier: 'S',
+    diff: 'Low',
+    winRate: '52.8%',
+    pickRate: '4.5%',
+    banRate: '12.0%',
+    summary: 'Tank inisiator dan crowd control terkuat yang mampu memporak-porandakan formasi musuh dengan putaran Heavy Spin tak terbendung.',
+    pros: ['Heavy Spin kebal terhadap efek slow dan CC biasa', 'Shield pasif Tai Chi sangat tebal berbasis Max HP', 'Pengaman objektif Turtle/Lord terbaik'],
+    cons: ['Positioning putaran harus tepat ke arah dinding', 'Rentan terhadap True Damage Karrie', 'Cooldown Ultimate cukup lama jika meleset']
+  },
+  Aldous: {
+    displayName: 'Aldous',
+    title: 'Soul Contractor',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'B',
+    diff: 'Medium',
+    winRate: '50.1%',
+    pickRate: '1.8%',
+    banRate: '2.1%',
+    summary: 'Fighter scaling tak terbatas dengan tinju Contract: Soul Steal yang mampu melumat carry musuh dalam 1 pukulan di late game.',
+    pros: ['Damage pukulan berskala tanpa batas dari stack minion', 'Ultimate Chase Fate membuka map seluruh musuh dan terbang langsung', 'Shield tebal dari skill 2'],
+    cons: ['Early game sangat lemah dan butuh waktu lama untuk mengumpulkan stack', 'Mudah di-kite dan di-freeze lane oleh lawan agresif']
+  },
+  Alice: {
+    displayName: 'Alice',
+    title: 'Queen of Blood',
+    role: 'Mage',
+    sec: 'Tank',
+    lane: 'Mid Lane',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.4%',
+    pickRate: '1.2%',
+    banRate: '4.5%',
+    summary: 'Mage lifesteal tanky yang menyelam ke tengah formasi lawan dan menghisap darah semua musuh di sekitarnya tanpa henti.',
+    pros: ['Sustain darah sangat luar biasa dengan Ultimate aktif', 'Mobilitas teleportasi instan melalui Flowing Blood', 'Sangat tebal di late game'],
+    cons: ['Sangat boros mana dan membutuhkan buff ungu atau item mana tinggi', 'Rentan terhadap efek anti-heal Dominance Ice dan Sea Halberd']
+  },
+  Alpha: {
+    displayName: 'Alpha',
+    title: 'Blade of Enmity',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Jungler',
+    tier: 'S',
+    diff: 'Low',
+    winRate: '52.6%',
+    pickRate: '3.9%',
+    banRate: '9.4%',
+    summary: 'Fighter jungle tercepat dengan robot Beta yang memberikan rentetan True Damage dan lifesteal deras pada setiap tebasan skill.',
+    pros: ['Clear jungle luar biasa cepat dengan cooldown skill super singkat', 'True damage alami menembus armor tank lawan', 'Sustain lifesteal tinggi'],
+    cons: ['Mudah dihindari jika musuh memiliki mobilitas tinggi', 'Rentan terkena kiting jarak jauh']
+  },
+  Alucard: {
+    displayName: 'Alucard',
+    title: 'Demon Hunter',
+    role: 'Fighter',
+    sec: 'Assassin',
+    lane: 'Jungler',
+    tier: 'B',
+    diff: 'Low',
+    winRate: '49.8%',
+    pickRate: '2.5%',
+    banRate: '1.0%',
+    summary: 'Pendekar pedang dengan lifesteal fisik tertinggi yang melompat lincah dari satu target ke target berikutnya.',
+    pros: ['Lifesteal fisik sangat deras saat Ultimate aktif', 'Cooldown skill sangat singkat dan tidak menggunakan mana', 'Snowball cepat'],
+    cons: ['Sangat rentan terhadap Hard Crowd Control', 'Mudah dimatikan jika musuh membuat item Dominance Ice']
+  },
+  Angela: {
+    displayName: 'Angela',
+    title: 'Bunnylove',
+    role: 'Support',
+    sec: 'Mage',
+    lane: 'Roamer',
+    tier: 'S',
+    diff: 'Low',
+    winRate: '53.2%',
+    pickRate: '6.1%',
+    banRate: '22.4%',
+    summary: 'Support global possession terpopuler yang merasuki tubuh assassin/fighter kawan untuk memberikan shield masif, heal, dan slow.',
+    pros: ['Ultimate Heartguard dapat membantu rekan setim dari ujung map manapun', 'Spam heal Love Waves sangat deras', 'Efek immobilize menjerat musuh'],
+    cons: ['Sangat rapuh jika terisolasi sendirian tanpa rekan', 'Tidak memiliki skill inisiasi hard CC area mandiri']
+  },
+  Argus: {
+    displayName: 'Argus',
+    title: 'Nightstalker',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'B',
+    diff: 'Low',
+    winRate: '50.4%',
+    pickRate: '1.5%',
+    banRate: '1.2%',
+    summary: 'Ksatria abadi dengan Eternal Evil yang kebal terhadap kematian selama 4 detik dan menyerap semua damage musuh menjadi HP miliknya.',
+    pros: ['Kekebalan 100% dari kematian saat Ultimate aktif', 'Attack speed dan pasif tebasan ganda sangat cepat', 'Push turret sangat cepat'],
+    cons: ['Mudah di-counter jika musuh menahan skill dan kabur saat Ultimate aktif', 'Kurang efektif dalam teamfight besar jika di-crowd control']
+  },
+  Arlot: {
+    displayName: 'Arlott',
+    title: 'Lone Lancer',
+    role: 'Fighter',
+    sec: 'Assassin',
+    lane: 'Exp Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '52.7%',
+    pickRate: '3.4%',
+    banRate: '14.5%',
+    summary: 'Petarung tombak lincah yang memanfaatkan pasif Demon Gaze untuk melakukan dash Vengeance tiada henti dan meraup lifesteal masif.',
+    pros: ['Dash tanpa henti ke target yang memiliki mark', 'Crowd control area sapuan tombak Final Slash', 'Damage burst dan sustain tinggi'],
+    cons: ['Sangat bergantung pada akurasi deteksi pasif Demon Gaze', 'Jika dash meleset tanpa mark, mobilitasnya langsung terkunci']
+  },
+  Atlas: {
+    displayName: 'Atlas',
+    title: 'Ocean Gladiator',
+    role: 'Tank',
+    sec: 'Support',
+    lane: 'Roamer',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '51.9%',
+    pickRate: '2.8%',
+    banRate: '10.1%',
+    summary: 'Tank inisiator gurita raksasa dengan Fatal Links yang menarik seluruh tim musuh dan membanting mereka menjadi satu titik kehancuran.',
+    pros: ['Kombo Fatal Links dapat membalikkan keadaan game dalam 1 momen', 'Mobilitas Perfect Match melepaskan tubuh robot untuk inisiasi cepat', 'Sangat tebal'],
+    cons: ['Sangat di-counter mutlak oleh Ultimate Time Journey Diggie', 'Channeling Ultimate bisa digagalkan jika terkena stun cepat']
+  },
+  Aulus: {
+    displayName: 'Aulus',
+    title: 'Warrior of Ferocity',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Jungler',
+    tier: 'B',
+    diff: 'Low',
+    winRate: '49.9%',
+    pickRate: '0.8%',
+    banRate: '0.5%',
+    summary: 'Pendekar kapak kerdil yang palunya berevolusi setiap mencapai level 4, 8, dan 12 hingga menjadi mesin pembantai jangkauan luas di late game.',
+    pros: ['Damage critical area raksasa saat mencapai level 12', 'Kecepatan gerak tinggi dari skill 1', 'Sangat mematikan saat teamfight late game'],
+    cons: ['Sangat lemah di early game sebelum palunya berevolusi', 'Rentan diinvasi jungler agresif']
+  },
+  Aurora: {
+    displayName: 'Aurora',
+    title: 'Frost Queen',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'S',
+    diff: 'Low',
+    winRate: '53.1%',
+    pickRate: '4.2%',
+    banRate: '15.6%',
+    summary: 'Ratu es penguasa Crowd Control beku mutlak dengan pasif Pride of Ice yang membekukan dirinya sendiri saat sekarat layaknya Winter Truncheon.',
+    pros: ['Efek Freeze area membekukan musuh dan turret', 'Pasif hidup kembali dengan membekukan diri saat menerima lethal damage', 'Burst damage es masif'],
+    cons: ['Mobilitas rendah tanpa skill dash bawaan', 'Sangat bergantung pada cooldown skill']
+  },
+  Badang: {
+    displayName: 'Badang',
+    title: 'Tribal Warrior',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'B',
+    diff: 'Low',
+    winRate: '50.2%',
+    pickRate: '1.4%',
+    banRate: '1.0%',
+    summary: 'Prajurit kepalan batu yang mampu menciptakan kurungan dinding jebakan dan melepaskan ratusan tinju Fist Crack bertubi-tubi.',
+    pros: ['Mampu mengurung musuh dengan dinding batu skill 2', 'Ultimate pukulan beruntun memberikan kekebalan CC sementara', 'Knockback stun ke dinding'],
+    cons: ['Musuh dengan skill blink/flicker mudah melompati dindingnya', 'Arah pukulan Ultimate bersifat statis']
+  },
+  Balmond: {
+    displayName: 'Balmond',
+    title: 'Bloody Beast',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Jungler',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.3%',
+    pickRate: '2.7%',
+    banRate: '4.2%',
+    summary: 'Berserker orc pemutar kapak Cyclone Sweep tiada henti dengan eksekusi Lethal Counter penghancur Turtle/Lord dan pencuri kill instan.',
+    pros: ['Eksekusi Ultimate menghitung True Damage berdasarkan persentase HP hilang musuh', 'Sustain regen pasif setiap membunuh minion/hero', 'Sangat mudah dimainkan'],
+    cons: ['Putaran kapak dapat dibatalkan oleh efek stun/airborne musuh', 'Kurang fleksibel melawan marksman kiting']
+  },
+  Bane: {
+    displayName: 'Bane',
+    title: 'Frozen King',
+    role: 'Fighter',
+    sec: 'Mage',
+    lane: 'Exp Lane',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.1%',
+    pickRate: '1.9%',
+    banRate: '2.0%',
+    summary: 'Bajak laut hantu dengan semburan ludah Ale pemulih HP dan gelombang hiu maut Deadly Catch penghancur formasi dan turret.',
+    pros: ['Dapat dibangun Hybrid Physical atau Full Magic burst', 'Semburan pasif Shark Bite memberikan splash damage tebal', 'Ultimate dapat merusak turret dari jarak jauh'],
+    cons: ['Mobilitas rata-rata tanpa dash panjang', 'Darah cukup empuk jika dibangun full offensive']
+  },
+  Barats: {
+    displayName: 'Barats',
+    title: 'Dino Rider',
+    role: 'Tank',
+    sec: 'Fighter',
+    lane: 'Jungler',
+    tier: 'S+',
+    diff: 'Low',
+    winRate: '54.2%',
+    pickRate: '4.8%',
+    banRate: '28.5%',
+    summary: 'Monster dinosaurus raksasa yang menelan hero musuh dan meludahkannya ke dinding dengan pertahanan armor dan resistensi CC tertinggi.',
+    pros: ['Ukuran tubuh membesar dan mendapat 25 stack defense pasif tebal', 'Detention Beam menelan assassin musuh dan merusak formasi', 'Sangat dominan di objektif Lord'],
+    cons: ['Mudah kehilangan stack jika tidak berada di pertempuran', 'Target empuk hero anti-HP seperti Karrie dan Lunox']
+  },
+  Baxia: {
+    displayName: 'Baxia',
+    title: 'Mystic Tortoise',
+    role: 'Tank',
+    sec: null,
+    lane: 'Jungler',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.8%',
+    pickRate: '2.1%',
+    banRate: '5.2%',
+    summary: 'Kura-kura pelindung dengan roda perisai berkecepatan tinggi yang memiliki efek pasif Anti-Heal alami untuk melumpuhkan lifesteal lawan.',
+    pros: ['Pasif mengurangi efek regen/heal musuh hingga 50% secara alami', 'Rotasi menggelinding antar lane paling kencang', 'Damage shield tiada henti'],
+    cons: ['Kurang memiliki efek Hard CC instan area seperti Tigreal atau Atlas', 'Perlu menempel musuh terus menerus']
+  },
+  Beatrix: {
+    displayName: 'Beatrix',
+    title: 'Dawnbreak Soldier',
+    role: 'Marksman',
+    sec: null,
+    lane: 'Gold Lane',
+    tier: 'S',
+    diff: 'High',
+    winRate: '52.1%',
+    pickRate: '5.2%',
+    banRate: '8.1%',
+    summary: 'Marksman multi-senjata jenius dengan 4 pilihan senjata unik (Renner, Bennett, Wesker, Nibiru) untuk segala situasi tempur.',
+    pros: ['Sangat adaptif di segala jarak tempur', 'Wesker shotgun jarak dekat melenyapkan musuh instan', 'Renner snipe dari luar layar'],
+    cons: ['Mekanik reload membutuhkan timing presisi', 'Tidak memiliki lifesteal alami tinggi']
+  },
+  Belerick: {
+    displayName: 'Belerick',
+    title: 'Guardians of Nature',
+    role: 'Tank',
+    sec: null,
+    lane: 'Roamer',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.7%',
+    pickRate: '3.1%',
+    banRate: '4.9%',
+    summary: 'Raksasa pohon penjaga yang memantulkan kembali setiap serangan fisik musuh menjadi duri mematikan berkat pasif Deadly Thorns.',
+    pros: ['Counter mutlak marksman bertipe attack speed cepat (Claude, Miya, Moskov)', 'Bonus Max HP dari item meningkat 30%', 'Ultimate taunt area luas'],
+    cons: ['Sangat lambat dalam mobilitas rotasi', 'Rentan terhadap burst magic jarak jauh']
+  },
+  Benedetta: {
+    displayName: 'Benedetta',
+    title: 'Shadow Ranger',
+    role: 'Assassin',
+    sec: 'Fighter',
+    lane: 'Exp Lane',
+    tier: 'S',
+    diff: 'High',
+    winRate: '52.5%',
+    pickRate: '3.6%',
+    banRate: '11.8%',
+    summary: 'Pendekar pedang wanita lincah dengan dash Swordout Slash pada setiap basic attack dan kekebalan CC sempurna dari An Eye for an Eye.',
+    pros: ['Mobilitas dash tak terbatas pada setiap serangan', 'Skill 2 memblokir semua damage dan stun musuh lalu memantulkannya', 'Ultimate pembersih wave instan'],
+    cons: ['Tingkat kesulitan mikro tinggi, butuh holding basic attack terus menerus', 'Mudah terpeleset keluar formasi jika timing salah']
+  },
+  Borg: {
+    displayName: 'X.Borg',
+    title: 'Firaga Armor',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'S',
+    diff: 'Low',
+    winRate: '52.4%',
+    pickRate: '3.8%',
+    banRate: '8.7%',
+    summary: 'Prajurit cyborg bersenjata semburan api True Damage yang memiliki 2 bar HP berkat zirah Firaga Armor penyelamat nyawanya.',
+    pros: ['Semburan api Fire Missiles membakar musuh dengan True Damage 100%', 'Kebal burst saat armor pecah', 'Ultimate ledakan area mematikan Last Insanity'],
+    cons: ['Sangat lemah dan rapuh saat zirah Firaga Armor sedang terlepas', 'Butuh mengambil baterai armor di tanah untuk regenerasi']
+  },
+  Brody: {
+    displayName: 'Brody',
+    title: 'Lone Star',
+    role: 'Marksman',
+    sec: null,
+    lane: 'Gold Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '52.8%',
+    pickRate: '4.6%',
+    banRate: '12.3%',
+    summary: 'Marksman unik yang mampu menembak sambil bergerak dengan pukulan Abyss Corrosion berdamage fisik raksasa dan stun instan.',
+    pros: ['Bisa menembak sambil berjalan (kiting sempurna)', 'Burst damage fisik early game tertinggi di antara semua marksman', 'Ultimate eksekusi auto-lock jangkauan jauh'],
+    cons: ['Attack speed statis dan memerlukan jeda timing animasi serang', 'Kurang efektif melawan hero tebal jika tidak unggul gold']
+  },
+  Bruno: {
+    displayName: 'Bruno',
+    title: 'The Protector',
+    role: 'Marksman',
+    sec: null,
+    lane: 'Gold Lane',
+    tier: 'S',
+    diff: 'Low',
+    winRate: '52.3%',
+    pickRate: '4.1%',
+    banRate: '9.0%',
+    summary: 'Pesepak bola berenergi tinggi dengan tendangan Volley Shot berkekuatan Critical masif yang meremukkan lawan hanya dalam 2 tendangan bola.',
+    pros: ['Critical chance pasif alami sangat tinggi sejak level 1', 'Tendangan bola memantul menghasilkan damage burst instan', 'Skill dash stun lincah'],
+    cons: ['Harus memungut pantulan bola terus-menerus untuk menjaga buff', 'Jarak serang menengah, rentan di-burst assassin']
+  },
+  Carmilla: {
+    displayName: 'Carmilla',
+    title: 'Shadow of Dusk',
+    role: 'Support',
+    sec: 'Tank',
+    lane: 'Roamer',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.6%',
+    pickRate: '0.9%',
+    banRate: '1.2%',
+    summary: 'Ratu vampir pengikat kutukan Curse of Blood yang menghubungkan hingga 3 hero musuh sehingga seluruh damage dan CC kawan terbagi rata ke mereka.',
+    pros: ['Ultimate membagi 100% damage dan CC ke semua musuh yang terhubung', 'Mencuri Physical & Magic Defense musuh secara pasif', 'Sustain darah tebal'],
+    cons: ['Jarak serang sangat dekat dan butuh masuk ke tengah musuh', 'Kurang populer di publik rank karena butuh koordinasi tim tinggi']
+  },
+  Cecilion: {
+    displayName: 'Cecilion',
+    title: 'Embrace of Night',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.9%',
+    pickRate: '3.2%',
+    banRate: '3.8%',
+    summary: 'Mage pengumpul stack Mana tanpa batas yang kelelawar Bat Impact-nya mampu melenyapkan seluruh formasi musuh dalam 1 tebasan di late game.',
+    pros: ['Scaling mana dan damage tanpa batas maksimal di late game', 'Jangkauan skill Bat Impact sangat jauh dan aman di belakang', 'Sinergi spesial dengan Carmilla'],
+    cons: ['Sangat boros mana di early game dan damage belum terasa', 'Sangat rentan jika didekati hero penyerang jarak dekat']
+  },
+  "Chang'e": {
+    displayName: "Chang'e",
+    title: 'Moon Palace Immortal',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.5%',
+    pickRate: '3.7%',
+    banRate: '4.1%',
+    summary: 'Gadis kelinci bulan dengan rentetan ratusan Meteor Shower jarak jauh pembersih minion kilat dan penghancur barisan depan musuh.',
+    pros: ['Meteor Shower menghujani musuh dari jarak sangat jauh dengan DPS tinggi', 'Pembersihan wave minion paling cepat', 'Mencuri buff musuh mudah'],
+    cons: ['Sangat di-counter oleh Radiant Armor dan tameng peluru Lolita', 'Shield skill 2 jika pecah menghilangkan buff movement speed-nya']
+  },
+  Chou: {
+    displayName: 'Chou',
+    title: 'Kung Fu Boy',
+    role: 'Fighter',
+    sec: 'Tank',
+    lane: 'Exp Lane',
+    tier: 'S',
+    diff: 'High',
+    winRate: '51.6%',
+    pickRate: '6.8%',
+    banRate: '9.4%',
+    summary: 'Fighter legendaris serbaguna dengan imunitas Crowd Control, knockup beruntun, dan tendangan insec The Way of Dragon penculik nomor satu.',
+    pros: ['Imunitas CC penuh saat dash Shunpo', 'Sangat fleksibel: full assassin atau full tank roam', 'Penculik carry musuh paling mematikan'],
+    cons: ['Mikro mekanik jari tingkat tinggi', 'Salah kalkulasi tendangan bisa menyelamatkan musuh']
+  },
+  Claude: {
+    displayName: 'Claude',
+    title: 'Master Thief',
+    role: 'Marksman',
+    sec: null,
+    lane: 'Gold Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '53.1%',
+    pickRate: '4.7%',
+    banRate: '16.8%',
+    summary: 'Pencuri ulung bersama monyet Dexter yang mampu teleportasi Battle Mirror Image dan menyapu bersih pertempuran dengan Blazing Duet.',
+    pros: ['Mobilitas bertukar posisi paling licin di antara semua marksman', 'Blazing Duet membersihkan pertempuran tim dalam sekejap', 'Scaling attack speed gila'],
+    cons: ['Sangat bergantung pada akumulasi 10 stack Art of Thievery', 'Rentan di-burst saat baru masuk memutar Blazing Duet']
+  },
+  Clint: {
+    displayName: 'Clint',
+    title: 'West Justice',
+    role: 'Marksman',
+    sec: null,
+    lane: 'Gold Lane',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.8%',
+    pickRate: '4.2%',
+    banRate: '3.5%',
+    summary: 'Koboi penembak jitu dengan pasif Double Shot tembus lurus yang memberikan damage burst kritikal jarak jauh setiap kali menembakkan skill.',
+    pros: ['Jarak tembak pasif Double Shot sangat jauh dan menembus lurus', 'Skill 2 jaring memberikan efek immobilize dan melompat mundur', 'Konsisten sepanjang fase game'],
+    cons: ['Mobilitas hanya mengandalkan skill 2 berjarak pendek', 'Kalah adu attack speed murni vs trinity marksman di late game']
+  },
+  Cyclops: {
+    displayName: 'Cyclops',
+    title: 'Starsoul Magician',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.2%',
+    pickRate: '2.5%',
+    banRate: '1.8%',
+    summary: 'Penyihir bermata satu penembak bola planet Planets Attack bertubi-tubi dengan lifesteal sihir deras dan kuncian Star Power Lockdown.',
+    pros: ['Spam skill terus menerus berkat pasif pemangkas cooldown per hit', 'Star Power Lockdown mengunci assassin lincah tanpa meleset', 'Lifesteal sihir tebal'],
+    cons: ['Jangkauan serang relatif dekat untuk ukuran hero mage', 'Sangat boros mana jika tidak memiliki buff atau enchanted talisman']
+  },
+  Diggie: {
+    displayName: 'Diggie',
+    title: 'Timekeeper',
+    role: 'Support',
+    sec: null,
+    lane: 'Roamer',
+    tier: 'S+',
+    diff: 'Low',
+    winRate: '54.5%',
+    pickRate: '3.8%',
+    banRate: '31.2%',
+    summary: 'Burung hantu manipulasi waktu penyelamat tim yang membatalkan seluruh efek Crowd Control musuh dengan Ultimate Time Journey.',
+    pros: ['Time Journey memberikan imunitas CC mutlak dan shield raksasa ke seluruh rekan tim di sekitar', 'Bom burung Auto Alarm Bomb mengejutkan di semak', 'Tetap bergerak memberi visi saat mati'],
+    cons: ['Sangat rapuh jika terisolasi tanpa kawan', 'Damage bom menurun di fase akhir game']
+  },
+  Dyrroth: {
+    displayName: 'Dyrroth',
+    title: 'Prince of the Abyss',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'S',
+    diff: 'Low',
+    winRate: '52.7%',
+    pickRate: '4.9%',
+    banRate: '15.3%',
+    summary: 'Pangeran jurang pemecah zirah musuh hingga 75% dengan tebasan Abyssal Strike penghancur tank terkeras di early hingga mid game.',
+    pros: ['Mengurangi Physical Defense musuh hingga 75% dengan skill 2', 'Early game lane bully paling ditakuti di Exp Lane', 'Regen HP deras dari pasif Wrath of the Abyss'],
+    cons: ['Ultimate memiliki jeda delay animasi yang bisa dihindari dengan flicker/dash', 'Efektivitas menurun di teamfight late game 5v5']
+  },
+  Edith: {
+    displayName: 'Edith',
+    title: 'Forsaken Warden',
+    role: 'Tank',
+    sec: 'Marksman',
+    lane: 'Exp Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '52.9%',
+    pickRate: '3.5%',
+    banRate: '8.4%',
+    summary: 'Penjaga mecha raksasa Phylax yang dapat melontarkan pilot Edith keluar menjadi marksman petir berdaya tembak Magic Attack dahsyat.',
+    pros: ['Bentuk robot memiliki CC berantai tebal (bantingan dan airborne)', 'Mengubah seluruh Physical & Magic Defense menjadi Magic Power murni saat Ultimate', 'Sustain lifesteal kilat'],
+    cons: ['Sangat empuk saat keluar dari robot jika stack Wrath belum maksimal', 'Jangkauan tembakan mode Edith cukup terbatas']
+  },
+  Esmeralda: {
+    displayName: 'Esmeralda',
+    title: 'Poisoning Witch',
+    role: 'Mage',
+    sec: 'Tank',
+    lane: 'Exp Lane',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.4%',
+    pickRate: '2.4%',
+    banRate: '3.1%',
+    summary: 'Penari astrologi penghisap perisai lawan yang mengubah seluruh shield musuh menjadi perisai tebal milik dirinya sendiri.',
+    pros: ['Mengabaikan dan menyerap shield musuh (counter telak Harith, Angela, Lolita)', 'Movement speed sangat tinggi saat spam skill 1', 'Hybrid physical & magic damage'],
+    cons: ['Sangat rentan terhadap efek debuff anti-heal Dominance Ice', 'Kurang memiliki burst damage instan']
+  },
+  Estes: {
+    displayName: 'Estes',
+    title: 'Moon Elf King',
+    role: 'Support',
+    sec: null,
+    lane: 'Roamer',
+    tier: 'S',
+    diff: 'Low',
+    winRate: '53.0%',
+    pickRate: '4.3%',
+    banRate: '21.0%',
+    summary: 'Raja penyembuh peri bulan dengan berkat Moonlight Immersion yang menjaga seluruh darah tim tetap penuh di tengah badai teamfight.',
+    pros: ['Kapasitas heal area terbesar dalam game', 'Membentuk strategi gameplay grouping tak terkalahkan', 'Slow area luas dari Domain of Moon God'],
+    cons: ['Sangat di-counter oleh item anti-heal (Dominance Ice, Glowing Wand, Sea Halberd, Baxia)', 'Target empuk utama assassin flanking']
+  },
+  Eudora: {
+    displayName: 'Eudora',
+    title: 'Lightning Sorceress',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'B',
+    diff: 'Low',
+    winRate: '50.6%',
+    pickRate: '3.1%',
+    banRate: '2.5%',
+    summary: 'Penyihir petir ratu semak dengan kombo petir 2-3-1 yang mengeliminasi hero empuk lawan dalam sepersekian detik.',
+    pros: ['Kombo point-and-click stun tidak bisa meleset', 'Burst damage instan sangat mematikan dari semak-semak', 'Sangat mudah dimainkan pemula'],
+    cons: ['Mobilitas nol tanpa escape skill', 'Sangat tidak berdaya setelah seluruh kombo cooldown']
+  },
+  Fanny: {
+    displayName: 'Fanny',
+    title: 'Blade Dancer',
+    role: 'Assassin',
+    sec: null,
+    lane: 'Jungler',
+    tier: 'S+',
+    diff: 'Very High',
+    winRate: '54.1%',
+    pickRate: '3.2%',
+    banRate: '35.0%',
+    summary: 'Ratu kabel pembunuh paling lincah dan berkecepatan tertinggi di MLBB yang terbang membelah dinding map dan merobek lawan.',
+    pros: ['Mobilitas tercepat di seluruh game dengan Steel Cable', 'Burst damage awal game paling mengerikan', 'Sangat sulit ditangkap di tangan pemain ahli'],
+    cons: ['Mekanik tersulit di game Mobile Legends', 'Sangat bergantung pada Purple Buff; tanpa buff energinya langsung habis']
+  },
+  Faramis: {
+    displayName: 'Faramis',
+    title: 'Soul Binder',
+    role: 'Support',
+    sec: 'Mage',
+    lane: 'Mid Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '53.4%',
+    pickRate: '2.7%',
+    banRate: '15.8%',
+    summary: 'Penyihir bayangan penyelamat tim yang Nether Realm-nya memberi bar darah ekstra kebal kematian bagi seluruh kawan saat open war.',
+    pros: ['Nether Realm memberi extra HP bar bagi seluruh tim', 'Ghost Bursters menghasilkan ledakan pantulan masif pada kerumunan musuh', 'Menarik musuh dengan rantai bayangan'],
+    cons: ['Membutuhkan kawan yang tetap berada dalam lingkaran Nether Realm', 'Kurang efektif jika rekan tim bermain terpisah (split push)']
+  },
+  Floryn: {
+    displayName: 'Floryn',
+    title: 'Budding Hope',
+    role: 'Support',
+    sec: null,
+    lane: 'Roamer',
+    tier: 'S',
+    diff: 'Low',
+    winRate: '53.2%',
+    pickRate: '3.9%',
+    banRate: '17.4%',
+    summary: 'Gadis pembawa lentera bunga peri yang dapat memberikan item gratis ke kawan dan menyembuhkan seluruh tim di manapun mereka berada tanpa terhalang anti-heal.',
+    pros: ['Ultimate menyembuhkan seluruh kawan global dan menghapus efek anti-heal sementara', 'Memberikan slot item buff gratis Dew Lantern kepada hypercarry tim', 'Stun jarak jauh'],
+    cons: ['Satu slot item pribadinya terkunci oleh lentera bunga', 'Sangat rapuh saat diincar assassin musuh']
+  },
+  Franco: {
+    displayName: 'Franco',
+    title: 'Frozen Warrior',
+    role: 'Tank',
+    sec: 'Support',
+    lane: 'Roamer',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '51.7%',
+    pickRate: '6.5%',
+    banRate: '19.2%',
+    summary: 'Tank legendaris penculik dengan Iron Hook maut dan kuncian gigitan Bloody Hunt suppression yang tidak bisa dibatalkan oleh Purify sekalipun.',
+    pros: ['Kuncian Suppression mutlak menahan hero assassin paling lincah sekalipun', 'Iron Hook mampu menculik musuh dari balik tembok dan merusuh buff musuh', 'Movement speed tinggi'],
+    cons: ['Sangat bergantung pada akurasi tarikan hook', 'Bukan tipe tank pelindung garis depan yang tahan gempuran terus menerus']
+  },
+  Fredrinn: {
+    displayName: 'Fredrinn',
+    title: 'Rogue Appraiser',
+    role: 'Tank',
+    sec: 'Fighter',
+    lane: 'Jungler',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '53.6%',
+    pickRate: '4.9%',
+    banRate: '24.1%',
+    summary: 'Raja jungler tank kompetitif dengan pedang Crystal Core yang mengubah darah yang hilang menjadi damage tebasan Appraiser\'s Wrath pembalik keadaan.',
+    pros: ['Cooldown skill sangat singkat dengan taunt, airborne, dan slow beruntun', 'Appraiser\'s Wrath membalikkan teamfight dengan burst true damage raksasa', 'Sangat keras'],
+    cons: ['Damage Ultimate bergantung pada seberapa banyak Crystal Energy abu-abu yang terkumpul', 'Mobilitas terbatas pada dash pendek']
+  },
+  Freya: {
+    displayName: 'Freya',
+    title: 'Valkyrie',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '52.1%',
+    pickRate: '2.2%',
+    banRate: '4.0%',
+    summary: 'Dewi perang Valkyrie Descent dengan tebasan kapak suci berkecepatan tinggi yang tak henti-hentinya menghasilkan shield dan stun.',
+    pros: ['Shield tebal tiada henti dari spam skill 2 Spirit Combo', 'Serangan tebasan Valkyrie memiliki splash damage dan jangkauan luas', 'Sangat kuat dalam duel 1v1'],
+    cons: ['Sangat rentan terhadap kiting dan efek slow/disengage lawan', 'Jika skill 2 terputus tanpa target, serangannya melambat drastis']
+  },
+  Gatot: {
+    displayName: 'Gatotkaca',
+    title: 'Iron Bone',
+    role: 'Tank',
+    sec: 'Fighter',
+    lane: 'Exp Lane',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.9%',
+    pickRate: '2.8%',
+    banRate: '3.6%',
+    summary: 'Ksatria otot kawat tulang besi dari mitologi Nusantara yang semakin tebal dan semakin sakit tinjunya seiring berkurangnya darah.',
+    pros: ['Physical defense meningkat drastis saat darah berkurang berkat Steel Bones', 'Pukulan tinju pasif menghasilkan burst magic dan heal deras', 'Avatar of Guardian melompat jauh'],
+    cons: ['Animasi pendaratan Ultimate cukup lambat dan mudah dihindari lawan', 'Kalah lincah melawan hero berbasis true damage']
+  },
+  Gloo: {
+    displayName: 'Gloo',
+    title: 'Swamp Spirits',
+    role: 'Tank',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.8%',
+    pickRate: '1.4%',
+    banRate: '3.9%',
+    summary: 'Makhluk lendir rawa yang mampu membelah diri menjadi puluhan tetesan dan menempel di tubuh hero musuh untuk mengendalikan gerak mereka.',
+    pros: ['Menempel di tubuh hero musuh dan mengalihkan 80% damage ke target tersebut', 'Regenerasi darah sangat deras saat membelah diri', 'Immobilize beruntun'],
+    cons: ['Counter mutlak oleh hero dengan spell vamp/lifesteal splash seperti Faramis, Ruby, dan Vexana', 'Mudah dibunuh saat belum menempel']
+  },
+  Gord: {
+    displayName: 'Gord',
+    title: 'Professor of the Mystic',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'B',
+    diff: 'Low',
+    winRate: '50.3%',
+    pickRate: '1.8%',
+    banRate: '1.1%',
+    summary: 'Profesor sihir berselancar kosmik dengan sinar laser Mystic Gush yang membakar musuh dengan rentetan True Damage tanpa henti.',
+    pros: ['True Damage pasif melumerkan tank tebal dari kejauhan', 'Clear wave minion sangat cepat dengan bola bouncher', 'Laser berjangkauan panjang'],
+    cons: ['Berdiri diam tak bisa bergerak saat menembakkan laser Ultimate', 'Sangat mudah disergap oleh assassin lincah']
+  },
+  Granger: {
+    displayName: 'Granger',
+    title: 'Death Chanter',
+    role: 'Marksman',
+    sec: 'Assassin',
+    lane: 'Jungler',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.7%',
+    pickRate: '3.6%',
+    banRate: '4.8%',
+    summary: 'Penembak biola kematian dengan peluru ke-6 berkekuatan Critical pasti dan tembakan bazoka jarak jauh Death Sonata.',
+    pros: ['Mobilitas dash lincah dengan cooldown singkat', 'Peluru ke-6 selalu memberikan Critical Damage 100%', 'Death Sonata membidik musuh yang kabur sekarat'],
+    cons: ['Sangat mengandalkan akurasi bidikan Rhapsody', 'Damage menurun jika lawan menumpuk Physical Defense tebal']
+  },
+  Grock: {
+    displayName: 'Grock',
+    title: 'Fortress Titan',
+    role: 'Tank',
+    sec: 'Fighter',
+    lane: 'Roamer',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.4%',
+    pickRate: '1.9%',
+    banRate: '2.8%',
+    summary: 'Raksasa benteng batu yang kebal terhadap semua efek Crowd Control saat berada di dekat dinding dan menabrak musuh dengan Wild Charge dahsyat.',
+    pros: ['Kebal terhadap seluruh CC saat mengayunkan senjata di samping dinding', 'Physical Attack tinggi yang dikonversi dari Physical Defense', 'Mampu membuat dinding pemotong jalan'],
+    cons: ['Magic Defense bawaan rendah jika tidak membeli item pertahanan sihir', 'Salah memasang dinding dapat merugikan rekan setim']
+  },
+  Guinevere: {
+    displayName: 'Guinevere',
+    title: 'Ms. Violet',
+    role: 'Fighter',
+    sec: 'Mage',
+    lane: 'Exp Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '52.6%',
+    pickRate: '4.5%',
+    banRate: '13.9%',
+    summary: 'Nona bangsawan violet yang melompat menerbangkan musuh ke udara dengan Spatial Migration dan menari di udara dengan Violet Requiem.',
+    pros: ['Efek Airborne beruntun yang tidak bisa dibatalkan oleh Purify biasa saat di udara', 'Mobilitas lompat jauh menembus dinding', 'Burst magic damage sangat tinggi'],
+    cons: ['Jika lompatan Spatial Migration meleset, Guinevere rentan diserang balik', 'Mudah dibatalkan oleh skill knockback sebelum sempat melompat']
+  },
+  Gusion: {
+    displayName: 'Gusion',
+    title: 'Holy Blade',
+    role: 'Assassin',
+    sec: 'Mage',
+    lane: 'Jungler',
+    tier: 'A',
+    diff: 'High',
+    winRate: '51.2%',
+    pickRate: '4.8%',
+    banRate: '6.4%',
+    summary: 'Assassin belati cahaya dengan kecepatan tangan 10 belati Shadowblade Slaughter yang melenyapkan lawan dalam hitungan detik.',
+    pros: ['Burst damage magic instan tertinggi di early-mid game', 'Reset cooldown skill instan berkat Incandescence', 'Mobilitas teleportasi dagger sangat lincah'],
+    cons: ['Membutuhkan kecepatan jari dan akurasi tinggi', 'Sangat di-counter oleh item Radiant Armor dan Athena\'s Shield di late game']
+  },
+  Hanabi: {
+    displayName: 'Hanabi',
+    title: 'Scarlet Flower',
+    role: 'Marksman',
+    sec: null,
+    lane: 'Gold Lane',
+    tier: 'B',
+    diff: 'Low',
+    winRate: '50.8%',
+    pickRate: '5.2%',
+    banRate: '4.1%',
+    summary: 'Ninja wanita dengan kelopak bunga Petal Barrage yang memantul ke seluruh musuh dan shield pasif yang memberinya kekebalan terhadap Crowd Control.',
+    pros: ['Kebal terhadap seluruh Crowd Control selama memiliki shield pasif', 'Pantulan serangan dasar mengenai seluruh musuh dan turret', 'Teamfight 5v5 sangat nyaman'],
+    cons: ['Tidak memiliki skill blink/dash alami', 'Early game damage sangat rendah sebelum memiliki item core']
+  },
+  Hanzo: {
+    displayName: 'Hanzo',
+    title: 'Akakage Demon',
+    role: 'Assassin',
+    sec: null,
+    lane: 'Jungler',
+    tier: 'B',
+    diff: 'Medium',
+    winRate: '49.7%',
+    pickRate: '1.2%',
+    banRate: '1.5%',
+    summary: 'Ninja iblis pemakan creep jungle secara instan yang melepaskan bayangan iblis Kinjutsu Pinnacle Ninja untuk menyerang musuh dari jarak jauh.',
+    pros: ['Melahap monster jungle musuh secara instan dengan skill 1', 'Menyerang dari jarak super aman menggunakan tubuh iblis', 'DPS fisik sangat deras'],
+    cons: ['Tubuh asli yang ditinggalkan di semak sangat rentan dibunuh oleh assassin lawan', 'Sangat boros energi Demon Blood']
+  },
+  Harith: {
+    displayName: 'Harith',
+    title: 'Time Traveler',
+    role: 'Mage',
+    sec: 'Marksman',
+    lane: 'Gold Lane',
+    tier: 'S+',
+    diff: 'High',
+    winRate: '54.6%',
+    pickRate: '5.1%',
+    banRate: '32.4%',
+    summary: 'Penyihir kucing pelintas waktu yang melakukan Chrono Dash tanpa henti di atas karpet Zaman Force dengan shield dan burst damage tiada henti.',
+    pros: ['Dash tanpa henti dengan shield tebal dan serangan enhanced basic attack', 'Resistensi CC alami hingga 45%', 'Sangat mendominasi Gold Lane'],
+    cons: ['Membutuhkan penempatan posisi di dalam matriks Zaman Force', 'Rentan terhadap efek Suppression dan anti-shield Esmeralda']
+  },
+  Harley: {
+    displayName: 'Harley',
+    title: 'Mage Genius',
+    role: 'Mage',
+    sec: 'Assassin',
+    lane: 'Jungler',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.5%',
+    pickRate: '2.8%',
+    banRate: '5.6%',
+    summary: 'Pesulap cilik dengan lingkaran cincin maut Deadly Magic yang meledakkan target berdasarkan akumulasi tembakan kartu poker yang diterimanya.',
+    pros: ['Kombo kartu dan Deadly Magic meledakkan target tunggal seketika', 'Mobilitas topi Space Escape sangat lincah untuk mengecoh lawan', 'Farming jungle cepat'],
+    cons: ['Sangat mudah ditangkal oleh item Athena\'s Shield dan Radiant Armor', 'Hanya efektif menargetkan 1 musuh tunggal']
+  },
+  Hayabusa: {
+    displayName: 'Hayabusa',
+    title: 'Crimson Shadow',
+    role: 'Assassin',
+    sec: null,
+    lane: 'Jungler',
+    tier: 'S',
+    diff: 'High',
+    winRate: '52.9%',
+    pickRate: '3.9%',
+    banRate: '18.7%',
+    summary: 'Ninja bayangan bayangan Quad Shadow yang menebas target tunggal dengan Ougi: Shadow Kill tanpa bisa disentuh oleh musuh sama sekali.',
+    pros: ['Kebal penuh terhadap semua serangan saat menebas dengan Ultimate', 'Mobilitas 4 bayangan Quad Shadow sangat lincah untuk outplay dan kabur', 'Split push kuat'],
+    cons: ['Damage Ultimate terbagi jika ada banyak minion atau hero musuh lain di dekatnya', 'Sangat boros energi jika kombo bayangan meleset']
+  },
+  Helcurt: {
+    displayName: 'Helcurt',
+    title: 'Shadowbringer',
+    role: 'Assassin',
+    sec: null,
+    lane: 'Jungler',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '52.7%',
+    pickRate: '3.1%',
+    banRate: '15.9%',
+    summary: 'Monster pembunuh kegelapan yang membutakan pandangan seluruh map musuh dengan Dark Night Falls dan membungkam skill lawan secara instan.',
+    pros: ['Ultimate mematikan seluruh visi map musuh dan memberi movement speed gila', 'Efek silence mematikan skill musuh sebelum mereka sempat melawan', 'Burst sting masif'],
+    cons: ['Tubuh sangat rapuh jika terkena CC balik', 'Bergantung pada tumpukan stack Deadly Stinger']
+  },
+  Hilda: {
+    displayName: 'Hilda',
+    title: 'Power of Megalith',
+    role: 'Fighter',
+    sec: 'Tank',
+    lane: 'Roamer',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.6%',
+    pickRate: '2.1%',
+    banRate: '3.7%',
+    summary: 'Pendekar wanita penguasa semak-semak yang meregenerasi darah dan shield secara gratis di dalam semak dan merusuh jungler musuh sejak level 1.',
+    pros: ['Regenerasi HP dan shield gratis setiap masuk ke semak-semak', 'Perusuh jungle musuh paling menyebalkan di early game', 'Ultimate eksekusi tebasan tebal'],
+    cons: ['Efektivitas menurun drastis di area terbuka tanpa semak', 'Bukan hero pemenang teamfight late game 5v5']
+  },
+  Hylos: {
+    displayName: 'Hylos',
+    title: 'Grand Warden',
+    role: 'Tank',
+    sec: null,
+    lane: 'Roamer',
+    tier: 'S',
+    diff: 'Low',
+    winRate: '53.5%',
+    pickRate: '4.8%',
+    banRate: '26.8%',
+    summary: 'Centaur pelindung dengan HP tertinggi dalam game yang menggunakan darahnya sendiri saat mana habis dan membuka karpet Glorious Pathway super cepat.',
+    pros: ['Pool darah HP terbesar di antara semua hero MLBB', 'Glorious Pathway memberi kecepatan gerak masif bagi tim dan memperlambat musuh', 'Stun point-and-click'],
+    cons: ['Target paling empuk bagi pengguna Demon Hunter Sword dan hero true damage % HP', 'Mudah terkena kiting di awal']
+  },
+  Irithel: {
+    displayName: 'Irithel',
+    title: 'Jungle Heart',
+    role: 'Marksman',
+    sec: null,
+    lane: 'Gold Lane',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.4%',
+    pickRate: '2.6%',
+    banRate: '2.0%',
+    summary: 'Penunggang harimau Leo yang mampu menembakkan panah panah maut sambil terus berlari tanpa pernah menghentikan langkahnya.',
+    pros: ['Mampu menembak sambil bergerak bebas 360 derajat (kiting terbaik)', 'Serangan panah Ultimate memiliki efek ledakan area splash', 'Mengurangi armor lawan'],
+    cons: ['Jangkauan serang relatif pendek dibandingkan marksman sniper', 'Sangat empuk dan mudah diculik jika terkena efek stun']
+  },
+  Ixia: {
+    displayName: 'Ixia',
+    title: 'Arclight Outlaw',
+    role: 'Marksman',
+    sec: null,
+    lane: 'Gold Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '52.8%',
+    pickRate: '3.7%',
+    banRate: '8.9%',
+    summary: 'Penembak busur energi dengan kubah radar Full Barrage yang menghujani seluruh musuh dalam jangkauan kipas raksasa dengan lifesteal deras.',
+    pros: ['Ultimate Full Barrage menyerang seluruh musuh dalam area kipas raksasa sekaligus', 'Lifesteal alami sangat deras dari pasif Siphon Starlium', 'Teamfight choke-point mematikan'],
+    cons: ['Tidak bisa bergerak saat berada di dalam mode Full Barrage', 'Target empuk bagi assassin yang melompat ke belakang kubahnya']
+  },
+  Jawhead: {
+    displayName: 'Jawhead',
+    title: 'Steel Sweetheart',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Roamer',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.5%',
+    pickRate: '2.3%',
+    banRate: '3.0%',
+    summary: 'Robot tempur pelindung gadis kecil yang mampu melempar musuh ke arah rekan setim dengan skill Ejector dan menghujani rudal Smart Missiles.',
+    pros: ['Skill Ejector mampu melempar musuh atau mengamankan teman', 'Burst damage rudal early game sangat sakit', 'Inisiasi lock Ultimate menabrak target pasti'],
+    cons: ['Jika salah melempar kawan bisa menjadi blunder fatal', 'Efektivitas berkurang jika musuh selalu berkumpul rapat']
+  },
+  Johnson: {
+    displayName: 'Johnson',
+    title: 'Mustang',
+    role: 'Tank',
+    sec: 'Support',
+    lane: 'Roamer',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.3%',
+    pickRate: '4.6%',
+    banRate: '8.2%',
+    summary: 'Tank mobil balap penabrak yang bertransformasi menjadi kendaraan tempur cepat bersama 1 rekan penumpang untuk menabrak musuh di seluruh map.',
+    pros: ['Kemampuan menabrak tiba-tiba menciptakan kombo maut (bersama Odette/Kadita)', 'Perisai elektromagnetik pasif sangat tebal saat sekarat', 'Stun dan slow area'],
+    cons: ['Dapat dihindari jika musuh memiliki visi map yang baik', 'Mudah dibatalkan oleh dinding Grock atau es Aurora']
+  },
+  Joy: {
+    displayName: 'Joy',
+    title: 'Flash of Miracle',
+    role: 'Assassin',
+    sec: 'Mage',
+    lane: 'Exp Lane',
+    tier: 'S',
+    diff: 'High',
+    winRate: '53.4%',
+    pickRate: '2.8%',
+    banRate: '24.5%',
+    summary: 'Gadis petir Leonin yang melompat lincah mengikuti ketukan irama musik Meow Rhythm dengan kekebalan Crowd Control dan burst listrik dahsyat.',
+    pros: ['Kebal terhadap seluruh Crowd Control saat dash pas pada ketukan irama beat musik', 'Damage Ultimate Ha! Electrifying Beats melenyapkan barisan belakang lawan', 'Sangat lincah'],
+    cons: ['Membutuhkan ketepatan ritme musik (irama beat)', 'Jika dash meleset satu kali, Ultimate tidak dapat diaktifkan']
+  },
+  Julian: {
+    displayName: 'Julian',
+    title: 'Scarlet Raven',
+    role: 'Mage',
+    sec: 'Fighter',
+    lane: 'Jungler',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '53.1%',
+    pickRate: '3.9%',
+    banRate: '16.7%',
+    summary: 'Anak Raven tanpa ultimate biasa yang setiap kombinasi skill ke-3 nya bertransformasi menjadi jurus mematikan dengan kekebalan dan airborne.',
+    pros: ['Dapat mengakses skill tier 3 yang diperkuat sejak level 3', 'Skill 2 enhanced memberikan efek invulnerable kebal dari serangan', 'Lifesteal sihir pasif tebal'],
+    cons: ['Jangkauan serang tergolong pendek untuk kategori mage', 'Sangat bergantung pada timing kombinasi 3 skill']
+  },
+  Kadita: {
+    displayName: 'Kadita',
+    title: 'Ocean Goddess',
+    role: 'Mage',
+    sec: 'Assassin',
+    lane: 'Mid Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '52.7%',
+    pickRate: '3.4%',
+    banRate: '11.5%',
+    summary: 'Dewi laut selatan dengan ombak Rough Waves pembawa kekebalan CC dan semburan ombak maut yang menenggelamkan lawan dalam satu kombo petrify.',
+    pros: ['Kombo Petrify + Rough Waves menghasilkan burst damage area one-shot', 'Kebal CC dan pengurangan damage 50% saat menunggangi ombak skill 1', 'Pasif memulihkan 65% darah'],
+    cons: ['Jika kombo ombak meleset, Kadita rentan diserang saat ombak kembali', 'Cooldown Ultimate cukup panjang']
+  },
+  Kagura: {
+    displayName: 'Kagura',
+    title: 'Onmyouji Master',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'S',
+    diff: 'High',
+    winRate: '52.3%',
+    pickRate: '3.7%',
+    banRate: '7.8%',
+    summary: 'Master payung Seimei dengan mobilitas purifikasi alami terlengkap yang mampu mencicil, mengunci, dan meledakkan musuh dari jarak aman.',
+    pros: ['Skill 2 memiliki efek Purify alami bawaan untuk melepaskan diri dari stun', 'Burst damage payung Yin-Yang sangat mematikan bagi backline musuh', 'Jangkauan poke sangat jauh'],
+    cons: ['Mekanik payung membutuhkan kontrol posisi dan makro skill tinggi', 'Kurang efektif melawan hero yang menumpuk Magic Defense tebal']
+  },
+  Kaja: {
+    displayName: 'Kaja',
+    title: 'Nazar Commander',
+    role: 'Support',
+    sec: 'Fighter',
+    lane: 'Roamer',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.3%',
+    pickRate: '1.7%',
+    banRate: '3.5%',
+    summary: 'Komandan burung petir penyerap damage musuh dengan cambuk Divine Judgment yang mengikat dan menyeret carry musuh ke dalam barisan rekan.',
+    pros: ['Kuncian cambuk Suppression mutlak menyeret musuh tanpa bisa di-purify', 'Pasif mengurangi damage yang diberikan musuh hingga 32%', 'Inisiasi kilat'],
+    cons: ['Darah relatif lebih tipis dibandingkan tank murni', 'Sangat bergantung pada ketersediaan battle spell Flicker']
+  },
+  Karina: {
+    displayName: 'Karina',
+    title: 'Shadow Blade',
+    role: 'Assassin',
+    sec: 'Mage',
+    lane: 'Jungler',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.8%',
+    pickRate: '2.9%',
+    banRate: '4.7%',
+    summary: 'Assassin elf pembunuh berantai dengan pedang Shadowdance yang kebal terhadap semua basic attack fisik dan me-reset cooldown skill setiap kill.',
+    pros: ['Kebal 100% terhadap seluruh tembakan Basic Attack lawan dengan skill 1', 'Reset cooldown skill instan setiap kali mengeliminasi musuh', 'True damage pasif'],
+    cons: ['Sangat rentan terhadap hero burst sihir', 'Kurang memiliki mobilitas kabur jika tidak mendapatkan kill']
+  },
+  Karrie: {
+    displayName: 'Karrie',
+    title: 'Lost Star',
+    role: 'Marksman',
+    sec: null,
+    lane: 'Gold Lane',
+    tier: 'S+',
+    diff: 'Medium',
+    winRate: '53.9%',
+    pickRate: '5.4%',
+    banRate: '29.8%',
+    summary: 'Marksman penghancur tank terkuat dalam sejarah MLBB dengan lemparan roda Lightwheel Mark yang mencairkan musuh dengan 8-12% True Damage Max HP.',
+    pros: ['True Damage pasif menembus semua armor pertahanan tank dalam hitungan detik', 'Mobilitas dash Phantom Step sangat singkat (kurang dari 2 detik)', 'Bisa dibangun semi-tank'],
+    cons: ['Jangkauan tembakan menengah, butuh positioning kiting yang baik', 'Clear wave minion relatif lebih lambat di awal']
+  },
+  Khaleed: {
+    displayName: 'Khaleed',
+    title: 'Desert Scimitar',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'S',
+    diff: 'Low',
+    winRate: '52.4%',
+    pickRate: '2.8%',
+    banRate: '6.2%',
+    summary: 'Ksatria badai gurun dengan tebasan pedang pasir Desert Tornado berdamage awal game raksasa dan meditasi pasir penyembuh darah instan.',
+    pros: ['Damage putaran pedang skill 1 di early game sangat mematikan', 'Meditasi pasir memulihkan HP dan memberi reduksi damage 50%', 'Ultimate pasir melompat jauh dengan stun area'],
+    cons: ['Meditasi pasir dapat dibatalkan dengan mudah oleh efek stun musuh', 'Damage menurun di late game']
+  },
+  Khufra: {
+    displayName: 'Khufra',
+    title: 'Desert Tyrant',
+    role: 'Tank',
+    sec: 'Support',
+    lane: 'Roamer',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '52.8%',
+    pickRate: '4.1%',
+    banRate: '16.5%',
+    summary: 'Mumi tiran padang pasir yang memantul menjadi bola Bouncing Ball untuk menggagalkan semua skill dash musuh dan membanting mereka ke dinding.',
+    pros: ['Bouncing Ball menghentikan seluruh hero ber-skill blink/dash (Fanny, Lancelot, Harith, Benedetta)', 'Lompatan Tyrant\'s Revenge berjarak sangat jauh dari semak', 'Ultimate bantingan dinding'],
+    cons: ['Bouncing Ball tidak dapat menghentikan hero bertipe flicker teleport instan', 'Arah lompatan butuh kalkulasi timing presisi']
+  },
+  Kimmy: {
+    displayName: 'Kimmy',
+    title: 'Jetpack Rebel',
+    role: 'Marksman',
+    sec: 'Mage',
+    lane: 'Gold Lane',
+    tier: 'B',
+    diff: 'High',
+    winRate: '49.9%',
+    pickRate: '1.2%',
+    banRate: '1.0%',
+    summary: 'Gadis jetpack penembak kimiawi yang menembakkan peluru sembari bergerak bebas dengan kontrol dual-joystick unik.',
+    pros: ['Dapat menembak terus-menerus ke segala arah sambil terbang', 'Hybrid magic dan physical damage', 'Rudal jarak jauh Maximum Charge'],
+    cons: ['Kontrol bidikan ganda membutuhkan kebiasaan tangan', 'Sangat di-counter oleh Radiant Armor dan Blade Armor']
+  },
+  Lancelot: {
+    displayName: 'Lancelot',
+    title: 'Blade of Roses',
+    role: 'Assassin',
+    sec: null,
+    lane: 'Jungler',
+    tier: 'S',
+    diff: 'High',
+    winRate: '52.6%',
+    pickRate: '5.1%',
+    banRate: '14.2%',
+    summary: 'Ksatria anggar bermahkota mawar dengan tusukan Puncture tanpa batas dan tebasan segitiga Thorned Rose pembawa kekebalan tak tersentuh.',
+    pros: ['Puncture tanpa cooldown selama mengenai target baru dengan mark', 'Thorned Rose kebal terhadap semua serangan selama animasi tebasan', 'Burst damage fisik masif'],
+    cons: ['Jika Puncture meleset mengenai target tanpa mark, mobilitasnya langsung mati', 'Tingkat mikro mekanik tinggi']
+  },
+  Lapu: {
+    displayName: 'Lapu-Lapu',
+    title: 'Courageous Blade',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '52.7%',
+    pickRate: '3.6%',
+    banRate: '9.8%',
+    summary: 'Pahlawan suku pemberani dengan pedang kembar yang bertransformasi menjadi pedang raksasa pemotong pertempuran dengan imunitas CC penuh.',
+    pros: ['Kebal terhadap seluruh CC saat mengayunkan pedang raksasa Ultimate', 'Reduksi damage tebal dan shield terus menerus saat war', 'Mampu menjangkau backline musuh'],
+    cons: ['Kurang lincah di luar mode pedang berat Ultimate', 'Mudah di-kite jika Ultimate sudah selesai durasinya']
+  },
+  Layla: {
+    displayName: 'Layla',
+    title: 'Malefic Gunner',
+    role: 'Marksman',
+    sec: null,
+    lane: 'Gold Lane',
+    tier: 'B',
+    diff: 'Low',
+    winRate: '50.7%',
+    pickRate: '4.9%',
+    banRate: '2.1%',
+    summary: 'Gadis meriam malefic dengan jangkauan tembakan terjauh dalam game yang mampu menembak turret musuh dari luar jangkauan radar pertahanan.',
+    pros: ['Jangkauan serang terjauh di MLBB seiring bertambahnya level hero', 'Laser Destruction Rush berjarak satu layar penuh', 'Damage kritikal late game sangat masif'],
+    cons: ['Sama sekali tidak memiliki skill kabur/dash bawaan', 'Makanan empuk nomor satu bagi seluruh hero assassin']
+  },
+  Leomord: {
+    displayName: 'Leomord',
+    title: 'Sworn Sword',
+    role: 'Fighter',
+    sec: 'Assassin',
+    lane: 'Jungler',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.4%',
+    pickRate: '2.3%',
+    banRate: '3.5%',
+    summary: 'Ksatria berkuda kegelapan Barbiel yang selalu menghasilkan Critical Damage 100% pada musuh yang memiliki darah di bawah 50%.',
+    pros: ['Serangan selalu 100% Critical Damage pada musuh berdarah sekarat', 'Menaiki kuda Barbiel memberikan defense ekstra dan tebasan area luas', 'Pembersih teamfight cepat'],
+    cons: ['Sangat bergantung pada kuda Barbiel; jika kuda dihalau lawan, Leomord lemah', 'Rentan terkena hard CC saat memanggil kuda']
+  },
+  Lesley: {
+    displayName: 'Lesley',
+    title: 'Sniper',
+    role: 'Marksman',
+    sec: 'Assassin',
+    lane: 'Gold Lane',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.6%',
+    pickRate: '4.8%',
+    banRate: '6.5%',
+    summary: 'Penembak runduk siluman yang mengubah setiap tembakan kritikalnya menjadi True Damage mematikan penembus armor tertabal sekalipun.',
+    pros: ['Tembakan pasif menghasilkan True Damage kritikal murni hingga 2000+ per peluru', 'Kamuflase Master of Camouflage memberi kecepatan lari dan imunitas target', 'Ultimate pengunci musuh sekarat'],
+    cons: ['Sangat lemah di early game sebelum item Blade of Despair selesai', 'Attack speed lambat, bukan marksman DPS cepat']
+  },
+  Ling: {
+    displayName: 'Ling',
+    title: 'Cyan Finch',
+    role: 'Assassin',
+    sec: null,
+    lane: 'Jungler',
+    tier: 'S',
+    diff: 'Very High',
+    winRate: '53.5%',
+    pickRate: '3.8%',
+    banRate: '25.6%',
+    summary: 'Pendekar pedang finch yang berjalan di atas dinding map Land of Dawn dan melompat membelah langit dengan pedang Tempest of Blades.',
+    pros: ['Mampu melompat dan berjalan di atas semua dinding map', 'Ultimate Tempest of Blades memberi kekebalan penuh dan reset pedang instan', 'Split push tercepat'],
+    cons: ['Sangat boros energi lightness; membutuhkan Purple Buff mutlak', 'Tingkat kesulitan mikro dan kecepatan jari tinggi']
+  },
+  Lolita: {
+    displayName: 'Lolita',
+    title: 'Steel Elf',
+    role: 'Support',
+    sec: 'Tank',
+    lane: 'Roamer',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '53.8%',
+    pickRate: '2.9%',
+    banRate: '12.4%',
+    summary: 'Elf bertameng baja Guardian\'s Reflection yang memantulkan kembali seluruh proyektil peluru musuh (Chang\'e, Beatrix, Cyclops, Harley).',
+    pros: ['Tameng memantulkan kembali 100% proyektil serangan musuh ke penembaknya', 'Ultimate stun kerucut raksasa pembuka war', 'Shield gratis bagi rekan di dekatnya'],
+    cons: ['Channeling Ultimate dapat dibatalkan jika terkena stun di tengah jalan', 'Kurang efektif melawan hero berbasis serangan fisik jarak dekat melee']
+  },
+  Lunox: {
+    displayName: 'Lunox',
+    title: 'Twilight Goddess',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'S',
+    diff: 'High',
+    winRate: '53.2%',
+    pickRate: '3.6%',
+    banRate: '18.9%',
+    summary: 'Dewi senja keseimbangan cahaya dan kegelapan yang menembus 100% Magic Penetration untuk mencairkan tank atau kebal total dengan Brilliance.',
+    pros: ['Menembus Magic Defense lawan hingga mendekati 100% PEN dengan Chaos', 'Bentuk Brilliance kebal penuh dari segala jenis serangan dan CC', 'Penghancur tank nomor satu'],
+    cons: ['Membutuhkan pergantian mode cahaya dan kegelapan yang presisi', 'Jarak serang menengah']
+  },
+  'Luo Yi': {
+    displayName: 'Luo Yi',
+    title: 'Yin-Yang Geomancer',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'S',
+    diff: 'High',
+    winRate: '53.0%',
+    pickRate: '3.1%',
+    banRate: '14.2%',
+    summary: 'Geomancer Yin-Yang yang membenturkan hero-hero musuh satu sama lain dengan gaya magnetis dan mampu teleportasi 1 tim penuh dengan Diversion.',
+    pros: ['Reaksi Yin-Yang membenturkan musuh dan menghasilkan damage ledakan beruntun', 'Ultimate Diversion memindahkan seluruh rekan tim ke belakang formasi musuh', 'Early game damage sangat perih'],
+    cons: ['Membutuhkan kombinasi warna tanda Yin (kuning) dan Yang (ungu) yang tepat', 'Mudah diculik jika skill 1 meleset']
+  },
+  Lylia: {
+    displayName: 'Lylia',
+    title: 'Little Witch',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '52.7%',
+    pickRate: '3.5%',
+    banRate: '9.6%',
+    summary: 'Penyihir cilik Gloom bertopi runcing dengan ranjau ledakan beruntun dan tombol reset waktu Black Shoes pemulih seluruh darah dan mana.',
+    pros: ['Spam ledakan Shadow Energy beruntun dengan slow tebal', 'Ultimate Black Shoes mengembalikan darah, mana, dan sepatu ke 4 detik sebelumnya', 'Sangat dominan di early lane'],
+    cons: ['Bergantung pada tumpukan cadangan sepatu hitam untuk survivabilitas', 'Jangkauan skill menengah']
+  },
+  Martis: {
+    displayName: 'Martis',
+    title: 'Ashura King',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Jungler',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '53.1%',
+    pickRate: '4.6%',
+    banRate: '21.5%',
+    summary: 'Raja Ashura penakluk 3000 dunia dengan tebasan Mortal Coil kebal CC dan tebasan eksekusi Decimation pemenggal beruntun True Damage.',
+    pros: ['Mortal Coil kebal terhadap semua efek Crowd Control', 'Decimation mengeksekusi True Damage dan me-reset cooldown serta menambah MS 100% per kill', 'Sangat dominan di early-mid game'],
+    cons: ['Efektivitas menurun di late game jika musuh menumpuk pertahanan', 'Rentan jika tebasan Ultimate gagal membunuh target']
+  },
+  Masha: {
+    displayName: 'Masha',
+    title: 'Wild-oats Fist',
+    role: 'Fighter',
+    sec: 'Tank',
+    lane: 'Exp Lane',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.8%',
+    pickRate: '1.9%',
+    banRate: '5.4%',
+    summary: 'Prajurit beruang dengan 3 lapis bar HP yang mengorbankan darahnya sendiri untuk melepaskan pukulan penghancur turret dan pencakar carry lawan.',
+    pros: ['Memiliki 3 bar nyawa HP terpisah', 'Disarm mematikan Basic Attack marksman lawan selama 2 detik', 'Push turret dan turtle tercepat'],
+    cons: ['Penggunaan skill terus-menerus memakan darah sendiri', 'Membutuhkan positioning matang sebelum menerjang']
+  },
+  Mathilda: {
+    displayName: 'Mathilda',
+    title: 'Swift Plume',
+    role: 'Support',
+    sec: 'Assassin',
+    lane: 'Roamer',
+    tier: 'S+',
+    diff: 'Medium',
+    winRate: '54.2%',
+    pickRate: '4.1%',
+    banRate: '34.8%',
+    summary: 'Pemandu angin suku yang memberi skill terbang gratis bagi seluruh kawan dengan Guiding Wind dan terbang mengitari target dengan Circling Eagle.',
+    pros: ['Guiding Wind memberi dash gratis dan shield tebal bagi rekan tim', 'Circling Eagle mengunci musuh dari kejauhan dengan efek airborne stun', 'Damage burst sihir awal game tinggi'],
+    cons: ['Darah relatif empuk jika salah perhitungan terbang ke kerumunan musuh', 'Butuh rekan yang paham cara menekan tombol terbang']
+  },
+  Melissa: {
+    displayName: 'Melissa',
+    title: 'Cursed Needle',
+    role: 'Marksman',
+    sec: null,
+    lane: 'Gold Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '52.6%',
+    pickRate: '4.2%',
+    banRate: '11.0%',
+    summary: 'Gadis penjahit boneka santet Muddles yang memantulkan seluruh damage ke musuh dan kubah pelindung Cuddles penolak hero melee.',
+    pros: ['Kubah Cuddles memantulkan dan melarang hero melee mendekat', 'Boneka Muddles mentransfer seluruh pukulan jarum ke hero musuh di belakang minion', 'Attack speed sangat kencang'],
+    cons: ['Kubah tidak menghalau tembakan hero ranged musuh', 'Sangat bergantung pada peletakan boneka Muddles']
+  },
+  Minotaur: {
+    displayName: 'Minotaur',
+    title: 'Son of Minos',
+    role: 'Tank',
+    sec: 'Support',
+    lane: 'Roamer',
+    tier: 'S',
+    diff: 'Low',
+    winRate: '52.9%',
+    pickRate: '3.8%',
+    banRate: '14.0%',
+    summary: 'Banteng gempa perkasa dengan hantaman palu Minoan Fury yang melambungkan seluruh musuh ke udara dan memulihkan darah kawan di sekitarnya.',
+    pros: ['Minoan Fury memberikan 3 kali guncangan gempa airborne area raksasa', 'Heal area memulihkan darah dan menambah attack speed kawan', 'Mengurangi defense musuh'],
+    cons: ['Animasi palu membutuhkan positioning di tengah-tengah formasi musuh', 'Mobilitas standar']
+  },
+  Minsitthar: {
+    displayName: 'Minsitthar',
+    title: 'Courageous Warrior',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.9%',
+    pickRate: '2.5%',
+    banRate: '7.8%',
+    summary: 'Raja tombak emas yang menarik musuh dengan Spear of Glory dan arena King\'s Calling yang mengunci seluruh skill dash & blink lawan.',
+    pros: ['King\'s Calling melarang semua musuh di dalam arena menggunakan skill blink, dash, dan flicker', 'Tombak menarik hero musuh dari balik barisan', 'Tameng stun tangguh'],
+    cons: ['Sangat mengandalkan musuh yang bertumpu pada skill dash', 'Damage menengah dibandingkan fighter murni']
+  },
+  Miya: {
+    displayName: 'Miya',
+    title: 'Moonlight Archer',
+    role: 'Marksman',
+    sec: null,
+    lane: 'Gold Lane',
+    tier: 'B',
+    diff: 'Low',
+    winRate: '50.4%',
+    pickRate: '4.7%',
+    banRate: '1.9%',
+    summary: 'Pemanah bulan pemanah panah ganda dengan jurus menghilang Moonlight Shadow pembawa efek Purify dan attack speed kilat di late game.',
+    pros: ['Ultimate menghilang dan menghapus seluruh Crowd Control secara instan', 'Attack speed dan panah ganda melumat tim musuh dalam 2 detik di late game', 'Sangat mudah dipahami'],
+    cons: ['Sangat lemah di early game dan mudah di-gank', 'Sangat bergantung pada item core']
+  },
+  Moskov: {
+    displayName: 'Moskov',
+    title: 'Spear of Quiescence',
+    role: 'Marksman',
+    sec: null,
+    lane: 'Gold Lane',
+    tier: 'S+',
+    diff: 'Medium',
+    winRate: '53.7%',
+    pickRate: '6.2%',
+    banRate: '28.9%',
+    summary: 'Penombak bayangan penembus formasi dengan pasif tombak tembus ke belakang, pin dinding stun maut, dan tombak global Spear of Destruction.',
+    pros: ['Serangan tombak menembus musuh ke belakang (DPS area tertinggi)', 'Abyss Fissure stun ke dinding hingga 1.5 detik', 'Tombak Ultimate menjangkau ujung map dan bisa teleportasi langsung ke target'],
+    cons: ['Jarak tembak dasar pendek dibandingkan marksman lain', 'Sangat boros mana di early game']
+  },
+  Nana: {
+    displayName: 'Nana',
+    title: 'Sweet Leonin',
+    role: 'Mage',
+    sec: 'Support',
+    lane: 'Mid Lane',
+    tier: 'S',
+    diff: 'Low',
+    winRate: '52.8%',
+    pickRate: '5.9%',
+    banRate: '17.8%',
+    summary: 'Gadis peri rubah menggemaskan dengan boneka Molina pengubah musuh jadi kelinci tak berdaya dan pasif nyawa kedua Molina\'s Blessing.',
+    pros: ['Pasif nyawa kedua memberi kekebalan maut saat darah habis dan lari kencang', 'Molina mengutuk musuh menjadi kelinci pelumpuh skill', 'Jejak kaki raksasa Ultimate burst area luas'],
+    cons: ['Bidikan bumerang dapat dihindari lawan lincah', 'Kurang memiliki mobilitas aktif selain pasifnya']
+  },
+  Natalia: {
+    displayName: 'Natalia',
+    title: 'Bright Claw',
+    role: 'Assassin',
+    sec: null,
+    lane: 'Roamer',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.7%',
+    pickRate: '2.1%',
+    banRate: '8.4%',
+    summary: 'Pembunuh bayangan cakar tak terlihat yang mengintai di semak-semak untuk membungkam dan mengeksekusi marksman musuh dari belakang.',
+    pros: ['Status Conceal stealth alami menjadikannya teror tak terlihat di map', 'Efek Silence membungkam musuh sebelum mereka sempat memencet skill', 'Asap Smoke Bomb kebal basic attack'],
+    cons: ['Sangat lemah jika terdeteksi sebelum sempat mendekat', 'Sulit berkontribusi dalam war terbuka 5v5']
+  },
+  Natan: {
+    displayName: 'Natan',
+    title: 'Spacetime Walker',
+    role: 'Marksman',
+    sec: 'Mage',
+    lane: 'Gold Lane',
+    tier: 'S',
+    diff: 'High',
+    winRate: '53.0%',
+    pickRate: '3.8%',
+    banRate: '16.4%',
+    summary: 'Penjelajah waktu dengan proyektil bumerang Magic Damage dan klon bayangan Entropy? yang melipatgandakan seluruh tembakan serangannya.',
+    pros: ['Seluruh tembakan marksman berupa Magic Damage 100% yang sangat sakit', 'Klon bayangan Entropy menduplikasi seluruh serangan dan skill', 'Attack speed pasif sangat cepat'],
+    cons: ['Tidak memiliki skill escape murni selain bertukar tempat dengan klon', 'Sangat di-counter oleh Radiant Armor dan Athena\'s Shield']
+  },
+  Novaria: {
+    displayName: 'Novaria',
+    title: 'Star Rebel',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '53.3%',
+    pickRate: '4.2%',
+    banRate: '19.8%',
+    summary: 'Pemberontak bintang penembak proyektil Astral Recall terjauh yang membuka seluruh visi semak musuh dan menembus dinding map dengan bebas.',
+    pros: ['Menembus dinding map dan mendapat movement speed masif dengan skill 2', 'Astral Recall menembak musuh dari 2 layar jarak jauh', 'Ultimate Astral Echo membuka semak dan memperbesar hitbox musuh'],
+    cons: ['Membutuhkan akurasi bidikan sniper tinggi', 'Kurang memiliki burst damage jarak dekat jika disergap']
+  },
+  Odette: {
+    displayName: 'Odette',
+    title: 'Swan Princess',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.8%',
+    pickRate: '3.4%',
+    banRate: '4.5%',
+    summary: 'Putri angsa dengan nyanyian sihir Swan Song berkubah luas yang menghujani musuh dengan ratusan not balok mematikan dan shield tebal.',
+    pros: ['Swan Song memiliki radius area burst sihir terluas dalam game', 'Mendapatkan shield tebal dan lompatan dash kecil saat mengaktifkan Ultimate', 'Kombo maut bersama Johnson'],
+    cons: ['Nyanyian Ultimate dapat dibatalkan seketika oleh efek crowd control airborne/freeze/stun', 'Mobilitas dasar rendah']
+  },
+  Paquito: {
+    displayName: 'Paquito',
+    title: 'The Heavenly Fist',
+    role: 'Fighter',
+    sec: 'Assassin',
+    lane: 'Exp Lane',
+    tier: 'S',
+    diff: 'High',
+    winRate: '52.8%',
+    pickRate: '4.7%',
+    banRate: '14.5%',
+    summary: 'Petinju surga dengan kombo rantai pukulan Champ Stance tanpa cooldown yang meremukkan lawan dengan kombinasi jab dan uppercut cepat.',
+    pros: ['Mekanik Champ Stance me-reset cooldown skill untuk kombo tinju ganda', 'Damage burst fisik dan shield tebal tiada henti', 'Sangat lincah bermanuver'],
+    cons: ['Membutuhkan perhitungan stack Champ Stance yang matang', 'Rentan terkena burst jika kombo tinju meleset']
+  },
+  Pharsa: {
+    displayName: 'Pharsa',
+    title: 'Wings of Vengeance',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '52.7%',
+    pickRate: '3.9%',
+    banRate: '11.8%',
+    summary: 'Penyihir gagak pembom udara dengan 4 tembakan bom Feathered Air Strike berdaya ledak raksasa dan terbang menjadi burung menembus rintangan.',
+    pros: ['Feathered Air Strike menguasai seluruh pertempuran objektif dari jarak super aman', 'Wings by Wings terbang menembus dinding dengan kecepatan tinggi', 'Zoning terbaik di MLBB'],
+    cons: ['Berdiri diam di tempat saat menembakkan bom udara', 'Sangat mudah diculik jika assassin musuh berhasil memutar ke belakang']
+  },
+  Phoveus: {
+    displayName: 'Phoveus',
+    title: 'Shadow of Dread',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.5%',
+    pickRate: '1.6%',
+    banRate: '3.8%',
+    summary: 'Prajurit rantai pemangsa kelincahan yang secara otomatis melompat menimpa musuh setiap kali ada hero lawan yang melakukan dash atau blink.',
+    pros: ['Counter mutlak seluruh hero lincah ber-dash (Wanwan, Harith, Benedetta, Chou)', 'Mendapatkan shield tebal setiap kali melompat', 'Damage magic area tinggi'],
+    cons: ['Sangat tidak berdaya jika tim musuh tidak memiliki hero dengan skill dash/blink', 'Serangan mudah dihindari musuh statis']
+  },
+  Popol: {
+    displayName: 'Popol and Kupa',
+    title: 'Hunting Partners',
+    role: 'Marksman',
+    sec: null,
+    lane: 'Gold Lane',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.9%',
+    pickRate: '2.5%',
+    banRate: '4.2%',
+    summary: 'Duet bocah pemburu dan serigala Kupa pelindung yang mampu mengamankan vision dengan jebakan perangkap dan mematikan musuh dengan gigitan serigala.',
+    pros: ['Serigala Kupa menjadi tameng badan dan penyerang garis depan', 'Perangkap trap memberi vision semak gratis dan efek beku/immobilize', 'Push turret tercepat'],
+    cons: ['Popol sangat lemah dan rapuh jika serigala Kupa mati', 'Butuh waktu untuk memanggil kembali Kupa']
+  },
+  Rafaela: {
+    displayName: 'Rafaela',
+    title: 'Wings of Healing',
+    role: 'Support',
+    sec: null,
+    lane: 'Roamer',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.8%',
+    pickRate: '2.4%',
+    banRate: '2.5%',
+    summary: 'Bidadari penyembuh pembawa berkat Holy Healing yang memberikan tambahan kecepatan gerak konstan bagi seluruh tim dan mendeteksi semak.',
+    pros: ['Holy Healing memberi boost movement speed kencang bagi tim terus menerus', 'Light of Retribution mendeteksi musuh di semak tanpa meleset', 'Holy Baptism stun lurus'],
+    cons: ['Jumlah heal per detik lebih kecil dibandingkan Estes atau Floryn', 'Sangat rapuh jika terisolasi']
+  },
+  Roger: {
+    displayName: 'Roger',
+    title: 'Dire Wolf Hunter',
+    role: 'Fighter',
+    sec: 'Marksman',
+    lane: 'Gold Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '53.1%',
+    pickRate: '4.8%',
+    banRate: '18.9%',
+    summary: 'Pemburu serigala bertransformasi ganda yang menembakkan senapan marksman untuk mencicil lalu berubah menjadi serigala buas pelompat mangsa.',
+    pros: ['Sangat fleksibel berganti wujud antara marksman jarak jauh dan serigala finisher', 'Movement speed serigala sangat kencang mengejar musuh sekarat', 'Sangat mematikan di Gold Lane'],
+    cons: ['Bentuk serigala butuh masuk ke jarak dekat berisiko tinggi', 'Rentan terkena hard CC saat melompat masuk']
+  },
+  Ruby: {
+    displayName: 'Ruby',
+    title: 'Little Red Hood',
+    role: 'Fighter',
+    sec: 'Tank',
+    lane: 'Exp Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '53.4%',
+    pickRate: '5.2%',
+    banRate: '17.6%',
+    summary: 'Gadis bertudung merah pembawa sabit raksasa penguasa lifesteal tiada henti dengan lompatan dash pasif dan tarikan sabit I\'m Offended!.',
+    pros: ['Spell vamp lifesteal luar biasa deras dari setiap tebasan skill', 'Seluruh skill memberikan efek Crowd Control (slow, stun, hook)', 'Dash lincah setelah setiap skill'],
+    cons: ['Sangat terganggu jika musuh membuat item anti-heal Dominance Ice dan Sea Halberd', 'Damage burst tidak setinggi assassin murni']
+  },
+  Saber: {
+    displayName: 'Saber',
+    title: 'Spacetime Sword',
+    role: 'Assassin',
+    sec: null,
+    lane: 'Jungler',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.4%',
+    pickRate: '3.9%',
+    banRate: '8.5%',
+    summary: 'Ksatria pedang pedang terbang pemburu carry dengan kuncian Triple Sweep point-and-click di udara yang mengeksekusi musuh tanpa ampun.',
+    pros: ['Triple Sweep mengunci target pasti ke udara tanpa bisa meleset', 'Pasif mengikis Physical Defense musuh hingga 40 poin', 'Sangat ditakuti marksman dan mage'],
+    cons: ['Setelah kombo Ultimate keluar, Saber mudah dibunuh jika kawan musuh berkumpul', 'Sangat mudah ditangkal oleh item Wind of Nature dan Antique Cuirass']
+  },
+  Selena: {
+    displayName: 'Selena',
+    title: 'Abyssal Witch',
+    role: 'Assassin',
+    sec: 'Mage',
+    lane: 'Mid Lane',
+    tier: 'A',
+    diff: 'Very High',
+    winRate: '50.9%',
+    pickRate: '2.1%',
+    banRate: '6.2%',
+    summary: 'Penyihir jurang pembawa lele panah Abyssal Arrow dengan durasi stun terlama di game (hingga 3 detik) dan cakaran iblis mematikan.',
+    pros: ['Abyssal Arrow memberikan stun hingga 3 detik penuh dari jarak jauh', 'Jebakan Abyssal Trap memberi penglihatan semak permanen', 'Burst damage awal game mengerikan'],
+    cons: ['Tingkat kesulitan bidikan panah sangat tinggi', 'Efektivitas menurun drastis di late game pertempuran 5v5']
+  },
+  Silvanna: {
+    displayName: 'Silvanna',
+    title: 'Imperial Knightess',
+    role: 'Fighter',
+    sec: 'Mage',
+    lane: 'Exp Lane',
+    tier: 'B',
+    diff: 'Low',
+    winRate: '50.6%',
+    pickRate: '1.5%',
+    banRate: '1.2%',
+    summary: 'Ksatria wanita kekaisaran dengan tombak Imperial Justice yang mengurung hero lawan dalam lingkaran duel tanpa bisa kabur.',
+    pros: ['Imperial Justice mengurung musuh dalam lingkaran tanpa bisa keluar selama 3.5 detik', 'Spiral Strangling menghasilkan magic lifesteal dan serangan beruntun', 'Stun skill 1 cepat'],
+    cons: ['Putaran tombak mudah dibatalkan oleh efek stun musuh', 'Kurang efektif jika musuh memiliki imunitas CC']
+  },
+  Sun: {
+    displayName: 'Sun',
+    title: 'Monkey King',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'B',
+    diff: 'Low',
+    winRate: '50.8%',
+    pickRate: '2.2%',
+    banRate: '2.0%',
+    summary: 'Raja kera pembuat klon bayangan ganda yang merontokkan armor pertahanan lawan dan menghancurkan turret serta Lord dalam sekejap mata.',
+    pros: ['Menciptakan hingga 2 klon tubuh tambahan untuk membingungkan musuh', 'Mengurangi physical defense musuh hingga 32% secara pasif', 'Pengambil objektif tercepat'],
+    cons: ['Klon memberi lifesteal gratis bagi hero musuh berkemampuan vamp seperti Ruby dan Balmond', 'Kurang berguna di war terbuka 5v5']
+  },
+  Terizla: {
+    displayName: 'Terizla',
+    title: 'Executioner',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'S+',
+    diff: 'Low',
+    winRate: '54.0%',
+    pickRate: '5.6%',
+    banRate: '27.4%',
+    summary: 'Algojo palu raksasa terkeras di Land of Dawn dengan reduksi damage pasif hingga 35% dan rantai pengikat Penalty Zone penahan formasi war.',
+    pros: ['Body Guard pasif memberi reduksi damage hingga 35% saat darah sekarat', 'Penalty Zone mengikat dan menarik seluruh musuh berulang kali', 'Tebasan palu sangat sakit'],
+    cons: ['Kecepatan ayunan palu lambat', 'Rentan terkena kiting oleh hero berjarak serang jauh']
+  },
+  Thamuz: {
+    displayName: 'Thamuz',
+    title: 'Lord Lava',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.9%',
+    pickRate: '2.7%',
+    banRate: '3.8%',
+    summary: 'Raja lava neraka dengan lemparan sabit berputar Grand Lord Lava yang menghasilkan semburan True Damage dan regenerasi darah tiada henti.',
+    pros: ['Semburan True Damage terus menerus saat sabit kembali', 'Regen darah sangat deras saat Ultimate Cauterant Inferno aktif', 'Duelist early game tak terkalahkan'],
+    cons: ['Kurang memiliki efek Hard CC untuk menghentikan musuh kabur', 'Mudah di-counter oleh item anti-heal']
+  },
+  Tigreal: {
+    displayName: 'Tigreal',
+    title: 'Warrior of Dawn',
+    role: 'Tank',
+    sec: 'Support',
+    lane: 'Roamer',
+    tier: 'S',
+    diff: 'Low',
+    winRate: '53.1%',
+    pickRate: '6.4%',
+    banRate: '28.0%',
+    summary: 'Ksatria pelindung fajar dengan dorongan Sacred Hammer dan pusaran magnet Implosion penarik 5 musuh sekaligus dalam kombo Flicker maut.',
+    pros: ['Kombo Flicker + Implosion mampu membalikkan jalannya pertandingan dalam 1 momen', 'Dorongan Sacred Hammer mendorong musuh masuk ke turret kawan', 'Pasif kebal basic attack'],
+    cons: ['Channeling Implosion dapat dibatalkan jika terkena stun cepat sebelum pusaran meledak', 'Sangat bergantung pada ketersediaan Flicker']
+  },
+  Uranus: {
+    displayName: 'Uranus',
+    title: 'Aethereal Defender',
+    role: 'Tank',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.7%',
+    pickRate: '2.1%',
+    banRate: '2.9%',
+    summary: 'Pengawal langit penimbun 20 stack Radiance yang meregenerasi darahnya sendiri hingga ribuan HP per detik tanpa perlu kembali ke base.',
+    pros: ['Regenerasi darah pasif tertinggi di MLBB; nyaris tidak pernah recall ke base', 'Zoning lane dan menahan tembakan musuh dengan sangat kuat', 'Movement speed tinggi'],
+    cons: ['Sama sekali tidak memiliki skill Hard CC (hanya slow)', 'Rentan terhadap anti-heal dan hero burst sihir']
+  },
+  Vale: {
+    displayName: 'Vale',
+    title: 'Windtalker',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.5%',
+    pickRate: '3.6%',
+    banRate: '4.2%',
+    summary: 'Pengendali badai angin yang skillnya berevolusi setiap naik level dengan pusaran angin topan Windstorm penarik dan pelontar musuh.',
+    pros: ['Pusaran angin topan menarik dan melambungkan musuh dalam area luas', 'Movement speed pasif bertambah setiap assist atau kill', 'Burst damage angin masif'],
+    cons: ['Skill membutuhkan akurasi prediksi arah gerak lawan', 'Sangat empuk jika didekati assassin lincah']
+  },
+  Valentina: {
+    displayName: 'Valentina',
+    title: 'Prophetess of Primal',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'S+',
+    diff: 'High',
+    winRate: '53.6%',
+    pickRate: '4.8%',
+    banRate: '32.1%',
+    summary: 'Penyihir ratu bayangan yang mampu mencuri dan menggunakan Ultimate hero musuh manapun (I am You) serta menguras EXP lawan.',
+    pros: ['Mampu mencuri Ultimate musuh terkuat (Tigreal, Atlas, Faramis, Yu Zhong)', 'Dash ganda Shadow Strike lincah dengan efek terror CC', 'Mendapat bonus EXP ekstra'],
+    cons: ['Efektivitas bergantung pada Ultimate apa yang dimiliki oleh draft tim musuh', 'Kurang maksimal jika musuh tidak memiliki Ultimate pembuka war yang bagus']
+  },
+  Valir: {
+    displayName: 'Valir',
+    title: 'Son of Flames',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'A',
+    diff: 'Low',
+    winRate: '51.8%',
+    pickRate: '3.2%',
+    banRate: '7.5%',
+    summary: 'Pengendali api penolak serbuan jarak dekat dengan bola api Burst Fireball beruntun, dorongan Searing Torrent, dan Purify alami Vengeance Flame.',
+    pros: ['Ultimate Vengeance Flame memberikan efek Purify alami bawaan', 'Dorongan api memukul mundur seluruh hero melee yang mencoba mendekat', 'Efek slow dan bakar tiada henti'],
+    cons: ['Jangkauan serang menengah', 'Rentan terhadap hero sniper jarak jauh seperti Pharsa dan Novaria']
+  },
+  Vexana: {
+    displayName: 'Vexana',
+    title: 'Sharna Necromancer',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'S',
+    diff: 'Low',
+    winRate: '53.4%',
+    pickRate: '6.1%',
+    banRate: '21.0%',
+    summary: 'Ratu necromancer pemanggil Undead Knight raksasa yang membanting musuh dengan airborne stun dan ledakan kutukan berantai Nether Curse.',
+    pros: ['Undead Knight raksasa menahan tembakan musuh dan mengincar carry lawan otomatis', 'Clear wave minion kilat berkat ledakan Nether Curse', 'Terrify CC area'],
+    cons: ['Animasi skill memerlukan prediksi arah gerak lawan', 'Mobilitas standar tanpa escape dash']
+  },
+  Wanwan: {
+    displayName: 'Wanwan',
+    title: 'Agile Tiger',
+    role: 'Marksman',
+    sec: null,
+    lane: 'Gold Lane',
+    tier: 'S',
+    diff: 'Very High',
+    winRate: '53.8%',
+    pickRate: '3.9%',
+    banRate: '26.4%',
+    summary: 'Gadis lincah klan harimau yang melompat pada setiap tembakan panah dan membantai seluruh musuh di udara dengan Crossbow of Tang tak tersentuh.',
+    pros: ['Kebal 100% terhadap semua serangan saat terbang menembakkan Crossbow of Tang', 'Purify alami bawaan dari skill 2 Needles in Flowers', 'Melompat lincah di setiap hit'],
+    cons: ['Harus memecahkan 3 titik kelemahan (weakness mark) sebelum Ultimate bisa ditekan', 'Rentan terhadap item defense Winter Truncheon dan Wind of Nature']
+  },
+  Xavier: {
+    displayName: 'Xavier',
+    title: 'Defier of Light',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '53.1%',
+    pickRate: '4.5%',
+    banRate: '15.6%',
+    summary: 'Pemberontak ordo cahaya dengan laser global Dawning Light menembus seluruh map dan kombinasi kurungan cahaya Mystic Field immobilize.',
+    pros: ['Laser Ultimate Dawning Light berjangkauan global dari ujung map ke ujung map', 'Tahap Transcendence memperluas skill dan memotong cooldown', 'Immobilize kurungan area'],
+    cons: ['Mobilitas rendah tanpa skill kabur', 'Sangat mudah disergap jika kurungan cahaya meleset']
+  },
+  Yin: {
+    displayName: 'Yin',
+    title: 'Martial Genius',
+    role: 'Fighter',
+    sec: 'Assassin',
+    lane: 'Exp Lane',
+    tier: 'A',
+    diff: 'Medium',
+    winRate: '51.4%',
+    pickRate: '4.2%',
+    banRate: '16.8%',
+    summary: 'Pendekar jenius yang menculik satu hero musuh ke dimensi ring duel My Turn! dan bertransformasi menjadi iblis Lieh berdaya hantam mematikan.',
+    pros: ['Menculik hero carry musuh ke dimensi ring 1v1 terpisah selama 8 detik', 'Bentuk Lieh memiliki stun dan hantaman Frenzy Strike raksasa', 'Mengisolasi carry dari pengawalan tank'],
+    cons: ['Bisa di-counter di dalam ring dengan Wind of Nature, Winter Truncheon, atau lari berputar', 'Rentan diserbu teman musuh setelah keluar ring']
+  },
+  Yss: {
+    displayName: 'Yi Sun-shin',
+    title: 'Paenlong Legend',
+    role: 'Assassin',
+    sec: 'Marksman',
+    lane: 'Jungler',
+    tier: 'A',
+    diff: 'High',
+    winRate: '51.6%',
+    pickRate: '1.8%',
+    banRate: '2.5%',
+    summary: 'Laksamana armada kura-kura pemanah dan pedang yang memanggil hujan meteor meriam Mountain Shocker global untuk membuka posisi musuh.',
+    pros: ['Mountain Shocker menghujani seluruh musuh di map dan membuka visi keberadaan mereka', 'Pergantian senjata pedang dan panah menghasilkan 100% Critical Damage', 'Kapal kura-kura super cepat'],
+    cons: ['Membutuhkan mikro pergantian jarak serang pedang dan panah secara ritmis', 'Sangat bergantung pada momentum snowball awal']
+  },
+  Yve: {
+    displayName: 'Yve',
+    title: 'Astrowarden',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'S',
+    diff: 'High',
+    winRate: '52.9%',
+    pickRate: '2.9%',
+    banRate: '11.0%',
+    summary: 'Penjaga galaksi papan catur Real World Manipulation yang memperlambat musuh hingga 90% dan mendikte jalannya seluruh peperangan.',
+    pros: ['Kubah catur Real World Manipulation memberikan slow area 90% dan zoning terbesar', 'Mendapatkan shield tebal dan kebal airborne saat Ultimate aktif', 'Pembersih pertempuran tim terbaik'],
+    cons: ['Ultimate dapat dibatalkan oleh efek CC Suppression', 'Berdiri diam di tempat saat menekan papan catur']
+  },
+  Yz: {
+    displayName: 'Yu Zhong',
+    title: 'Black Dragon',
+    role: 'Fighter',
+    sec: null,
+    lane: 'Exp Lane',
+    tier: 'S+',
+    diff: 'Medium',
+    winRate: '54.2%',
+    pickRate: '6.1%',
+    banRate: '31.5%',
+    summary: 'Naga hitam penguasa langit yang terbang menjadi Black Dragon Form kebal CC, menabrak barisan belakang musuh, dan menghisap darah Sha Essence.',
+    pros: ['Terbang menjadi naga hitam raksasa kebal semua CC menembus langsung ke carry lawan', 'Sha Essence pasif menyedot darah musuh dan memulihkan HP Yu Zhong', 'Penguasa Exp Lane terkuat'],
+    cons: ['Jeda sebelum naga mendarat memberi waktu bagi musuh bersiap', 'Mudah terkena kiting di luar bentuk naga']
+  },
+  Zhask: {
+    displayName: 'Zhask',
+    title: 'Planes Dominator',
+    role: 'Mage',
+    sec: null,
+    lane: 'Mid Lane',
+    tier: 'S',
+    diff: 'Medium',
+    winRate: '53.1%',
+    pickRate: '4.6%',
+    banRate: '19.4%',
+    summary: 'Penguasa serangga alien pemanggil menara Nightmaric Spawn raksasa yang menyatu ke dalam tubuh serangga dengan kekebalan dan tembakan sinar mematikan.',
+    pros: ['Menyatu ke dalam tubuh alien Nightmaric Spawn raksasa kebal serangan fisik instan', 'Laser serangga memiliki DPS dan slow sangat tinggi', 'Sangat kuat dalam adu tembak statis'],
+    cons: ['Kurang lincah saat alien tidak dipanggil', 'Mudah dihindari jika musuh mundur keluar jangkauan tembak alien']
+  },
+  Zilong: {
+    displayName: 'Zilong',
+    title: 'Spear of Dragon',
+    role: 'Fighter',
+    sec: 'Assassin',
+    lane: 'Exp Lane',
+    tier: 'B',
+    diff: 'Low',
+    winRate: '50.2%',
+    pickRate: '3.8%',
+    banRate: '1.4%',
+    summary: 'Ksatria tombak naga berlari kencang Supreme Warrior yang mencungkil musuh ke belakang dan menghancurkan turret tanpa henti dalam split push.',
+    pros: ['Supreme Warrior kebal terhadap efek slow dan meningkatkan kecepatan lari serta attack speed masif', 'Mencungkil musuh ke dalam turret dengan skill 1', 'Penghancur turret tercepat'],
+    cons: ['Sangat rapuh di awal game', 'Sangat mudah dimatikan oleh hero berkemampuan hard stun']
+  }};
+
+// Helper to assemble hero with archetype
+function buildHero(dirName, meta) {
+  const id = dirName.toLowerCase().replace(/[^a-z0-9]/g, '_');
+  const slug = dirName.toLowerCase().replace(/[^a-z0-9]/g, '-');
+  
+  let archKey = 'FighterExp';
+  if (meta.role === 'Assassin') {
+    archKey = meta.sec === 'Mage' ? 'MagicMage' : 'PhysicalAssassin';
+  } else if (meta.role === 'Mage') {
+    archKey = 'MagicMage';
+  } else if (meta.role === 'Tank') {
+    archKey = 'TankRoam';
+  } else if (meta.role === 'Marksman') {
+    archKey = 'MarksmanGold';
+  } else if (meta.role === 'Support') {
+    archKey = 'SupportRoam';
+  }
+
+  const arch = ARCHETYPES[archKey];
+
+  return {
+    id: id,
+    slug: slug,
+    name: meta.displayName,
+    title: meta.title,
+    role: meta.role,
+    secondaryRole: meta.sec,
+    lane: meta.lane,
+    tier: meta.tier,
+    difficulty: meta.diff,
+    ratings: {
+      durability: meta.role === 'Tank' ? 10 : meta.role === 'Fighter' ? 7 : meta.role === 'Marksman' ? 3 : 5,
+      offense: meta.role === 'Marksman' || meta.role === 'Assassin' ? 9 : 7,
+      controlEffect: meta.role === 'Tank' || meta.role === 'Support' ? 9 : 5,
+      difficulty: meta.diff === 'Very High' ? 10 : meta.diff === 'High' ? 8 : meta.diff === 'Medium' ? 6 : 4
+    },
+    winRate: meta.winRate,
+    pickRate: meta.pickRate,
+    banRate: meta.banRate,
+    patch: "1.8.92",
+    summary: meta.summary,
+    pros: meta.pros,
+    cons: meta.cons,
+    assets: {
+      heroIcon: `/Assets/Hero Icons/${dirName}/${dirName}.png`,
+      heroPortrait: `/Assets/Hero Icons/${dirName}/${dirName}_rec.png`,
+      roleIcon: `/Assets/Clases/${meta.role}.png`,
+      skins: [
+        { name: `Default ${meta.displayName}`, path: `/Assets/Hero Icons/${dirName}/${dirName}.png` },
+        { name: "Special Skin 1", path: `/Assets/Hero Icons/${dirName}/${dirName}_0.png` },
+        { name: "Elite Skin 2", path: `/Assets/Hero Icons/${dirName}/${dirName}_1.png` }
+      ]
+    },
+    spells: arch.spells,
+    emblem: arch.emblem,
+    coreBuild: arch.coreBuild,
+    situationalBuild: arch.situationalBuild,
+    skills: [
+      {
+        type: "Passive",
+        name: `${meta.displayName}'s Mastery`,
+        cooldown: "Pasif",
+        description: `Setiap serangan atau penggunaan kemampuan dari ${meta.displayName} memperkuat status dasarnya, memberikan keunggulan bertarung pada fase pertempuran berkepanjangan.`,
+        tips: "Manfaatkan efek pasif untuk menjaga efisiensi farming dan keunggulan duel di lane."
+      },
+      {
+        type: "Skill 1",
+        name: `${meta.displayName} Strike`,
+        cooldown: "7.5 - 5.0s",
+        description: "Melancarkan serangan terarah ke arah target yang memberikan damage instan dan efek pergerakan kepada lawan yang terkena.",
+        tips: "Gunakan secara berkala untuk mencicil darah lawan dan membersihkan wave minion dengan cepat."
+      },
+      {
+        type: "Skill 2",
+        name: "Tactical Maneuver",
+        cooldown: "10.0 - 7.5s",
+        description: "Bermanuver cepat untuk mengatur ulang posisi di medan tempur sekaligus memperoleh shield pertahanan atau efek kontrol lawan.",
+        tips: "Simpan skill ini untuk menghindari sergapan gank mendadak atau mengunci target yang mencoba kabur."
+      },
+      {
+        type: "Ultimate",
+        name: "Apex Domain",
+        cooldown: "40.0 - 28.0s",
+        description: `Melepaskan kemampuan terkuat ${meta.displayName} yang membalikkan jalannya pertempuran tim dengan damage masif atau efek kontrol area luas.`,
+        tips: "Keluarkan Ultimate saat seluruh musuh berkumpul rapat atau saat mengamankan objektif Lord krusial."
+      }
+    ],
+    skillOrder: {
+      priority: "Prioritas: Max Skill 1 > Max Skill 2 > Ambil Ultimate tiap Lv 4/8/12",
+      levels: [
+        { level: 1, skill: "Skill 1" }, { level: 2, skill: "Skill 2" }, { level: 3, skill: "Skill 1" },
+        { level: 4, skill: "Ultimate" }, { level: 5, skill: "Skill 1" }, { level: 6, skill: "Skill 2" },
+        { level: 7, skill: "Skill 1" }, { level: 8, skill: "Ultimate" }, { level: 9, skill: "Skill 1" },
+        { level: 10, skill: "Skill 2" }, { level: 11, skill: "Skill 1" }, { level: 12, skill: "Ultimate" }
+      ]
+    },
+    combos: [
+      {
+        name: `Standard Inisiasi ${meta.displayName}`,
+        sequence: ["Skill 2 (Reposition / Dash)", "Skill 1 (Poke / CC)", "Enhanced Basic Attack", "Ultimate (Finisher)"],
+        description: "Buka pertempuran dengan mengatur posisi ideal melalui Skill 2, susul dengan serbuan Skill 1, dan akhiri dengan eksekusi Ultimate mematikan."
+      }
+    ],
+    counters: {
+      strongAgainst: [
+        { name: "Layla", role: "Marksman", reason: "Hero tanpa mobilitas yang sangat mudah dijangkau dan dihabisi." },
+        { name: "Miya", role: "Marksman", reason: "Kalah adu burst damage dan sustain di fase awal pertempuran." }
+      ],
+      weakAgainst: [
+        { name: "Franco", role: "Tank", reason: "Suppression Bloody Hunt mengunci gerak seketika tanpa ampun." },
+        { name: "Diggie", role: "Support", reason: "Time Journey membatalkan seluruh efek Crowd Control tim." }
+      ],
+      synergies: [
+        { name: "Tigreal", role: "Tank", reason: "Pusaran Implosion mengumpulkan seluruh musuh menjadi satu titik serang empuk." },
+        { name: "Angela", role: "Support", reason: "Heartguard memberi perlindungan shield ekstra dan percepatan gerak tak terbendung." }
+      ]
+    },
+    gameplayGuide: {
+      earlyGame: `Di fase awal permainan (menit 00:00 - 05:00), fokuslah mengamankan gold dan level di lane Anda (${meta.lane}). Jaga jarak aman dari gank musuh dan bantu pengamanan Turtle pertama jika memungkinkan.`,
+      midGame: "Pada fase mid game (menit 05:00 - 12:00), mulailah berotasi bersama roamer dan midlaner untuk menekan turret musuh serta mengamankan vision semak jungle lawan.",
+      lateGame: "Di fase akhir game (menit 12:00+), hindari berjalan sendirian di map terbuka. Tetap berada di dekat formasi tim Anda untuk memastikan kontes Lord berjalan sukses."
+    }
+  };
+}
+
+// Generate the array of all 121 heroes
+export const HEROES_DATA = Object.keys(RAW_METADATA).map((dirName) => {
+  return buildHero(dirName, RAW_METADATA[dirName]);
+});
+
+// Helper functions for easy querying
+export function getAllHeroes() {
+  return HEROES_DATA;
+}
+
+export function getHeroBySlug(slug) {
+  if (!slug) return null;
+  const normalized = slug.toString().toLowerCase().trim().replace(/[^a-z0-9]/g, '');
+  return HEROES_DATA.find((hero) => {
+    const heroSlugNorm = hero.slug.replace(/[^a-z0-9]/g, '');
+    const heroIdNorm = hero.id.replace(/[^a-z0-9]/g, '');
+    const heroNameNorm = hero.name.toLowerCase().replace(/[^a-z0-9]/g, '');
+    return heroSlugNorm === normalized || heroIdNorm === normalized || heroNameNorm === normalized;
+  }) || null;
+}
+
+export function getHeroesByRole(role) {
+  if (!role || role === "All") return HEROES_DATA;
+  return HEROES_DATA.filter((hero) => hero.role === role || hero.secondaryRole === role);
+}

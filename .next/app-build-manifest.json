@@ -1,39 +1,25 @@
 {
   "pages": {
-    "/_not-found/page": [
-      "static/chunks/webpack-c81f7fd28659d64f.js",
-      "static/chunks/fd9d1056-6922f449a204c2cc.js",
-      "static/chunks/117-c86a41b869f6b521.js",
-      "static/chunks/main-app-a5009a6b859b9c06.js",
-      "static/chunks/app/_not-found/page-98467b0ee1cfb9b0.js"
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
     ],
     "/layout": [
-      "static/chunks/webpack-c81f7fd28659d64f.js",
-      "static/chunks/fd9d1056-6922f449a204c2cc.js",
-      "static/chunks/117-c86a41b869f6b521.js",
-      "static/chunks/main-app-a5009a6b859b9c06.js",
-      "static/css/401ddc09b44b9548.css",
-      "static/chunks/648-206d44c65372d6d5.js",
-      "static/chunks/app/layout-4ab43cde6d22f273.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ],
-    "/page": [
-      "static/chunks/webpack-c81f7fd28659d64f.js",
-      "static/chunks/fd9d1056-6922f449a204c2cc.js",
-      "static/chunks/117-c86a41b869f6b521.js",
-      "static/chunks/main-app-a5009a6b859b9c06.js",
-      "static/chunks/648-206d44c65372d6d5.js",
-      "static/chunks/844-d64be48c7680691c.js",
-      "static/chunks/352-2b180b696096ac40.js",
-      "static/chunks/app/page-0e16a8a7141050eb.js"
+    "/tier-list/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/tier-list/page.js"
     ],
     "/[heroName]/page": [
-      "static/chunks/webpack-c81f7fd28659d64f.js",
-      "static/chunks/fd9d1056-6922f449a204c2cc.js",
-      "static/chunks/117-c86a41b869f6b521.js",
-      "static/chunks/main-app-a5009a6b859b9c06.js",
-      "static/chunks/648-206d44c65372d6d5.js",
-      "static/chunks/352-2b180b696096ac40.js",
-      "static/chunks/app/[heroName]/page-e1ca50c58cbf256e.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[heroName]/page.js"
     ]
   }
 }
