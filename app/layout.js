@@ -8,12 +8,19 @@ export const metadata = {
   keywords: ['Mobile Legends', 'MLBB Build', 'Hero Guide', 'Aamon Build', 'Akai Build', 'Emblem MLBB', 'Tier List'],
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="id" className="dark scroll-smooth">
-      <body className="min-h-screen flex flex-col bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
+    <html lang="id" className="dark scroll-smooth overflow-x-hidden">
+      <body className="min-h-screen flex flex-col bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950 overflow-x-hidden w-full relative">
         <Navbar />
-        <main className="flex-1 w-full">
+        <main className="flex-1 w-full overflow-x-hidden">
           {children}
         </main>
         <Footer />

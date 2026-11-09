@@ -1,5 +1,5 @@
 {
   "/page": "app/page.js",
-  "/[heroName]/page": "app/[heroName]/page.js",
-  "/tier-list/page": "app/tier-list/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/[heroName]/page": "app/[heroName]/page.js"
 }

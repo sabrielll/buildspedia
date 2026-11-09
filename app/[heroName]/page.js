@@ -56,11 +56,11 @@ export default function HeroDetailPage() {
   ];
 
   return (
-    <div className="min-h-screen pb-24">
+    <div className="min-h-screen pb-24 w-full max-w-full overflow-x-hidden">
       {/* Breadcrumb & Navigation Top Bar */}
-      <div className="bg-slate-900/60 border-b border-slate-800/80 py-3">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between text-xs text-slate-400">
-          <div className="flex items-center gap-2">
+      <div className="bg-slate-900/60 border-b border-slate-800/80 py-2.5 sm:py-3 w-full max-w-full overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-slate-400">
+          <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
             <Link href="/" className="hover:text-cyan-400 transition-colors">
               Home
             </Link>
@@ -69,17 +69,17 @@ export default function HeroDetailPage() {
               {hero.role}
             </Link>
             <span>/</span>
-            <span className="text-slate-200 font-bold">{hero.name} Build Guide</span>
+            <span className="text-slate-200 font-bold truncate max-w-[200px]">{hero.name} Guide</span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <span className="text-[10px] uppercase font-bold text-slate-400">Pilih Hero Lain:</span>
-            <div className="flex items-center gap-1.5">
-              {HEROES_DATA.map((h) => (
+          <div className="flex items-center gap-1.5 overflow-x-auto max-w-full scrollbar-none">
+            <span className="text-[10px] uppercase font-bold text-slate-500 whitespace-nowrap">Hero Lain:</span>
+            <div className="flex items-center gap-1">
+              {HEROES_DATA.slice(0, 6).map((h) => (
                 <Link
                   key={h.id}
                   href={`/${h.slug}`}
-                  className={`px-2 py-0.5 rounded text-[11px] font-bold transition-all ${
+                  className={`px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-bold transition-all whitespace-nowrap ${
                     h.slug === hero.slug
                       ? 'bg-amber-500 text-slate-950 shadow-glow-gold'
                       : 'bg-slate-800 text-slate-300 hover:text-white'

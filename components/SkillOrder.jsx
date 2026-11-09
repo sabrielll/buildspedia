@@ -13,29 +13,29 @@ export default function SkillOrder({ skillOrder }) {
   };
 
   return (
-    <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 md:p-6 shadow-xl">
+    <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 sm:p-5 md:p-6 shadow-xl w-full max-w-full overflow-hidden">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3 mb-4">
-        <h3 className="text-base font-bold text-slate-100 flex items-center gap-2">
+        <h3 className="text-sm sm:text-base font-bold text-slate-100 flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-cyan-400" />
           Urutan Prioritas Leveling Skill
         </h3>
         {skillOrder.priority && (
-          <span className="text-xs font-semibold text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full">
+          <span className="text-[11px] sm:text-xs font-semibold text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full self-start sm:self-auto">
             {skillOrder.priority}
           </span>
         )}
       </div>
 
-      {/* Grid Leveling Steps */}
-      <div className="overflow-x-auto pb-2 scrollbar-none">
-        <div className="min-w-[600px] grid grid-cols-12 gap-1.5 text-center">
+      {/* Grid Leveling Steps with internal scroll container */}
+      <div className="w-full max-w-full overflow-x-auto pb-2 scrollbar-none">
+        <div className="min-w-[540px] grid grid-cols-12 gap-1.5 text-center">
           {skillOrder.levels.map((item) => (
             <div key={item.level} className="flex flex-col gap-1.5">
-              <span className="text-[11px] font-bold text-slate-500">
+              <span className="text-[10px] sm:text-[11px] font-bold text-slate-500">
                 Lv {item.level}
               </span>
               <div
-                className={`py-2 px-1 text-[11px] rounded-lg border transition-all ${skillColor(item.skill)}`}
+                className={`py-1.5 sm:py-2 px-1 text-[10px] sm:text-[11px] rounded-lg border transition-all ${skillColor(item.skill)}`}
                 title={`Level ${item.level}: Tingkatkan ${item.skill}`}
               >
                 {item.skill.replace('Skill ', 'S').replace('Ultimate', 'ULT')}
