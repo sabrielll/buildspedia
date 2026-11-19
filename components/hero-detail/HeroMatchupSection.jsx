@@ -64,8 +64,8 @@ export default function HeroMatchupSection({ hero }) {
   ];
 
   return (
-    <div className="lg:col-span-5 bg-slate-900/85 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-lg flex flex-col justify-between space-y-4">
-      <div className="flex items-center gap-2">
+    <div className="lg:col-span-5 h-fit self-start bg-slate-900/85 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-lg space-y-4">
+      <div className="flex items-center gap-2 pb-3 border-b border-slate-800">
         <span className="w-2 h-5 rounded-full bg-emerald-400" />
         <h2 className="text-sm sm:text-base font-black text-slate-100 uppercase tracking-wider">
           Peta Matchup &amp; Sinergi

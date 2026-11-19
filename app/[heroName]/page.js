@@ -32,7 +32,7 @@ export default function HeroDetailPage() {
         </div>
 
         {/* 3. Bottom Split: Skill Leveling + Combo Video (Left) & Matchup Matrix (Right) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           <HeroSkillSection hero={hero} />
           <HeroMatchupSection hero={hero} />
         </div>

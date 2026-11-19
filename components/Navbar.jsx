@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { CURRENT_PATCH } from '../data/constants/patch';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -57,7 +58,7 @@ export default function Navbar() {
           <div className="hidden sm:flex items-center gap-1.5 bg-slate-900 border border-slate-700/80 px-2.5 py-1 rounded-full text-[11px]">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-slate-400">Patch:</span>
-            <span className="font-bold text-amber-400">1.8.92</span>
+            <span className="font-bold text-amber-400">{CURRENT_PATCH}</span>
           </div>
 
           {/* Mobile Hamburger Toggle Button */}
@@ -98,7 +99,7 @@ export default function Navbar() {
           ))}
           <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 px-1">
             <span>Patch Meta MLBB</span>
-            <span className="text-amber-400 font-bold">1.8.92 Season 32</span>
+            <span className="text-amber-400 font-bold">{CURRENT_PATCH} Season 32</span>
           </div>
         </div>
       )}

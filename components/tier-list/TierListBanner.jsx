@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { CURRENT_PATCH } from '../../data/constants/patch';
 
 export default function TierListBanner({ lanes, selectedLane, onSelectLane }) {
   return (
@@ -12,7 +13,7 @@ export default function TierListBanner({ lanes, selectedLane, onSelectLane }) {
         <h1 className="text-3xl sm:text-5xl font-black text-slate-100 tracking-tight">
           Tier List Mobile Legends{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-500">
-            Patch 1.8.92
+            Patch {CURRENT_PATCH}
           </span>
         </h1>
         <p className="mt-3 text-sm text-slate-400 max-w-2xl mx-auto">
