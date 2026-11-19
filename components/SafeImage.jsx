@@ -1,14 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 /**
  * SafeImage - Komponen gambar dengan proteksi fallback otomatis
  * Menangani dynamic path, encoding spasi pada folder (misal "Hero Icons"),
- * dan menampilkan fallback SVG MLBB-themed jika file gagal dimuat.
+ * mendukung fallbackSrc sekunder, dan menampilkan fallback SVG MLBB-themed jika file gagal dimuat.
  */
 export default function SafeImage({
   src,
+  fallbackSrc = null,
   alt = 'Image',
   className = '',
   fallbackType = 'default', // 'hero' | 'item' | 'emblem' | 'spell' | 'role' | 'default'
@@ -16,20 +17,36 @@ export default function SafeImage({
   height,
   ...props
 }) {
+  const [currentSrc, setCurrentSrc] = useState(src);
+  const [triedFallbackSrc, setTriedFallbackSrc] = useState(false);
   const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    setCurrentSrc(src);
+    setTriedFallbackSrc(false);
+    setHasError(false);
+  }, [src]);
 
   // Encode URL path jika mengandung spasi seperti "Hero Icons", "Build Icons"
   const formattedSrc = React.useMemo(() => {
-    if (!src) return '';
+    if (!currentSrc) return '';
     try {
-      // Decode dulu untuk cegah double encoding, lalu encode URI
-      return encodeURI(decodeURI(src));
+      return encodeURI(decodeURI(currentSrc));
     } catch (e) {
-      return src;
+      return currentSrc;
     }
-  }, [src]);
+  }, [currentSrc]);
 
-  if (!src || hasError) {
+  const handleError = () => {
+    if (fallbackSrc && !triedFallbackSrc && currentSrc !== fallbackSrc) {
+      setTriedFallbackSrc(true);
+      setCurrentSrc(fallbackSrc);
+    } else {
+      setHasError(true);
+    }
+  };
+
+  if (!currentSrc || hasError) {
     return (
       <div
         className={`flex items-center justify-center bg-slate-800/90 border border-slate-700/60 rounded text-slate-400 select-none overflow-hidden ${className}`}
@@ -86,7 +103,7 @@ export default function SafeImage({
       src={formattedSrc}
       alt={alt}
       className={className}
-      onError={() => setHasError(true)}
+      onError={handleError}
       loading="lazy"
       width={width}
       height={height}

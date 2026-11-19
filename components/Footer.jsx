@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
 
           <div className="text-xs text-center md:text-right text-slate-500 max-w-md">
-            Dibangun dengan Next.js, Tailwind CSS, dan Framer Motion. Terinspirasi oleh arsitektur dan kejelasan WildRiftFire.
+            Platform database build, emblem, dan strategi kompetitif Mobile Legends: Bang Bang untuk komunitas Land of Dawn.
           </div>
         </div>
 

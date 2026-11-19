@@ -8,8 +8,8 @@ import { TIER_CONFIG } from '../data/heroes';
 
 /**
  * HeroCard - Komponen Reusable Kartu Hero untuk Grid Halaman Utama
- * Mendukung mode 'compact' (8 per baris - WildRift / MLBB roster style)
- * dan mode 'detailed' (4 per baris)
+ * Mendukung mode 'compact' (8 per baris - MLBB Hero Roster style)
+ * dan mode 'detailed' (4 per baris), menggunakan aset resolusi tinggi _rec.png
  */
 export default function HeroCard({ hero, viewMode = 'compact' }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -17,6 +17,7 @@ export default function HeroCard({ hero, viewMode = 'compact' }) {
   if (!hero) return null;
 
   const tierStyle = TIER_CONFIG[hero.tier] || TIER_CONFIG['S'];
+  const heroPortraitPath = hero.assets?.heroPortrait || `/Assets/Hero Icons/${hero.name}/${hero.name}_rec.png`;
   const heroIconPath = hero.assets?.heroIcon || `/Assets/Hero Icons/${hero.name}/${hero.name}.png`;
   const roleIconPath = hero.assets?.roleIcon || `/Assets/Clases/${hero.role}.png`;
 
@@ -37,13 +38,14 @@ export default function HeroCard({ hero, viewMode = 'compact' }) {
             group-hover:border-cyan-400 group-hover:shadow-glow-cyan transition-all duration-300 
             overflow-hidden flex flex-col justify-between">
             
-            {/* Background Hero Portrait / Avatar */}
+            {/* Background Hero Portrait (_rec.png) */}
             <div className="absolute inset-0 bg-slate-950 overflow-hidden">
               <SafeImage
-                src={heroIconPath}
+                src={heroPortraitPath}
+                fallbackSrc={heroIconPath}
                 alt={hero.name}
                 fallbackType="hero"
-                className="w-full h-full object-cover object-top filter brightness-95 group-hover:brightness-110 group-hover:scale-108 transition-all duration-300"
+                className="w-full h-full object-cover object-[center_12%] filter brightness-95 group-hover:brightness-110 group-hover:scale-105 transition-all duration-300"
               />
               {/* Radial Ambient Glow */}
               <div className="absolute inset-0 bg-radial-gradient from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -68,8 +70,8 @@ export default function HeroCard({ hero, viewMode = 'compact' }) {
             </div>
 
             {/* Bottom Gradient Overlay & Hero Name */}
-            <div className="relative z-10 pt-6 pb-2 px-1.5 sm:px-2 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent flex flex-col items-center text-center">
-              <h3 className="text-xs sm:text-sm font-black text-slate-100 group-hover:text-cyan-300 transition-colors tracking-wide truncate w-full">
+            <div className="relative z-10 pt-8 pb-2 px-1.5 sm:px-2 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent flex flex-col items-center text-center">
+              <h3 className="text-xs sm:text-sm font-black text-slate-100 group-hover:text-cyan-300 transition-colors tracking-wide truncate w-full drop-shadow">
                 {hero.name}
               </h3>
               
@@ -132,7 +134,7 @@ export default function HeroCard({ hero, viewMode = 'compact' }) {
   }
 
   // ==========================================
-  // MODE DETAILED (4 Per Baris - Traditional Card)
+  // MODE DETAILED (4 Per Baris - Full Card)
   // ==========================================
   return (
     <motion.div
@@ -145,15 +147,16 @@ export default function HeroCard({ hero, viewMode = 'compact' }) {
           group-hover:border-cyan-400 group-hover:shadow-glow-cyan transition-all duration-300 
           overflow-hidden flex flex-col justify-between">
           
-          {/* Top Banner & Hero Art */}
+          {/* Top Banner & Hero Portrait (_rec.png) */}
           <div className="relative w-full aspect-[4/3] bg-gradient-to-b from-slate-800 to-slate-950 overflow-hidden">
             <SafeImage
-              src={heroIconPath}
+              src={heroPortraitPath}
+              fallbackSrc={heroIconPath}
               alt={hero.name}
               fallbackType="hero"
-              className="w-full h-full object-cover object-top filter brightness-95 group-hover:brightness-110 group-hover:scale-105 transition-all duration-500"
+              className="w-full h-full object-cover object-[center_15%] filter brightness-95 group-hover:brightness-110 group-hover:scale-105 transition-all duration-500"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />
 
             {/* Tier Badge Top Right */}
             <div className="absolute top-2.5 right-2.5 z-10">

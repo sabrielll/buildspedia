@@ -5,7 +5,7 @@ import SafeImage from './SafeImage';
 
 /**
  * EmblemSetup - Komponen Reusable Konfigurasi Emblem MLBB
- * Menampilkan susunan 3 Tier Talent + Base Emblem dengan styling WildRiftFire
+ * Menampilkan susunan 3 Tier Talent + Base Emblem
  * Path: /Assets/Emblem/[Kategori_Emblem]/[Nama_Talent].png
  */
 export default function EmblemSetup({ emblem, className = '' }) {

@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 export const metadata = {
   title: 'Buildspedia - Panduan Build Hero Mobile Legends Terlengkap',
-  description: 'Platform panduan komprehensif MLBB dengan analisis Core Build, Situational Items, Emblem Sets, dan Gameplay Guide bergaya WildRiftFire.',
+  description: 'Platform panduan komprehensif Mobile Legends: Bang Bang dengan analisis Core Build, Situational Items, Emblem Sets, dan Gameplay Guide kompetitif.',
   keywords: ['Mobile Legends', 'MLBB Build', 'Hero Guide', 'Aamon Build', 'Akai Build', 'Emblem MLBB', 'Tier List'],
 };
 

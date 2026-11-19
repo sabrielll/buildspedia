@@ -56,7 +56,7 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl mx-auto">
-              Panduan build terstruktur ala <span className="text-cyan-400 font-semibold">WildRiftFire</span>. 
+              Panduan build kompetitif <span className="text-cyan-400 font-semibold">Mobile Legends: Bang Bang</span> terlengkap. 
               Temukan racikan Core Items, Situational Counters, susunan 3-Tier Emblem, dan urutan kombo dari seluruh 121 hero.
             </p>
 
@@ -68,10 +68,11 @@ export default function HomePage() {
               >
                 <div className="w-10 h-10 rounded-lg bg-slate-950 border border-amber-500/50 p-0.5 flex-shrink-0 overflow-hidden">
                   <SafeImage
-                    src="/Assets/Hero Icons/Aamon/Aamon.png"
+                    src="/Assets/Hero Icons/Aamon/Aamon_rec.png"
+                    fallbackSrc="/Assets/Hero Icons/Aamon/Aamon.png"
                     alt="Aamon"
                     fallbackType="hero"
-                    className="w-full h-full object-cover rounded"
+                    className="w-full h-full object-cover object-top rounded"
                   />
                 </div>
                 <div className="min-w-0">
@@ -89,10 +90,11 @@ export default function HomePage() {
               >
                 <div className="w-10 h-10 rounded-lg bg-slate-950 border border-amber-500/50 p-0.5 flex-shrink-0 overflow-hidden">
                   <SafeImage
-                    src="/Assets/Hero Icons/Akai/Akai.png"
+                    src="/Assets/Hero Icons/Akai/Akai_rec.png"
+                    fallbackSrc="/Assets/Hero Icons/Akai/Akai.png"
                     alt="Akai"
                     fallbackType="hero"
-                    className="w-full h-full object-cover rounded"
+                    className="w-full h-full object-cover object-top rounded"
                   />
                 </div>
                 <div className="min-w-0">
@@ -110,10 +112,11 @@ export default function HomePage() {
               >
                 <div className="w-10 h-10 rounded-lg bg-slate-950 border border-amber-500/50 p-0.5 flex-shrink-0 overflow-hidden">
                   <SafeImage
-                    src="/Assets/Hero Icons/Fanny/Fanny.png"
+                    src="/Assets/Hero Icons/Fanny/Fanny_rec.png"
+                    fallbackSrc="/Assets/Hero Icons/Fanny/Fanny.png"
                     alt="Fanny"
                     fallbackType="hero"
-                    className="w-full h-full object-cover rounded"
+                    className="w-full h-full object-cover object-top rounded"
                   />
                 </div>
                 <div className="min-w-0">
@@ -131,10 +134,11 @@ export default function HomePage() {
               >
                 <div className="w-10 h-10 rounded-lg bg-slate-950 border border-amber-500/50 p-0.5 flex-shrink-0 overflow-hidden">
                   <SafeImage
-                    src="/Assets/Hero Icons/Valentina/Valentina.png"
+                    src="/Assets/Hero Icons/Valentina/Valentina_rec.png"
+                    fallbackSrc="/Assets/Hero Icons/Valentina/Valentina.png"
                     alt="Valentina"
                     fallbackType="hero"
-                    className="w-full h-full object-cover rounded"
+                    className="w-full h-full object-cover object-top rounded"
                   />
                 </div>
                 <div className="min-w-0">

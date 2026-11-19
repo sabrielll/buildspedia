@@ -110,19 +110,20 @@ export default function TierListPage() {
 
               {/* Heroes in this Tier */}
               {heroes.length > 0 ? (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2.5 sm:gap-3">
                   {heroes.map((hero) => (
                     <Link
                       key={hero.id}
                       href={`/${hero.slug}`}
-                      className="group bg-slate-950/80 hover:bg-slate-800/80 border border-slate-800 hover:border-cyan-400 hover:shadow-glow-cyan rounded-xl p-2.5 transition-all flex flex-col items-center text-center"
+                      className="group bg-slate-950/80 hover:bg-slate-800/80 border border-slate-800 hover:border-cyan-400 hover:shadow-glow-cyan rounded-xl p-2 transition-all flex flex-col items-center text-center"
                     >
-                      <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border border-slate-700 group-hover:border-cyan-400 mb-2">
+                      <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden border border-slate-700 group-hover:border-cyan-400 mb-2">
                         <SafeImage
-                          src={hero.assets?.heroIcon || `/Assets/Hero Icons/${hero.name}/${hero.name}.png`}
+                          src={hero.assets?.heroPortrait || `/Assets/Hero Icons/${hero.name}/${hero.name}_rec.png`}
+                          fallbackSrc={hero.assets?.heroIcon || `/Assets/Hero Icons/${hero.name}/${hero.name}.png`}
                           alt={hero.name}
                           fallbackType="hero"
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                          className="w-full h-full object-cover object-[center_12%] group-hover:scale-105 transition-transform duration-300"
                         />
                         <span className="absolute bottom-1 right-1 bg-slate-950/90 text-[10px] text-emerald-400 font-black px-1 rounded">
                           {hero.winRate}
