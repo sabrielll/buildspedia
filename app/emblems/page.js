@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import SafeImage from '../../components/SafeImage';
+import EmblemBanner from '../../components/emblems/EmblemBanner';
+import EmblemShowcaseCard from '../../components/emblems/EmblemShowcaseCard';
 
 const EMBLEM_SETS = [
   {
@@ -102,121 +103,13 @@ export default function EmblemsPage() {
 
   return (
     <div className="min-h-screen pb-24">
-      {/* Header Banner */}
-      <section className="bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-b border-slate-800/80 pt-10 pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase mb-3">
-            Sistem Talent Emblem Baru MLBB
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-black text-slate-100 tracking-tight">
-            Katalog Emblem &{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-              Talent Matrix
-            </span>
-          </h1>
-          <p className="mt-3 text-sm text-slate-400 max-w-2xl mx-auto">
-            Pelajari setiap bonus stat atribut dan efek pasif 3-Tier Talent untuk menyusun kombinasi emblem terkuat bagi hero andalan Anda.
-          </p>
+      <EmblemBanner
+        emblemSets={EMBLEM_SETS}
+        selectedEmblem={selectedEmblem}
+        onSelectEmblem={setSelectedEmblem}
+      />
 
-          {/* Emblem Selector Pills */}
-          <div className="mt-8 flex items-center justify-center gap-2 flex-wrap">
-            {EMBLEM_SETS.map((emb) => (
-              <button
-                key={emb.id}
-                onClick={() => setSelectedEmblem(emb)}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
-                  selectedEmblem.id === emb.id
-                    ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-glow-cyan border border-cyan-400'
-                    : 'bg-slate-900/90 text-slate-400 hover:text-white border border-slate-800'
-                }`}
-              >
-                <div className="w-5 h-5 flex items-center justify-center">
-                  <SafeImage
-                    src={`/Assets/Emblem/${emb.category}/${emb.icon}`}
-                    alt={emb.name}
-                    fallbackType="emblem"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <span>{emb.name.replace('Custom ', '').replace(' Emblem', '')}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Emblem Detail Showcase */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
-        <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
-          {/* Header */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 border-b border-slate-800 pb-6 mb-8">
-            <div className="w-20 h-20 rounded-2xl bg-slate-950 p-2.5 border-2 border-amber-500/60 shadow-glow-gold flex items-center justify-center flex-shrink-0">
-              <SafeImage
-                src={`/Assets/Emblem/${selectedEmblem.category}/${selectedEmblem.icon}`}
-                alt={selectedEmblem.name}
-                fallbackType="emblem"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider bg-cyan-950/80 border border-cyan-500/40 px-2.5 py-0.5 rounded-full">
-                  Kategori {selectedEmblem.category}
-                </span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-100 mt-1">
-                {selectedEmblem.name}
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-400 mt-1">
-                {selectedEmblem.description}
-              </p>
-              <div className="mt-2 text-xs font-bold text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-lg inline-block">
-                Bonus Atribut: {selectedEmblem.stats}
-              </div>
-            </div>
-          </div>
-
-          {/* 3 Talents Matrix */}
-          <div className="space-y-4">
-            <h3 className="text-base font-bold text-slate-200">
-              Pilihan Susunan Talent ({selectedEmblem.name})
-            </h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {selectedEmblem.talents.map((talent, idx) => (
-                <div
-                  key={idx}
-                  className="bg-slate-950/80 border border-slate-800 hover:border-cyan-400/60 rounded-2xl p-5 transition-all flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-[10px] uppercase font-black px-2 py-0.5 rounded bg-slate-800 text-cyan-400 border border-slate-700">
-                        {talent.tier}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700 p-1 flex items-center justify-center">
-                        <SafeImage
-                          src={`/Assets/Emblem/${selectedEmblem.category}/${talent.filename}`}
-                          alt={talent.name}
-                          fallbackType="emblem"
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                      <h4 className="text-sm font-bold text-slate-100">{talent.name}</h4>
-                    </div>
-
-                    <p className="text-xs text-slate-300 leading-relaxed">
-                      {talent.effect}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+      <EmblemShowcaseCard selectedEmblem={selectedEmblem} />
     </div>
   );
 }
